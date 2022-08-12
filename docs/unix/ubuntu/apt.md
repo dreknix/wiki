@@ -17,4 +17,4 @@ key with the following command:
 
 ```console
 $ sudo apt-key adv --keyserver keys.gnupg.net --recv-keys AAAABBBBCCCCDDDD
-````
+```
