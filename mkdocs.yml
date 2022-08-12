@@ -1,0 +1,107 @@
+---
+
+# Project information
+site_name: 'dreknix Wiki'
+site_description: 'dreknix Wiki'
+site_author: 'dreknix'
+site_url: !ENV [MKDOCS_SITE_URL, 'http://localhost:8000']
+dev_addr: !ENV [MKDOCS_DEV_ADDR, '127.0.0.1:8000']
+
+# Repository
+repo_url: 'https://github.com/dreknix/wiki'
+repo_name: 'dreknix/wiki'
+edit_uri: 'edit/main/docs'
+
+use_directory_urls: false
+
+# Configuration
+theme:
+  name: 'material'
+  language: 'en'
+  palette:
+    scheme: 'slate'
+    primary: 'teal'
+    accent: 'deep orange'
+  font:
+    text: 'Roboto'
+    code: 'Hack Mono, Roboto Mono'
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.tracking
+    - toc.integrate
+  icon:
+    logo: material/library
+    # repo: fontawesome/brands/bitbucket
+    admonition:
+      note: fontawesome/solid/note-sticky
+      abstract: fontawesome/solid/book
+      info: fontawesome/solid/circle-info
+      tip: fontawesome/solid/bullhorn
+      success: fontawesome/solid/check
+      question: fontawesome/solid/circle-question
+      warning: fontawesome/solid/triangle-exclamation
+      failure: fontawesome/solid/bomb
+      danger: fontawesome/solid/skull
+      bug: fontawesome/solid/robot
+      example: fontawesome/solid/flask
+      quote: fontawesome/solid/quote-left
+
+# Plugins
+plugins:
+  - search:
+      prebuild_index: true
+  # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
+  - awesome-pages
+# - mermaid2:
+#     arguments:
+#       securityLevel: 'loose'
+#       theme: 'dark'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - mdx_truly_sane_lists:
+      nested_indent: 2
+      truly_sane: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  # https://facelessuser.github.io/pymdown-extensions/extensions/highlight/
+  - pymdownx.highlight:
+      use_pygments: true
+      noclasses: true
+      pygments_style: 'solarized-dark'
+  - pymdownx.inlinehilite
+  # https://facelessuser.github.io/pymdown-extensions/extensions/keys/
+  - pymdownx.keys
+  # https://facelessuser.github.io/pymdown-extensions/extensions/magiclink/
+  - pymdownx.magiclink:
+      repo_url_shortener: true
+      repo_url_shorthand: true
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        # see: https://squidfunk.github.io/mkdocs-material/reference/diagrams/
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - toc:
+      permalink: "&#128279;"
+      toc_depth: 5
+
+...

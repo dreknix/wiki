@@ -1,0 +1,4 @@
+mkdocs-material==8.3.8
+mkdocs-awesome-pages-plugin
+pymdown-extensions
+mdx_truly_sane_lists         # for nested lists
