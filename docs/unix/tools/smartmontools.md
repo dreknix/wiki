@@ -1,8 +1,8 @@
 # smartmontools
 
 * [smartmontools](https://www.smartmontools.org/)
-* [smartctl(1)](
-   https://manpages.debian.org/smartctl.1.en.html)
+* [smartctl(8)](
+   https://manpages.debian.org/smartctl.8.en.html)
 
 ## Get information about device
 
