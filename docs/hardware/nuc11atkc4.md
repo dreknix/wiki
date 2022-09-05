@@ -11,11 +11,11 @@
 
 ## Boot
 
-* ++F2++ - Enter setup
-* ++F7++ - Update BIOS
+* ++f2++ - Enter setup
+* ++f7++ - Update BIOS
   * [ATJSLCPX](https://www.intel.com/content/www/us/en/download/721452/bios-update-atjslcpx.html) - Version 37
-* ++F10++ - Boot menu
-* ++F12++ - Network boot
+* ++f10++ - Boot menu
+* ++f12++ - Network boot
 
 ## Debian 11 - bullseye
 
