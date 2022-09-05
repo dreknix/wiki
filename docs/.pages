@@ -1,4 +1,5 @@
 nav:
   - Wiki: index.md
+  - Hardware: hardware
   - UNIX: unix
   - Writing: writing
