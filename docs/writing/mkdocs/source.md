@@ -33,3 +33,22 @@ int main(int argc, char *argv[])
   exit EXIT_SUCCESS;
 }
 ```
+
+Using annotations:
+
+```c
+int main(int argc, char* argv[])
+{
+  int a = 42; // (1)
+}
+```
+
+1.  :man_raising_hand: The answer to everything.
+
+
+``` { .yaml .annotate }
+# (1)
+```
+
+1.  Look ma, less line noise!
+

@@ -26,12 +26,13 @@ theme:
     text: 'Roboto'
     code: 'Hack Mono, Roboto Mono'
   features:
+    - content.code.annotate
     - navigation.instant
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
     - navigation.tracking
-    - toc.integrate
+    # - toc.integrate
   icon:
     logo: material/library
     # repo: fontawesome/brands/bitbucket
@@ -78,9 +79,11 @@ plugins:
 
 # Extensions
 markdown_extensions:
+  - abbr
   - admonition
   - attr_list
   - def_list
+  - md_in_html
   - mdx_truly_sane_lists:
       nested_indent: 2
       truly_sane: true
@@ -96,8 +99,6 @@ markdown_extensions:
   # https://facelessuser.github.io/pymdown-extensions/extensions/highlight/
   - pymdownx.highlight:
       use_pygments: true
-      noclasses: true
-      pygments_style: 'solarized-dark'
   - pymdownx.inlinehilite
   # https://facelessuser.github.io/pymdown-extensions/extensions/keys/
   - pymdownx.keys
@@ -107,6 +108,7 @@ markdown_extensions:
       repo_url_shorthand: true
   - pymdownx.mark
   - pymdownx.smartsymbols
+  - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         # see: https://squidfunk.github.io/mkdocs-material/reference/diagrams/
