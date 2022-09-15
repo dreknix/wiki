@@ -5,9 +5,12 @@ version: '3'
 
 tasks:
 
-  update:
+  python:
     desc: Update all Python packages including Mkdocs Material
     cmds:
+      # Upgrade pip3, setuptools and install wheel
+      - pip3 install --upgrade pip setuptools wheel
+      # Install/upgrade requirements
       - pip3 install --upgrade -r requirements.txt
 
   serve:
