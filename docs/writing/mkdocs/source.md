@@ -6,15 +6,24 @@
 ## Setup
 
 ```yaml
+theme:
+  features:
+    - content.code.annotate # (1)!
+    
 markdown_extensions:
   - pymdownx.highlight:
+      anchor_linenums: true
       use_pygments: true
-      noclasses: true
-      pygments_style: 'solarized-dark'
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
 ```
 
+1.  Important for code annotations
+
 ## Examples
+
+Source code with highlighting:
 
 ```c
 #include<stdio.h>
@@ -34,21 +43,37 @@ int main(int argc, char *argv[])
 }
 ```
 
-Using annotations:
+!!! example "Using annotations:"
 
-```c
-int main(int argc, char* argv[])
-{
-  int a = 42; // (1)
-}
-```
+    === "Layout"
 
-1.  :man_raising_hand: The answer to everything.
+        ```c
+        // Simple example
+        int main(int argc, char* argv[])
+        {
+          int a = 42; // The answer (1)
+          return EXIT_SUCCESS; // (2)!
+        }
+        ```
 
+        1.  to everything.
+        2.  Annotation with stripping comments
 
-``` { .yaml .annotate }
-# (1)
-```
+    === "Markdown"
 
-1.  Look ma, less line noise!
+        ````markdown
+        ```c
+        // Simple example
+        int main(int argc, char *argv[])
+        {
+          int a = 42;          // The answer (1)
+          return EXIT_SUCCESS; // (2)!
+        ```
+
+        1.  to everthing
+        2.  Annotation with stripping comments
+        ````
+
+    For each code annotation a link can be set
+    ([example](http://localhost:8000/writing/mkdocs/source.html#__code_3_annotation_1)).
 
