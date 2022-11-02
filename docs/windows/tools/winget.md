@@ -9,6 +9,18 @@ https://github.com/microsoft/winget-cli
 Download latest version from GitHub
 [release page](https://github.com/microsoft/winget-cli/releases).
 
+!!! info
+
+    The download a package with all dependencies you can use
+    [https://store.rg-adguard.net/](https://store.rg-adguard.net/).
+    * Go to [Microsoft store](https://apps.microsoft.com/store/)
+    * Select the application
+    * Copy the URL
+    * Go to [https://store.rg-adguard.net/](https://store.rg-adguard.net/)
+    * Paste the URL
+    * Select on the right side 'Slow'
+    Now you will see all packages inside this application.
+
 Install `winget` as a provisioned package:
 
 ```powershell
