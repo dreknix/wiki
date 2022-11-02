@@ -1,8 +1,14 @@
 # winget
 
-Windows Package Manager Client
+Windows Package Manager CLI (aka `winget`) can be used to install/upgrade
+software on Windows via the command line.
 
-https://github.com/microsoft/winget-cli
+* https://github.com/microsoft/winget-cli
+* [Microsoft Store - App-Installer](
+   https://apps.microsoft.com/store/detail/9NBLGGH4NNS1)
+* [Use the `winget` tool to install and manage applications](
+   https://learn.microsoft.com/en-us/windows/package-manager/winget/)
+* [winget @ SS64](https://ss64.com/nt/winget.html)
 
 ## Install
 
