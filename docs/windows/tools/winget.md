@@ -82,6 +82,9 @@ Try to install all packages in machine scope (for all users):
 PS> winget install --scope machine --exact --id gerardog.gsudo
 ```
 
+Therefore, the default scope should be `machine`. Change the default scope in
+the [settings](#configuration-settings)
+
 Some package can not be installed in machine scope:
 
 ```powershell
