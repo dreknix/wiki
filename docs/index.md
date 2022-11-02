@@ -11,5 +11,9 @@ can be found on [GitHub pages](https://dreknix.github.io/wiki/).
 
 ## Writing
 
+* [Overview](windows/)
+
+## Writing
+
 * [Overview](writing/)
 * [Material for MkDocs](writing/mkdocs/)
