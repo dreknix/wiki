@@ -9,7 +9,7 @@ can be found on [GitHub pages](https://dreknix.github.io/wiki/).
 * [Overview](unix/)
 * [Ubuntu](unix/ubuntu)
 
-## Writing
+## Windows
 
 * [Overview](windows/)
 
