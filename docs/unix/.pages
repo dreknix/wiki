@@ -1,5 +1,6 @@
 nav:
   - Overview: index.md
+  - Proxmox: proxmox
   - systemd: systemd
   - Tools: tools
   - Ubuntu: ubuntu
