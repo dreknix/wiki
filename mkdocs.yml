@@ -33,6 +33,9 @@ theme:
     - navigation.tabs.sticky
     - navigation.top
     - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#anchor-following
     - toc.follow
     # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-integration
@@ -73,7 +76,7 @@ copyright: >
 # Plugins
 plugins:
   - search:
-      prebuild_index: true
+      lang: en
   # https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin
   - awesome-pages
 # - mermaid2:
