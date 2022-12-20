@@ -15,3 +15,5 @@
 * SumatraPDF
 * nomacs
 * Jitsi.Meet
+
+* https://github.com/lptstr/winfetch - Like Neofetch, but for Windows
