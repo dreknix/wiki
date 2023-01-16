@@ -27,3 +27,16 @@ Get list of installed updates:
 ```PS
 PS> Get-HotFix | Sort-Object InstalledOn -Descending
 ```
+
+## Check Windows Version
+
+```PS
+if ((Get-CimInstance -ClassName Win32_OperatingSystem).Caption -like "Microsoft Windows 10*")
+{
+  Write-Host "Windows 10"
+}
+else
+{
+  Write-Host "Windows 11"
+}
+```
