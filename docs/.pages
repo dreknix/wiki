@@ -1,6 +1,7 @@
 nav:
   - Wiki: index.md
   - Hardware: hardware
+  - HA: ha
   - UNIX: unix
   - Windows: windows
   - Writing: writing
