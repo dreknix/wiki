@@ -1,3 +1,3 @@
 # Hardware
 
-* [NUC11ATKC4](nuk11atkc4) - Celeron N5105
+* [NUC11ATKC4](nuk11atkc4.md) - Celeron N5105
