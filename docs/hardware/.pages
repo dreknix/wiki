@@ -1,3 +1,4 @@
 nav:
   - Overview: index.md
+  - ThinkPad: lenovo.md
   - NUC11ATKC4: nuc11atkc4.md
