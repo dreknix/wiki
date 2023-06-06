@@ -15,16 +15,14 @@ filetype plugin on
 
 ## Things to learn
 
-```vim
-" cip cap dip dap
-" ciw
-" ci"
-" ci'
-" ci(
-" ci{
-" ci<
-" cit
-```
+(**d**|**c**|**v**)(**a**|**i**)(**"**|**'**|**(**|**]**|**{**|**<**|**t**|**p**|**w**)
+
+* `da"` - **d**elete **a**round quotes or `da'`
+* `di]` - **d**elete **i**nside brackets
+* `ci{` - **c**hange **i**nside braces
+* `dap` - **d**elete **i**nside paragraph
+* `vaw` - **v**isual select **a**round word
+* `vit` - **v**isual select **i**nside tag or `vi<`
 
 ## Finding Files
 
