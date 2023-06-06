@@ -15,14 +15,28 @@ filetype plugin on
 
 ## Things to learn
 
-(**d**|**c**|**v**)(**a**|**i**)(**"**|**'**|**(**|**]**|**{**|**<**|**t**|**p**|**w**)
+<b>d</b> <b>c</b> <b>v</b> ---
+<b>a</b> <b>i</b> --- 
+<b>"</b> <b>'</b> <b>(</b> <b>]</b> <b>{</b> <b><</b> <b>t</b> <b>p</b> <b>w</b>
 
-* `da"` - **d**elete **a**round quotes or `da'`
-* `di]` - **d**elete **i**nside brackets
-* `ci{` - **c**hange **i**nside braces
-* `dap` - **d**elete **i**nside paragraph
-* `vaw` - **v**isual select **a**round word
-* `vit` - **v**isual select **i**nside tag or `vi<`
+* `da"` - <b>d</b>elete <b>a</b>round quotes or `da'`
+* `di]` - <b>d</b>elete <b>i</b>nside brackets
+* `ci{` - <b>c</b>hange <b>i</b>nside braces
+* `dap` - <b>d</b>elete <b>i</b>nside paragraph
+* `vaw` - <b>v</b>isual select <b>a</b>round word
+* `vit` - <b>v</b>isual select <b>i</b>nside tag or `vi<`
+
+<b>d</b> <b>c</b> <b>v</b> ---
+<b>t</b> <b>f</b> --- 
+*character*
+
+* `dt)` - <b>d</b>elete up <b>t</b>o next character ``)`` - excluding match
+* `cf>` - <b>c</b>hange up to next character ``>`` - including match
+
+Remove lines matching a pattern
+
+* `:g/pattern/d` - remove lines that ^^**do**^^ match the pattern
+* `:g!/pattern/d` - remove lines that ^^**do not**^^ match the pattern
 
 ## Finding Files
 
