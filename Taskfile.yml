@@ -5,6 +5,11 @@ version: '3'
 
 tasks:
 
+  lint:
+    desc: Lint YAML files
+    cmds:
+      - yamllint .
+
   python:
     desc: Update all Python packages including Mkdocs Material
     cmds:

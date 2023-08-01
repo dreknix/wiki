@@ -1,0 +1,15 @@
+---
+
+extends: default
+
+rules:
+  truthy:
+    ignore: |
+      .github/workflows/ci.yml
+  line-length:
+    max: 120
+
+ignore: |
+  .direnv/
+
+...
