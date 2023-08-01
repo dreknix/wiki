@@ -1,7 +1,7 @@
 # Windows - Tools
 
-* [`winget`](winget)
-* [Windows Terminal](wt)
+* [`winget`](winget.md)
+* [Windows Terminal](wt.md)
 * gsudo
 * OpenSSH Beta
 * vim

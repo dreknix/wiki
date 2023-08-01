@@ -1,3 +1,3 @@
 # Writing
 
-* [MkDocs Material](mkdocs/)
+* [MkDocs Material](mkdocs/index.md)

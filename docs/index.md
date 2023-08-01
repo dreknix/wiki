@@ -6,18 +6,18 @@ can be found on [GitHub pages](https://dreknix.github.io/wiki/).
 
 ## Home Assistant
 
-* [Overview](ha/)
+* [Overview](ha/index.md)
 
 ## UNIX
 
-* [Overview](unix/)
-* [Ubuntu](unix/ubuntu)
+* [Overview](unix/index.md)
+* [Ubuntu](unix/ubuntu/index.md)
 
 ## Windows
 
-* [Overview](windows/)
+* [Overview](windows/index.md)
 
 ## Writing
 
-* [Overview](writing/)
-* [Material for MkDocs](writing/mkdocs/)
+* [Overview](writing/index.md)
+* [Material for MkDocs](writing/mkdocs/index.md)
