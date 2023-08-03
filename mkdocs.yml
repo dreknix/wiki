@@ -83,9 +83,9 @@ copyright: >
 
 # Plugins
 plugins:
-  - awesome-pages
   - search:
       lang: en
+  - awesome-pages
 
 # Extensions
 markdown_extensions:

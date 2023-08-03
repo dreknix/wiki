@@ -1,5 +1,5 @@
 nav:
-  - Wiki: index.md
+  - Wiki: .
   - Hardware: hardware
   - HA: ha
   - UNIX: unix
