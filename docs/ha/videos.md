@@ -1,5 +1,9 @@
 # Videos
 
+## First Steps
+
+* [15 Home Assistant Tips You MUST Do](https://youtu.be/FVusYP4fHFM)
+
 ## Templates
 
 * [Home Assistant Template Sensoren und Hilfsentitäten (Helfer) 101](https://youtu.be/tgZqukb2jHo)
