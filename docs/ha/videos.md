@@ -1,3 +1,8 @@
+---
+tags:
+  - HomeAssistant
+---
+
 # Videos
 
 ## First Steps

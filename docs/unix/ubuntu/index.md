@@ -1,1 +1,6 @@
+---
+tags:
+  - Ubuntu
+---
+
 # Ubuntu

@@ -1,3 +1,8 @@
+---
+tags:
+  - Windows
+---
+
 # Windows Terminal
 
 ## Install

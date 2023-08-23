@@ -1,3 +1,8 @@
+---
+tags:
+  - Proxmox
+---
+
 # Terminal Access
 
 ## Connect to serial console

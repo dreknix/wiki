@@ -15,6 +15,9 @@ markdown_extensions:
 
 ## Examples
 
+There is a search in all available icons under
+https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/.
+
 Available Icons/Emojis:
 
 * https://materialdesignicons.com/
@@ -23,3 +26,5 @@ Available Icons/Emojis:
   * `:fontawesome-regular-face-laugh-wink:` - :fontawesome-regular-face-laugh-wink:
 * https://primer.style/octicons/
   * `:octicons-verified-24:` - :octicons-verified-24:
+* https://simpleicons.org/
+  * `:simple-ubuntu:` - :simple-ubuntu:

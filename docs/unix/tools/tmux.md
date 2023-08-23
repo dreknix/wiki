@@ -1,3 +1,8 @@
+---
+tags:
+  - tmux
+---
+
 # tmux
 
 tmux is a terminal multiplexer.

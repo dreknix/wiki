@@ -1,3 +1,8 @@
+---
+tags:
+  - HomeAssistant
+---
+
 # Home Assistent
 
 ## First Steps

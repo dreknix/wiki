@@ -2,8 +2,8 @@
 ---
 
 # Project information
-site_name: 'dreknix Wiki'
-site_description: 'dreknix Wiki'
+site_name: 'dreknix - Documentation'
+# site_description: 'dreknix'
 site_author: 'dreknix'
 site_url: !ENV [MKDOCS_SITE_URL, 'http://localhost:8000']
 dev_addr: !ENV [MKDOCS_DEV_ADDR, '127.0.0.1:8000']
@@ -44,13 +44,15 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
-    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#anchor-following
+    # # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#anchor-following
     - toc.follow
-    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-integration
-    # - toc.integrate
+    # # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-integration
+    # # - toc.integrate
   icon:
     logo: material/library
     # repo: fontawesome/brands/bitbucket
+    #
+    # search for icons: https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
     admonition:
       note: fontawesome/solid/note-sticky
       abstract: fontawesome/solid/book
@@ -64,6 +66,28 @@ theme:
       bug: fontawesome/solid/robot
       example: fontawesome/solid/flask
       quote: fontawesome/solid/quote-left
+    tag:
+      ansible: simple/ansible
+      bash: simple/gnubash
+      debian: simple/debian
+      docker: simple/docker
+      git: simple/git
+      github: simple/github
+      gitlab: simple/gitlab
+      homeassistant: simple/homeassistant
+      html: fontawesome/brands/html5
+      json: material/code-json
+      markdown: simple/markdown
+      neovim: simple/neovim
+      powershell: simple/powershell
+      proxmox: simple/proxmox
+      python: simple/python
+      tmux: simple/tmux
+      truenas: simple/truenas
+      ubuntu: simple/ubuntu
+      vim: simple/vim
+      windows: material/microsoft-windows
+      yaml: simple/yaml
 
 extra:
   consent:
@@ -76,6 +100,28 @@ extra:
     actions:
       - accept
       - manage
+  tags:
+    Ansible: ansible
+    bash: bash
+    Debian: debian
+    Docker: docker
+    Git: git
+    GitHub: github
+    GitLab: gitlab
+    HomeAssistant: homeassistant
+    HTML: html
+    JSON: json
+    Markdown: markdown
+    Neovim: neovim
+    PowerShell: powershell
+    Proxmox: proxmox
+    Python: python
+    tmux: tmux
+    TrueNAS: truenas
+    Ubuntu: ubuntu
+    Vim: vim
+    Windows: windows
+    YAML: yaml
 
 copyright: >
   Copyright &copy; 2022 dreknix –
@@ -85,7 +131,18 @@ copyright: >
 plugins:
   - search:
       lang: en
-  - awesome-pages
+  - awesome-pages:
+      # collapse_single_pages: true
+      strict: true
+  - blog
+  - tags:
+      enabled: true
+      tags_file: tags.md
+
+nav:
+  - ...
+  - Tags: tags.md
+  - Blog: blog/index.md
 
 # Extensions
 markdown_extensions:

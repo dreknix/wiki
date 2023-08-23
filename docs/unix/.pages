@@ -1,7 +1,9 @@
+title: UNIX
 nav:
   - Overview: index.md
+  - bash: bash
   - Proxmox: proxmox
-  - TrueNAS: truenas
   - systemd: systemd
   - Tools: tools
+  - TrueNAS: truenas
   - Ubuntu: ubuntu

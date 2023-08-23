@@ -1,3 +1,8 @@
+---
+tags:
+  - Windows
+---
+
 # winget
 
 Windows Package Manager CLI (aka `winget`) can be used to install/upgrade

@@ -1,3 +1,8 @@
+---
+tags:
+  - Windows
+---
+
 # Windows
 
 ## Windows Updates

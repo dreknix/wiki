@@ -1,3 +1,8 @@
+---
+tags:
+  - HomeAssistant
+---
+
 # Devices
 
 ## Shelly Plug S

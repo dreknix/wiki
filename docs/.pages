@@ -1,7 +1,0 @@
-nav:
-  - Wiki: .
-  - Hardware: hardware
-  - HA: ha
-  - UNIX: unix
-  - Windows: windows
-  - Writing: writing
