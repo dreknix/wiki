@@ -142,7 +142,8 @@ plugins:
 nav:
   - ...
   - Tags: tags.md
-  - Blog: blog/index.md
+  - Blog:
+      - blog/index.md
 
 # Extensions
 markdown_extensions:
