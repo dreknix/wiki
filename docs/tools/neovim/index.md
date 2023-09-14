@@ -1,6 +1,16 @@
 # Neovim / NvChad
 
-* [:fontawesome-brands-github: neovim/neovim](https://github.com/neovim/neovim/)
+[:fontawesome-brands-github: Neovim](https://github.com/neovim/neovim/)
+is a fork of Vim with builtin support for Language Server Protocol (LSP)
+and Lua scripting.
+
+For Neovim different advanced configurations exists:
+[LazyVim](https://github.com/LazyVim/LazyVim/),
+[LunarVim](https://github.com/LunarVim/LunarVim/),
+[AstroNvim](https://github.com/AstroNvim/AstroNvim/),
+[NvChad](https://github.com/NvChad/NvChad/), ...
+In the following NvChad is used as the bases for the custom configuration.
+
 * [:fontawesome-brands-github: NvChad/NvChad](https://github.com/NvChad/NvChad/)
 * [:fontawesome-brands-github: NvChad/example_config](https://github.com/NvChad/example_config/)
 
