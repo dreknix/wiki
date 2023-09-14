@@ -60,6 +60,8 @@ Update:
 
 ## Custom Config
 
+[:fontawesome-brands-github: dreknix/tools-nvchad-config](https://github.com/dreknix/tools-nvchad-config/)
+
 ```
 ~/.config/nvim/lua/custom/
 ├── init.lua
