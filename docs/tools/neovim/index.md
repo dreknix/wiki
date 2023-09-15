@@ -66,24 +66,32 @@ Update:
 ~/.config/nvim/lua/custom/
 ├── init.lua
 ├── chadrc.lua
+├── mappings.lua
+├── plugins.lua
 ├── configs/
 │   ├── lspconfig.lua
 │   └── overrides.lua
-├── snippets/
-├── mappings.lua
-└── plugins.lua
+├── after/
+└── snippets/
 ```
+
+### Config Files
 
 Custom configuration files:
 
 * [`init.lua`](init_lua.md)
 * [`chadrc.lua`](chadrc_lua.md)
-* [`configs/lspconfig.lua`](configs_lspconfig_lua.md)
-* [`configs/overrides.lua`](configs_overrides_lua.md)
 * [`mappings.lua`](mappings_lua.md)
 * [`plugins.lua`](plugins_lua.md)
+* [`configs/lspconfig.lua`](configs_lspconfig_lua.md)
+* [`configs/overrides.lua`](configs_overrides_lua.md)
 
-## Snippets
+### After Directory
+
+Specific settings for each file type can be found in
+`after/ftplugin/<filetype>.lua`.
+
+### Snippets
 
 NvChad uses the following plugins for snippets:
 
