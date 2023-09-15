@@ -1,4 +1,4 @@
-# vim
+# Vim
 
 https://github.com/mhinz/vim-galore
 
