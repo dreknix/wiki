@@ -13,31 +13,6 @@ syntax enable
 filetype plugin on
 ```
 
-## Things to learn
-
-<b>d</b> <b>c</b> <b>v</b> ---
-<b>a</b> <b>i</b> --- 
-<b>"</b> <b>'</b> <b>(</b> <b>]</b> <b>{</b> <b><</b> <b>t</b> <b>p</b> <b>w</b>
-
-* `da"` - <b>d</b>elete <b>a</b>round quotes or `da'`
-* `di]` - <b>d</b>elete <b>i</b>nside brackets
-* `ci{` - <b>c</b>hange <b>i</b>nside braces
-* `dap` - <b>d</b>elete <b>i</b>nside paragraph
-* `vaw` - <b>v</b>isual select <b>a</b>round word
-* `vit` - <b>v</b>isual select <b>i</b>nside tag or `vi<`
-
-<b>d</b> <b>c</b> <b>v</b> ---
-<b>t</b> <b>f</b> --- 
-*character*
-
-* `dt)` - <b>d</b>elete up <b>t</b>o next character ``)`` - excluding match
-* `cf>` - <b>c</b>hange up to next character ``>`` - including match
-
-Remove lines matching a pattern
-
-* `:g/pattern/d` - remove lines that ^^**do**^^ match the pattern
-* `:g!/pattern/d` - remove lines that ^^**do not**^^ match the pattern
-
 ## Finding Files
 
 ```vim
