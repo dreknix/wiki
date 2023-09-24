@@ -2,16 +2,16 @@
 
 [Overrides](configs_lspconfig_lua.md) already loaded NvChad plugins:
 
-* [:fontawesome-brands-github: williamboman/mason.nvim](https://github.com/williamboman/mason.nvim/)
-* [:fontawesome-brands-github: nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter/)
-* [:fontawesome-brands-github: nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua/)
-* [:fontawesome-brands-github: lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim/)
+* [:fontawesome-brands-github: williamboman/mason.nvim](https://github.com/williamboman/mason.nvim/){:target="_blank"}
+* [:fontawesome-brands-github: nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter/){:target="_blank"}
+* [:fontawesome-brands-github: nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua/){:target="_blank"}
+* [:fontawesome-brands-github: lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim/){:target="_blank"}
 
 Add LSP servers in [`configs/lspconfig.lua`](configs_lspconfig_lua.md).
 
 Add additional plugins:
 
-* [:fontawesome-brands-github: christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator/)
+* [:fontawesome-brands-github: christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator/){:target="_blank"}
 
 Content of `~/.config/nvim/lua/custom/plugins.lua`:
 

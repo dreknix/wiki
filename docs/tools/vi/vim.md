@@ -1,6 +1,6 @@
 # Vim
 
-https://github.com/mhinz/vim-galore
+[https://github.com/mhinz/vim-galore](https://github.com/mhinz/vim-galore){:target="_blank"}
 
 ## General
 

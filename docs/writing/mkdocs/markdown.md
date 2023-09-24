@@ -32,7 +32,7 @@ is___bold___is
 
 ### Setup
 
-Using [Mdx Truly Sane Lists](https://github.com/radude/mdx_truly_sane_lists).
+Using [Mdx Truly Sane Lists](https://github.com/radude/mdx_truly_sane_lists){:target="_blank"}.
 
 Needs to be added into `requirements.txt`: `mdx_truly_sane_lists`
 

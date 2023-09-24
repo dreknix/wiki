@@ -1,6 +1,7 @@
 # Definition List
 
-* https://squidfunk.github.io/mkdocs-material/reference/lists/#definition-list
+* [https://squidfunk.github.io/mkdocs-material/reference/lists/#definition-list](
+   https://squidfunk.github.io/mkdocs-material/reference/lists/#definition-list){:target="_blank"}
 
 ## Setup
 

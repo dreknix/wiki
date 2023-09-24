@@ -1,7 +1,9 @@
 # Admonition
 
-* https://squidfunk.github.io/mkdocs-material/reference/admonitions/
-* https://facelessuser.github.io/pymdown-extensions/extensions/details/
+* [https://squidfunk.github.io/mkdocs-material/reference/admonitions/](
+   https://squidfunk.github.io/mkdocs-material/reference/admonitions/){:target="_blank"}
+* [https://facelessuser.github.io/pymdown-extensions/extensions/details/](
+   https://facelessuser.github.io/pymdown-extensions/extensions/details/){:target="_blank"}
 
 ## Setup
 

@@ -1,6 +1,6 @@
 # configs/lspconfig.lua
 
-Configuration of the LSP servers can be found [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md).
+Configuration of the LSP servers can be found [here](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md){:target="_blank"}.
 
 The LSP configuration for the current buffer can be shown with `:LspInfo`. Often the file type (`:set ft`) must be set to the correct value. See `vim.filetype.add` in [init.lua](init_lua.md).
 

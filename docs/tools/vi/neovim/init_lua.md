@@ -21,7 +21,7 @@ vim.g.snipmate_snippets_path = vim.fn.stdpath "config" .. "/lua/custom/snippets"
 ## File Types
 
 Add file types to specific file name patterns (
-see [vim.filetype](https://neovim.io/doc/user/lua.html#vim.filetype)). The file
+see [vim.filetype](https://neovim.io/doc/user/lua.html#vim.filetype){:target="_blank"}). The file
 type `yaml.docker-compose` and `yaml.ansible` is used for choosing a more
 specific LSP server.
 

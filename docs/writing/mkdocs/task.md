@@ -1,7 +1,9 @@
 # Task List
 
-* https://squidfunk.github.io/mkdocs-material/reference/lists/#tasklist
-* https://facelessuser.github.io/pymdown-extensions/extensions/tasklist/
+* [https://squidfunk.github.io/mkdocs-material/reference/lists/#tasklist](
+   https://squidfunk.github.io/mkdocs-material/reference/lists/#tasklist){:target="_blank"}
+* [https://facelessuser.github.io/pymdown-extensions/extensions/tasklist/](
+   https://facelessuser.github.io/pymdown-extensions/extensions/tasklist/){:target="_blank"}
 
 ## Setup
 

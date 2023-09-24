@@ -1,18 +1,18 @@
 # Neovim / NvChad
 
-[:fontawesome-brands-github: Neovim](https://github.com/neovim/neovim/)
+[:fontawesome-brands-github: Neovim](https://github.com/neovim/neovim/){:target="_blank"}
 is a fork of Vim with builtin support for Language Server Protocol (LSP)
 and Lua scripting.
 
 For Neovim different advanced configurations exists:
-[LazyVim](https://github.com/LazyVim/LazyVim/),
-[LunarVim](https://github.com/LunarVim/LunarVim/),
-[AstroNvim](https://github.com/AstroNvim/AstroNvim/),
-[NvChad](https://github.com/NvChad/NvChad/), ...
+[LazyVim](https://github.com/LazyVim/LazyVim/){:target="_blank"},
+[LunarVim](https://github.com/LunarVim/LunarVim/){:target="_blank"},
+[AstroNvim](https://github.com/AstroNvim/AstroNvim/){:target="_blank"},
+[NvChad](https://github.com/NvChad/NvChad/){:target="_blank"}, ...
 In the following NvChad is used as the bases for the custom configuration.
 
-* [:fontawesome-brands-github: NvChad/NvChad](https://github.com/NvChad/NvChad/)
-* [:fontawesome-brands-github: NvChad/example_config](https://github.com/NvChad/example_config/)
+* [:fontawesome-brands-github: NvChad/NvChad](https://github.com/NvChad/NvChad/){:target="_blank"}
+* [:fontawesome-brands-github: NvChad/example_config](https://github.com/NvChad/example_config/){:target="_blank"}
 
 ## Install/Update
 
@@ -60,7 +60,7 @@ Update:
 
 ## Custom Config
 
-[:fontawesome-brands-github: dreknix/tools-nvchad-config](https://github.com/dreknix/tools-nvchad-config/)
+[:fontawesome-brands-github: dreknix/tools-nvchad-config](https://github.com/dreknix/tools-nvchad-config/){:target="_blank"}
 
 ```
 ~/.config/nvim/lua/custom/
@@ -95,8 +95,8 @@ Specific settings for each file type can be found in
 
 NvChad uses the following plugins for snippets:
 
-* [:fontawesome-brands-github: L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip/)
-* [:fontawesome-brands-github: rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets/)
+* [:fontawesome-brands-github: L3MON4D3/LuaSnip](https://github.com/L3MON4D3/LuaSnip/){:target="_blank"}
+* [:fontawesome-brands-github: rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets/){:target="_blank"}
 
 The predefined snippets are installed in `~/.local/share/nvim/lazy/friendly-snippets/snippets/`. Custom snippets are loaded in [`init.lua`](init_lua.md).
 

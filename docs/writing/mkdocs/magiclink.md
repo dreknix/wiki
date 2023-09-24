@@ -1,6 +1,7 @@
 # Magic Link
 
-* https://facelessuser.github.io/pymdown-extensions/extensions/magiclink/
+* [https://facelessuser.github.io/pymdown-extensions/extensions/magiclink/](
+   https://facelessuser.github.io/pymdown-extensions/extensions/magiclink/){:target="_blank"}
 
 ## Setup
 

@@ -1,6 +1,7 @@
 # Mermaid
 
-* https://squidfunk.github.io/mkdocs-material/reference/diagrams/
+* [https://squidfunk.github.io/mkdocs-material/reference/diagrams/](
+   https://squidfunk.github.io/mkdocs-material/reference/diagrams/){:target="_blank"}
 
 ## Setup
 
