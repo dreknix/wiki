@@ -99,3 +99,71 @@ All Key Protectors
 
 The `RecoveryPassword` is called numerical password and the value is visible.
 Please store this recovery password in case you forget your password.
+
+## Script
+
+The following PowerShell script enable BitLocker on `C:`:
+
+```PowerShell
+if ((Get-BitLockerVolume C:).EncryptionMethod -ne "None") {
+  Write-Host ""
+  Write-Host "Volume C: is already encrypted" -ForegroundColor red
+  Get-BitLockerVolume C: | Select-Object *
+  Write-Host "Disable BitLocker: " -NoNewLine
+  Write-Host "Disable-BitLocker -MountPoint C:" -ForegroundColor yellow
+  Exit 1
+}
+
+function Set-RegistryProperty {
+  Param (
+    [Parameter(Mandatory=$True, Position=0)]
+    [String] $Path,
+    [Parameter(Mandatory=$True, Position=1)]
+    [String] $Name,
+    [Parameter(Mandatory=$True, Position=2)]
+    [String] $Type,
+    [Parameter(Mandatory=$True, Position=3)]
+    [Object] $Value
+  )
+
+  if (-not (Test-Path $Path)) {
+    New-Item -Path $Path -Force > $null
+  }
+  if ((Get-Item $Path).Property -contains $Name) {
+    Set-ItemProperty -Path $Path -Name $Name `
+                     -Type $Type -Value $Value -Force > $null
+  } else {
+    New-ItemProperty -Path $Path -Name $Name `
+                     -PropertyType $Type -Value $Value -Force > $null
+  }
+}
+
+Write-Host ""
+Write-Host "Configure Bitlocker without TPM and better encryption"
+$properties = `
+  @{Name = 'UseAdvancedStartup';         Type = 'DWORD'; Value = 1}, `
+  @{Name = 'EnableBDEWithNoTPM';         Type = 'DWORD'; Value = 1}, `
+  @{Name = 'UseTPM';                     Type = 'DWORD'; Value = 2}, `
+  @{Name = 'UseTPMPIN';                  Type = 'DWORD'; Value = 2}, `
+  @{Name = 'UseTPMKey';                  Type = 'DWORD'; Value = 2}, `
+  @{Name = 'UseTPMKeyPIN';               Type = 'DWORD'; Value = 2}, `
+  @{Name = 'EncryptionMethodNoDiffuser'; Type = 'DWORD'; Value = 4}, `
+  @{Name = 'EncryptionMethod';           Type = 'DWORD'; Value = 2}
+
+ForEach ($property in $properties) {
+  Set-RegistryProperty -Path 'HKLM:\SOFTWARE\Policies\Microsoft\FVE' `
+                       -Name $property.Name `
+                       -Type $property.Type -Value $property.Value
+}
+
+Write-Host ""
+Write-Host "Activate Bitlocker"
+Enable-BitLocker -MountPoint C: -PasswordProtector
+Enable-BitLocker -MountPoint C: -RecoveryPasswordProtector `
+                                -ErrorAction SilentlyContinue
+
+Write-Host ""
+Write-Host "Reboot: " -NoNewLine
+Write-Host "shutdown /r /t 0" -ForegroundColor yellow
+Write-Host ""
+```
