@@ -1,4 +1,4 @@
-# Bitlocker
+# BitLocker
 
 BitLocker is a proprietary volume encryption tool includes in Microsoft Windows.
 Without any configuration BitLocker using TPM. When using TPM on start of the
