@@ -67,6 +67,30 @@ See: [`:help text-objects`](https://vimhelp.org/motion.txt.html#text-objects){:t
   * WORD: `vaW` - <b>v</b>isual select <b>a</b>round WORD
   * tag: `vit` - <b>v</b>isual select <b>i</b>nside tag or `vi<`
 
+## Quickfix
+
+See: [`:help quickfix`](https://vimhelp.org/quickfix.txt.html){:target="_blank"}
+
+The quickfix commands are used to work with a list of positions in files. A
+location list is a window-local quickfix list.
+
+`:vim word **` or `:vim /pattern/ **` searches the word or pattern in all files
+recursively beneath the current directory. And opens the first location. After
+that the following commands are working on this quickfix list.
+
+* `:copen` - open the quickfix list
+* `:cfirst` / `:clast` - open the first resp. last location
+* `:cnext` / `:cprev` - open the next resp. previous location
+* `:cc4` - open the fourth location
+* `:cclose` or `:ccl` - close the quickfix list
+* `:colder` / `:cnewer` - open the older resp. newer quickfix list (within the
+last ten)
+* `:cdo` *cmd* - execute *cmd* on each location
+  * `:cdo s/Foo/Bar/` - replace Foo with Bar at each location
+  * `:cdo s/Foo/Bar/ | update` - store each buffer after executing the command
+* `:cfdo` *cmd* - execute *cmd* on each file in the quickfix list
+  * `:cdo bd` - close all buffers from the quickfix list
+
 ## Commands starting with `g`
 
 See: [`:help *g*`](https://vimhelp.org/index.txt.html#g){:target="_blank"}
@@ -76,6 +100,29 @@ See: [`:help *g*`](https://vimhelp.org/index.txt.html#g){:target="_blank"}
 * `gw`*`motion`* - format text described by *`motion`* without cursor movement
 
 ## Misc
+
+### Clear Search Highlight
+
+With the option `:hlsearch` all matches of the last search are highlighted. To
+clear all highlights the command `:nohlsearch` can be used. Often this command
+is mapped to `C-L`. In NeoVim the following default mapping exists:
+
+```
+nnoremap <C-L> <Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>
+```
+
+### Indenting Code
+
+With `==` or `=` code can be formatted.
+
+* `==` - indent current line
+  * `>>` - increase current indentation level be one
+  * `<<` - decrease current indentation level be one
+* `4==` - indent four lines (including current line)
+  * `V3j=` - same indentation by using visual selection
+* `=ap` - indent current paragraph
+* `gg=G` - indent whole file
+* `=%` - when cursor is on `{` or `}` indent whole code block
 
 ### Remove Lines Matching a Pattern
 
