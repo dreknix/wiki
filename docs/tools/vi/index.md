@@ -99,6 +99,14 @@ See: [`:help *g*`](https://vimhelp.org/index.txt.html#g){:target="_blank"}
 * `gq`*`motion`* - format text described by *`motion`*
 * `gw`*`motion`* - format text described by *`motion`* without cursor movement
 
+Jump through or work with changes:
+
+* `g;` - jump to last change
+* `g,` - jump forward through the change list
+* `:changes` - show the last 100 changes
+* `u` - undo changes
+* `<C-r>` - redo changes
+
 ## Misc
 
 ### Clear Search Highlight
