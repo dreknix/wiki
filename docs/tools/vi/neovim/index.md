@@ -38,7 +38,7 @@ Update:
 :NvChadUpdate
 ```
 
-## Commands
+## Key Mappings and Commands
 
 !!! note
     In NvChad the leader key is ++space++.
