@@ -132,6 +132,11 @@ With `==` or `=` code can be formatted.
 * `gg=G` - indent whole file
 * `=%` - when cursor is on `{` or `}` indent whole code block
 
+### Avoid Wrong Formatting During Paste
+
+Set the configuration `:set paste` before pasting into Vi. Disable this option
+afterwards with `:set nopaste`.
+
 ### Remove Lines Matching a Pattern
 
 * `:g/pattern/d` - remove lines that ^^**do**^^ match the pattern
