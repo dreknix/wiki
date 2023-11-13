@@ -49,7 +49,7 @@ Update:
 * file tree: `:NvimTreeOpen` / `<leader> + e`
 * searchable keymaps: `:Telescope keymaps`
 * list of LSP packages: `:Mason`
-* install all configured LSP packages: `:MasonInstallAll` 
+* install all configured LSP packages: `:MasonInstallAll`
 * find files: `<leader> + f f`
 * recent files: `<leader> + f o`
 * find words (live grep): `<leader> + f w`
@@ -57,6 +57,10 @@ Update:
 * floating terminal: ++alt++ + `i`
 * horizontal terminal: ++alt++ + `h` / `<leader> + h`
 * vertical terminal: ++alt++ + `v` / `<leader> + v`
+* next buffer: ++tab++
+* previous buffer: ++shift++ + ++tab++
+* new buffer: `<leader> + b`
+* close buffer: `<leader> + x`
 
 ## Custom Config
 
@@ -99,4 +103,3 @@ NvChad uses the following plugins for snippets:
 * [:fontawesome-brands-github: rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets/){:target="_blank"}
 
 The predefined snippets are installed in `~/.local/share/nvim/lazy/friendly-snippets/snippets/`. Custom snippets are loaded in [`init.lua`](init_lua.md).
-
