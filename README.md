@@ -1,6 +1,7 @@
 # dreknix Wiki
 
-Wiki based on Material for MkDocs: https://dreknix.github.io/wiki/
+[Wiki](https://dreknix.github.io/wiki/) based on [Material for MkDocs](
+https://squidfunk.github.io/mkdocs-material/).
 
 ## License
 
