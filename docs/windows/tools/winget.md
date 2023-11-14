@@ -8,7 +8,8 @@ tags:
 Windows Package Manager CLI (aka `winget`) can be used to install/upgrade
 software on Windows via the command line.
 
-* https://github.com/microsoft/winget-cli
+* [:fontawesome-brands-github: microsoft/winget-cli](
+   https://github.com/microsoft/winget-cli)
 * [Microsoft Store - App-Installer](
    https://apps.microsoft.com/store/detail/9NBLGGH4NNS1)
 * [Use the `winget` tool to install and manage applications](
@@ -49,7 +50,7 @@ PS> Add-AppxProvisionedPackage
 Enable provisioned package for the current user:
 
 ```powershell
-(Get-AppxProvisionedPackage -Online | 
+(Get-AppxProvisionedPackage -Online |
    Where-Object -Property DisplayName -EQ Microsoft.DesktopAppInstaller
 ).InstallLocation | Add-AppxPackage -Register -DisableDevelopmentMode
 ```
@@ -67,7 +68,7 @@ The executable `winget.exe` is than found in
 List all available packages:
 
 ```powershell
-PS> winget search 
+PS> winget search
 ```
 
 Can also be seen at
@@ -79,7 +80,7 @@ List all packages that contains `note`:
 PS> winget search note
 ```
 
-Display informations about a package:
+Display information about a package:
 
 ```powershell
 PS> winget show notepad++
