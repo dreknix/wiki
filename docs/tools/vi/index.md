@@ -109,13 +109,36 @@ Jump through or work with changes:
 
 ## Misc
 
+### Search in Key Mappings
+
+Besides the plugin Telescope the command `:filter` allows to search through all
+available key mappings.
+
+Search for key mappings in insert mode:
+
+``` vim
+:filter pattern imap
+```
+
+Search for key mappings in normal mode:
+
+``` vim
+:filter pattern imap
+```
+
+To print the content of a mapping:
+
+``` vim
+:verbose map <Leader>x
+```
+
 ### Clear Search Highlight
 
 With the option `:hlsearch` all matches of the last search are highlighted. To
 clear all highlights the command `:nohlsearch` can be used. Often this command
 is mapped to `C-L`. In NeoVim the following default mapping exists:
 
-```
+``` vim
 nnoremap <C-L> <Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>
 ```
 
@@ -146,7 +169,7 @@ afterwards with `:set nopaste`.
 
 See: [`:help non-greedy`](https://vimhelp.org/pattern.txt.html#non-greedy){:target="_blank"}
 
-```json
+``` json
 {
   "key1": "valueA",
   "key2": "valueB"
