@@ -2,6 +2,4 @@
 
 ## systemd-cgls
 
-* [systemd-cgls(1)](https://manpages.debian.org/systemd-cgls.1.en.html)
-
-
+* [systemd-cgls(1)](https://manpages.debian.org/systemd-cgls.1.en.html){target="_blank"}

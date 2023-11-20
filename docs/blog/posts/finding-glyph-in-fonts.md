@@ -8,7 +8,8 @@ categories:
 # Finding Glyph in Fonts
 
 Sometimes it is necessary to find fonts that contain a specific glyph. The tool
-[albatross](https://ctan.org/pkg/albatross) can be used for that task.
+[albatross](https://ctan.org/pkg/albatross){target="_blank"} can be used for
+that task.
 
 <!-- more -->
 

@@ -7,9 +7,9 @@ tags:
 
 tmux is a terminal multiplexer.
 
-* [:fontawesome-brands-github: tmux / tmux](https://github.com/tmux/tmux)
-* [tmux - wiki](https://github.com/tmux/tmux/wiki)
-* [tmux(1)](https://manpages.debian.org/tmux.1.en.html)
+* [:fontawesome-brands-github: tmux/tmux](https://github.com/tmux/tmux){target="_blank"}
+* [tmux - wiki](https://github.com/tmux/tmux/wiki){target="_blank"}
+* [tmux(1)](https://manpages.debian.org/tmux.1.en.html){target="_blank"}
 
 ## Scripting with tmux
 
@@ -31,10 +31,11 @@ fi
 The command `send-keys` has the following syntax:
 
 ```console
-$ tmux send-keys -t '{session}:{window}.{pane}' {command} ENTER
+tmux send-keys -t '{session}:{window}.{pane}' {command} ENTER
 ```
 
 The target can be shorted as `-t ':.!'`, which means:
+
 * last active session
 * last active window
 * previously selected pane

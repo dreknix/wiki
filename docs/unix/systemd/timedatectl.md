@@ -1,3 +1,3 @@
 # timedatectl
 
-* [timedatectl(1)](https://manpages.debian.org/timedatectl.1.en.html)
+* [timedatectl(1)](https://manpages.debian.org/timedatectl.1.en.html){target="_blank"}

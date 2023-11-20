@@ -6,8 +6,10 @@ tags:
 
 # YAML and bash
 
-* https://stackoverflow.com/questions/5014632/
-* [:fontawesome-brands-github: mrbaseman / parse_yaml](https://github.com/mrbaseman/parse_yaml)
+* [https://stackoverflow.com/questions/5014632/](
+   https://stackoverflow.com/questions/5014632/){target="_blank"}
+* [:fontawesome-brands-github: mrbaseman/parse_yaml](
+   https://github.com/mrbaseman/parse_yaml){target="_blank"}
 
 Example yaml file:
 
@@ -24,7 +26,7 @@ global:
   licence: |
     this is published under
     open source license
-    in the hope that it would 
+    in the hope that it would
     be useful
 ...
 ```
