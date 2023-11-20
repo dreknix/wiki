@@ -2,6 +2,7 @@
 date: 2023-11-20
 categories:
   - LaTeX
+  - Tools
 ---
 
 # Finding Glyph in Fonts
