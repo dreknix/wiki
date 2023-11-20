@@ -10,7 +10,7 @@ categories:
 When using IMAP-based user authentication in applications written in PHP (i.e.
 Nextcloud, DokuWiki, etc.), debugging with a test script is essential. The
 idea of using `curl` for authentication, is based on the external user
-authentication plugin (see: [fontawesome-brands-github: nextcloud/user_external](
+authentication plugin (see: [:fontawesome-brands-github: nextcloud/user_external](
 https://github.com/nextcloud/user_external){:target="_blank"}) of Nextcloud.
 
 ``` php title="imap-test.php"
