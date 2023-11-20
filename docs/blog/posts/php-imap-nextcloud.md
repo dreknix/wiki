@@ -13,6 +13,8 @@ idea of using `curl` for authentication, is based on the external user
 authentication plugin (see: [:fontawesome-brands-github: nextcloud/user_external](
 https://github.com/nextcloud/user_external){:target="_blank"}) of Nextcloud.
 
+<!-- more -->
+
 ``` php title="imap-test.php"
 #!/usr/bin/env php
 <?php
