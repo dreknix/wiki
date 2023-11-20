@@ -32,7 +32,7 @@ theme:
     accent: 'deep orange'
   font:
     text: 'Roboto'
-    code: 'Hack Mono, Roboto Mono'
+    code: 'Roboto Mono'
   features:
     - content.code.annotate
     - content.code.copy
@@ -137,7 +137,8 @@ plugins:
   - awesome-pages:
       # collapse_single_pages: true
       strict: true
-  - blog
+  - blog:
+      post_readtime: false
   - tags:
       enabled: true
       tags_file: tags.md
