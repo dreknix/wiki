@@ -58,5 +58,9 @@ if ($errorcode === 0) {
     application. To ensure the correct version Docker/Podman can be used.
 
     ```
-    docker run --rm --name php-test -v "$PWD:/usr/src/test" -w /usr/src/test php:8.2-cli php imap-test.php
+    docker run -it --rm \
+               --name php-test \
+               -v "$PWD:/usr/src/test" \
+               -w /usr/src/test php:8.2-cli \
+               php imap-test.php
     ```
