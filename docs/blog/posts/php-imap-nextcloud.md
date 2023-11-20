@@ -60,4 +60,3 @@ if ($errorcode === 0) {
     ```
     docker run --rm --name php-test -v "$PWD:/usr/src/test" -w /usr/src/test php:8.2-cli php imap-test.php
     ```
-...
