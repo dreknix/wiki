@@ -33,7 +33,7 @@ https://manpages.debian.org/albatross.1.en.html){target="_blank"}.
 Possible Unicode characters and their code point can be searched on
 [symbl.cc](https://symbl.cc){target="_blank"}.
 
-!!! note
+!!! info
     On Debian or Ubuntu the tool is part of the package `texlive-font-utils`.
     The command is not available. Instead the following command can be used:
 
