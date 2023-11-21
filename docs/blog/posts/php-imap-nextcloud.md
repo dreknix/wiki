@@ -62,7 +62,7 @@ if ($errorcode === 0) {
     ```
     docker run -it --rm \
                --name php-test \
-               -v "$PWD:/usr/src/test" \
-               -w /usr/src/test php:8.2-cli \
+               -v "./imap-test.php:/work/imap-test.php" \
+               -w /work php:8.2-cli \
                php imap-test.php
     ```
