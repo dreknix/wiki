@@ -83,6 +83,7 @@ return M
 ```
 
 !!! info
+
     When you only want to use the `gx` command, there are other solutions like
     using a separate plugin, e.g., [:fontawesome-brands-github: chrishrb/gx.nvim](
     https://github.com/chrishrb/gx.nvim){target="_blank"}. This is also an
@@ -90,6 +91,7 @@ return M
     NvChad.
 
 !!! tip
+
     A table can be printed with the following commands:
 
     ``` lua

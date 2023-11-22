@@ -36,6 +36,7 @@ If multiple VMs are running the different ports can be found in the details of
 the display device.
 
 !!! tip
+
     If a VM was created before version 23.10 the display of the VM must be
     deleted and newly created. Since version 23.10 only the SPICE protocol is
     available and password, which protects the connection, must be set.

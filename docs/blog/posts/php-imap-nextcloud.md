@@ -56,6 +56,7 @@ if ($errorcode === 0) {
 ```
 
 !!! tip
+
     It is important to use the same PHP version for testing, as used for the
     application. To ensure the correct version Docker/Podman can be used.
 
