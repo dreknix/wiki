@@ -9,11 +9,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4
+      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac  # v4
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
       - run: pip install -r requirements.txt
       - run: mkdocs gh-deploy --force
+
+env:
+  MKDOCS_SITE_URL: https://dreknix.github.io/wiki/
 
 ...
