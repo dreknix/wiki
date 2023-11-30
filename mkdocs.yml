@@ -146,6 +146,7 @@ plugins:
       match_path: blog/posts/.*
       date_from_meta:
         as_creation: date
+      pretty_print: true
       categories:
         - categories
   - tags:
