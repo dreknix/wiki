@@ -132,13 +132,22 @@ copyright: >
 
 # Plugins
 plugins:
-  - search:
-      lang: en
   - awesome-pages:
       # collapse_single_pages: true
       strict: true
+  - search:
+      enabled: true
+      lang: en
   - blog:
+      enabled: true
       post_readtime: false
+  - rss:
+      enabled: true
+      match_path: blog/posts/.*
+      date_from_meta:
+        as_creation: date
+      categories:
+        - categories
   - tags:
       enabled: true
       tags_file: tags.md
