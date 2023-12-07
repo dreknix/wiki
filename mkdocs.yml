@@ -11,7 +11,7 @@ dev_addr: !ENV [MKDOCS_DEV_ADDR, '127.0.0.1:8000']
 # Repository
 repo_url: 'https://github.com/dreknix/wiki'
 repo_name: 'dreknix/wiki'
-edit_uri: 'edit/main/docs'
+edit_uri: 'edit/main/docs/'
 
 use_directory_urls: false
 
@@ -26,17 +26,40 @@ validation:
 theme:
   name: 'material'
   language: 'en'
+  favicon: /assets/images/favicon.png
   palette:
-    scheme: 'slate'
-    primary: 'teal'
-    accent: 'deep orange'
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: 'teal'
+      accent: 'deep orange'
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: 'teal'
+      accent: 'deep orange'
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
   font:
     text: 'Roboto'
     code: 'Roboto Mono'
   features:
+    # - content.action.edit
     - content.code.annotate
     - content.code.copy
     - content.tabs.link
+    - content.tooltips
     # - navigation.expand
     - navigation.indexes
     - navigation.instant
@@ -135,12 +158,23 @@ plugins:
   - awesome-pages:
       # collapse_single_pages: true
       strict: true
-  - search:
-      enabled: true
-      lang: en
   - blog:
       enabled: true
       post_readtime: false
+  - git-committers:
+      enabled: true
+      repository: dreknix/wiki
+      branch: main
+  - git-revision-date-localized:
+      type: date
+      enable_creation_date: true
+  # - privacy:
+  #     enabled: true
+  #     concurrency: 1
+  #     cache: false
+  - search:
+      enabled: true
+      lang: en
   - rss:
       enabled: true
       match_path: blog/posts/.*
@@ -198,6 +232,9 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
