@@ -26,7 +26,7 @@ validation:
 theme:
   name: 'material'
   language: 'en'
-  favicon: /assets/images/favicon.png
+  favicon: assets/images/favicon.png
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
