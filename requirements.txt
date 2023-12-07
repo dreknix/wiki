@@ -1,4 +1,4 @@
-mkdocs-material>=9.4,<9.5
+mkdocs-material>=9.5,<9.6
 mkdocs-awesome-pages-plugin
 mkdocs-rss-plugin
 pymdown-extensions
