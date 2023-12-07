@@ -15,12 +15,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+      - name: Deploy to GitHub pages
+        run: mkdocs gh-deploy --force
         env:
+          MKDOCS_SITE_URL: https://dreknix.github.io/wiki/
           MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.MKDOCS_GIT_COMMITTERS_APIKEY }}
-      - run: pip install -r requirements.txt
-      - run: mkdocs gh-deploy --force
-
-env:
-  MKDOCS_SITE_URL: https://dreknix.github.io/wiki/
 
 ...
