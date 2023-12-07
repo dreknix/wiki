@@ -20,6 +20,7 @@ jobs:
       - name: Deploy to GitHub pages
         run: mkdocs gh-deploy --force
         env:
+          CI: true
           MKDOCS_SITE_URL: https://dreknix.github.io/wiki/
           MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.MKDOCS_GIT_COMMITTERS_APIKEY }}
 

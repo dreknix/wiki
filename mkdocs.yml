@@ -162,21 +162,22 @@ plugins:
       enabled: true
       post_readtime: false
   - git-committers:
-      enabled: true
+      enabled: !ENV [CI, false]
       repository: dreknix/wiki
       branch: main
   - git-revision-date-localized:
+      enabled: !ENV [CI, false]
       type: date
       enable_creation_date: true
   # - privacy:
-  #     enabled: true
+  #     enabled: !ENV [CI, false]
   #     concurrency: 1
   #     cache: false
   - search:
       enabled: true
       lang: en
   - rss:
-      enabled: true
+      enabled: !ENV [CI, false]
       match_path: blog/posts/.*
       date_from_meta:
         as_creation: date
@@ -184,7 +185,7 @@ plugins:
       categories:
         - categories
   - tags:
-      enabled: true
+      enabled: !ENV [CI, false]
       tags_file: tags.md
 
 # Extensions
