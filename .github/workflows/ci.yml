@@ -19,9 +19,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Deploy to GitHub pages
         run: mkdocs gh-deploy --force
-
-env:
-  MKDOCS_SITE_URL: https://dreknix.github.io/wiki/
-  MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.MKDOCS_GIT_COMMITTERS_APIKEY }}
+        env:
+          MKDOCS_SITE_URL: https://dreknix.github.io/wiki/
+          MKDOCS_GIT_COMMITTERS_APIKEY: ${{ secrets.MKDOCS_GIT_COMMITTERS_APIKEY }}
 
 ...
