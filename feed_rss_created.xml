@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    
+    <title>dreknix - Documentation</title>
+    
+    <link>https://dreknix.github.io/wiki/</link>
+    <atom:link href="https://dreknix.github.io/wiki/feed_rss_created.xml" rel="self" type="application/rss+xml" />
+
+    
+    <managingEditor>dreknix</managingEditor>
+    <docs>https://github.com/dreknix/wiki</docs>
+    <language>en-None</language>
+
+    
+    <pubDate>Thu, 07 Dec 2023 15:05:20 -0000</pubDate>
+    <lastBuildDate>Thu, 07 Dec 2023 15:05:20 -0000</lastBuildDate>
+    <ttl>1440</ttl>
+
+    
+    <generator>MkDocs RSS plugin - v1.8.0</generator>
+
+    
+    
+
+    
+    
+    <item>
+      <title>QEMU and Windows Keys</title>
+      
+      
+      
+      
+        
+      <category>Tools</category>
+        
+      <category>Windows</category>
+        
+      
+      <description>&lt;h1&gt;QEMU and Windows Keys&lt;/h1&gt;
+&lt;p&gt;OEM Windows keys are often stored in the software licensing (SLIC) or Microsoft
+data management (MSDM) table. When a key is stored the unattended installation
+can use a generic key and the stored key is than used and activated. The usage
+of such a key can be tested with QEMU/libvirt.&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2023/12/04/qemu-and-windows-keys.html</link>
+      <pubDate>Mon, 04 Dec 2023 00:00:00 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_created.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/12/04/qemu-and-windows-keys.html</guid>
+      
+    </item>
+    
+    <item>
+      <title>Using SPICE with TrueNAS Scale Cobia (23.10)</title>
+      
+      
+      
+      
+        
+      <category>Tools</category>
+        
+      <category>UNIX</category>
+        
+      
+      <description>&lt;h1&gt;Using SPICE with TrueNAS Scale Cobia (23.10)&lt;/h1&gt;
+&lt;p&gt;TrueNAS Scale Cobia (23.10) disabled the option to access VM displays via VNC.
+The connection method is changed to
+&lt;a href=&#34;https://www.spice-space.org/&#34;&gt;SPICE&lt;/a&gt;{target=&#34;_blank&#34;}.&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2023/11/22/using-spice-with-truenas-scale-cobia-2310.html</link>
+      <pubDate>Wed, 22 Nov 2023 00:00:00 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_created.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/11/22/using-spice-with-truenas-scale-cobia-2310.html</guid>
+      
+    </item>
+    
+    <item>
+      <title>Enable gx in NvChad</title>
+      
+      
+      
+      
+        
+      <category>Neovim</category>
+        
+      
+      <description>&lt;h1&gt;Enable &lt;code&gt;gx&lt;/code&gt; in NvChad&lt;/h1&gt;
+&lt;p&gt;The command &lt;code&gt;gx&lt;/code&gt; opens the filename under the the cursor with &lt;code&gt;vim.ui.open()&lt;/code&gt;
+(see &lt;a href=&#34;https://neovim.io/doc/user/pi_netrw.html#netrw-gx&#34;&gt;&lt;code&gt;:help netrw-gx&lt;/code&gt;&lt;/a&gt;{target=&#34;_blank&#34;}).
+Then handling is provided by the internal &lt;code&gt;netrw&lt;/code&gt; plugin. This plugin is
+disabled when using &lt;a href=&#34;../../tools/vi/neovim/index.md&#34;&gt;NvChad&lt;/a&gt;.&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2023/11/21/enable-gx-in-nvchad.html</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_created.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/11/21/enable-gx-in-nvchad.html</guid>
+      
+    </item>
+    
+    <item>
+      <title>Finding Glyph in Fonts</title>
+      
+      
+      
+      
+        
+      <category>LaTeX</category>
+        
+      <category>Tools</category>
+        
+      
+      <description>&lt;h1&gt;Finding Glyph in Fonts&lt;/h1&gt;
+&lt;p&gt;Sometimes it is necessary to find fonts that contain a specific glyph. The tool
+&lt;a href=&#34;https://ctan.org/pkg/albatross&#34;&gt;albatross&lt;/a&gt;{target=&#34;_blank&#34;} can be used for
+that task.&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2023/11/20/finding-glyph-in-fonts.html</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_created.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/11/20/finding-glyph-in-fonts.html</guid>
+      
+    </item>
+    
+    <item>
+      <title>IMAP-based Authentication in PHP</title>
+      
+      
+      
+      
+        
+      <category>Tools</category>
+        
+      <category>UNIX</category>
+        
+      
+      <description>&lt;h1&gt;IMAP-based Authentication in PHP&lt;/h1&gt;
+&lt;p&gt;When using IMAP-based user authentication in applications written in PHP (i.e.
+Nextcloud, DokuWiki, etc.), debugging with a test script is essential. The
+idea of using &lt;code&gt;curl&lt;/code&gt; for authentication, is based on the external user
+authentication plugin (see: &lt;a href=&#34;https://github.com/nextcloud/user_external&#34;&gt;:fontawesome-brands-github: nextcloud/user_external&lt;/a&gt;{:target=&#34;_blank&#34;}) of Nextcloud.&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2023/11/20/imap-based-authentication-in-php.html</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_created.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/11/20/imap-based-authentication-in-php.html</guid>
+      
+    </item>
+    
+    <item>
+      <title>Using TeX files in Vi</title>
+      
+      
+      
+      
+        
+      <category>LaTeX</category>
+        
+      <category>Neovim</category>
+        
+      
+      <description>&lt;h1&gt;Using TeX files in Vi&lt;/h1&gt;
+&lt;p&gt;In Vim/Neovim the filetype plugin uses three different type for different TeX
+flavors (see &lt;a href=&#34;https://neovim.io/doc/user/filetype.html#ft-tex-plugin&#34;&gt;&lt;code&gt;:help ft-tex-plugin&lt;/code&gt;&lt;/a&gt;{target=&#34;_blank&#34;}).&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2023/11/20/using-tex-files-in-vi.html</link>
+      <pubDate>Mon, 20 Nov 2023 00:00:00 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_created.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/11/20/using-tex-files-in-vi.html</guid>
+      
+    </item>
+    
+  </channel>
+</rss>
