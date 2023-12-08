@@ -169,10 +169,10 @@ plugins:
       enabled: !ENV [CI, false]
       type: date
       enable_creation_date: true
-  # - privacy:
-  #     enabled: !ENV [CI, false]
-  #     concurrency: 1
-  #     cache: false
+  - privacy:
+      enabled: !ENV [CI, false]
+      concurrency: 1
+      cache: false
   - search:
       enabled: true
       lang: en
