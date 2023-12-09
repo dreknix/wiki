@@ -9,6 +9,7 @@ tags:
 * [apt(8)](https://manpages.debian.org/apt/apt.8.en.html){target="_blank"}
 * [apt-cache(8)](https://manpages.debian.org/apt/apt-cache.8.en.html){target="_blank"}
 * [apt-mark(8)](https://manpages.debian.org/apt/apt-mark.8.en.html){target="_blank"}
+* [Debian Package Management Book](https://buch.dpmb.org/){target="_blank"}
 
 ## Keys
 
@@ -118,3 +119,8 @@ qemu-guest-agent:
 ```
 
 In this case the update is only available for 30% of all users.
+
+## `netselect-apt`
+
+A tool that finds the nearest and fastest mirror and creates a `source.list`
+file for this mirror.
