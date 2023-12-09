@@ -161,6 +161,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dreknix.github.io/wiki/unix/filesystems/index.html</loc>
+         <lastmod>2023-12-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dreknix.github.io/wiki/unix/filesystems/btrfs.html</loc>
+         <lastmod>2023-12-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dreknix.github.io/wiki/unix/filesystems/luks.html</loc>
+         <lastmod>2023-12-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dreknix.github.io/wiki/unix/proxmox/index.html</loc>
          <lastmod>2023-12-09</lastmod>
          <changefreq>daily</changefreq>
