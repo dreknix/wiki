@@ -2,6 +2,21 @@
 
 ## Debian 13 trixie (testing)
 
+The target of this Debian installation is a 2TB NVME (`/dev/nvme0n1`).
+[LUKS](../filesystems/luks.md) is
+enabled for the main Linux and the swap partition. Additionally
+[`btrfs`](../filesystems/btrfs.md) with a
+flat subvolume layout is used.
+
+The target partition layout is:
+
+```
+/dev/nvme0n1p1 2.0 GB EFI System
+/dev/nvme0n1p2 4.0 GB ext4 (/boot)
+/dev/nvme0n1p3 1.9 TB LUKS encrypted (/)
+/dev/nvme0n1p4 94 GB  LUKS encrypted (swap)
+```
+
 Get the
 [network installer](
 https://cdimage.debian.org/cdimage/daily-builds/daily/current/amd64/iso-cd/){target="_blank"}
