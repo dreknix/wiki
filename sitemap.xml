@@ -251,6 +251,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dreknix.github.io/wiki/unix/tools/apt.html</loc>
+         <lastmod>2023-12-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dreknix.github.io/wiki/unix/tools/fun.html</loc>
          <lastmod>2023-12-09</lastmod>
          <changefreq>daily</changefreq>
@@ -277,11 +282,6 @@
     </url>
     <url>
          <loc>https://dreknix.github.io/wiki/unix/ubuntu/index.html</loc>
-         <lastmod>2023-12-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://dreknix.github.io/wiki/unix/ubuntu/apt.html</loc>
          <lastmod>2023-12-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
