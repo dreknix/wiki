@@ -1,4 +1,4 @@
-# NUC 11 Essential Kit - NUC11ATKC4
+# NUC 11 Essential Kit
 
 * [NUC 11 Essential Kit - NUC11ATKC4](
    https://www.intel.com/content/www/us/en/products/sku/217669/)

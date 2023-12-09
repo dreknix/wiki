@@ -2,6 +2,7 @@ title: UNIX
 nav:
   - Overview: index.md
   - bash: bash
+  - Debian: debian
   - Proxmox: proxmox
   - systemd: systemd
   - Tools: tools
