@@ -4,7 +4,24 @@
 
 ## Layout
 
+* https://sysguides.com/install-fedora-with-snapshot-and-rollback-support/
+* https://youtu.be/JvfCieWkXxI?si=tFSJziZylZpbDwg0
+
 ## Snapshots
+
+* https://youtu.be/_97JOyC1o2o?si=8W8XuKHa7o7yqSre
+
+### Read-only Snapshots
+
+``` console
+sudo btrfs property get -t subvol /path/to/snapshot
+```
+
+Make snapshot writeable:
+
+``` console
+sudo btrfs property set -ts /path/to/snapshot ro false
+```
 
 ## Tools
 
