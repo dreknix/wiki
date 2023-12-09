@@ -10,31 +10,31 @@
         <meta name="author" content="dreknix">
       
       
-        <link rel="canonical" href="https://dreknix.github.io/wiki/tools/vi/neovim/init_lua.html">
+        <link rel="canonical" href="https://dreknix.github.io/wiki/hardware/framework.html">
       
       
-        <link rel="prev" href="configs_overrides_lua.html">
+        <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="mappings_lua.html">
+        <link rel="next" href="lenovo.html">
       
       
-        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../feed_rss_updated.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1">
     
     
       
-        <title>init.lua - dreknix - Documentation</title>
+        <title>Framework 13 AMD - dreknix - Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.45e1311d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.45e1311d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -220,12 +220,12 @@
         
         
         
-        <link rel="stylesheet" href="../../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -251,7 +251,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#initlua" class="md-skip">
+        <a href="#framework-13-amd" class="md-skip">
           Skip to content
         </a>
       
@@ -267,7 +267,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../index.html" title="dreknix - Documentation" class="md-header__button md-logo" aria-label="dreknix - Documentation" data-md-component="logo">
+    <a href="../index.html" title="dreknix - Documentation" class="md-header__button md-logo" aria-label="dreknix - Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -287,7 +287,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              init.lua
+              Framework 13 AMD
             
           </span>
         </div>
@@ -405,7 +405,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../index.html" class="md-tabs__link">
+      <a href="../index.html" class="md-tabs__link">
         
   
     
@@ -424,7 +424,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../ha/index.html" class="md-tabs__link">
+        <a href="../ha/index.html" class="md-tabs__link">
           
   
     
@@ -440,11 +440,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../hardware/index.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="index.html" class="md-tabs__link">
           
   
     
@@ -460,21 +462,17 @@
         
   
   
-    
-  
   
     
     
       
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../container/debugging.html" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../tools/container/debugging.html" class="md-tabs__link">
           
   
     
@@ -497,7 +495,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../unix/index.html" class="md-tabs__link">
+        <a href="../unix/index.html" class="md-tabs__link">
           
   
     
@@ -517,7 +515,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../windows/index.html" class="md-tabs__link">
+        <a href="../windows/index.html" class="md-tabs__link">
           
   
     
@@ -537,7 +535,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../writing/index.html" class="md-tabs__link">
+        <a href="../writing/index.html" class="md-tabs__link">
           
   
     
@@ -555,7 +553,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../tags.html" class="md-tabs__link">
+      <a href="../tags.html" class="md-tabs__link">
         
   
     
@@ -574,7 +572,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../blog/index.html" class="md-tabs__link">
+        <a href="../blog/index.html" class="md-tabs__link">
           
   
     
@@ -615,7 +613,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../index.html" title="dreknix - Documentation" class="md-nav__button md-logo" aria-label="dreknix - Documentation" data-md-component="logo">
+    <a href="../index.html" title="dreknix - Documentation" class="md-nav__button md-logo" aria-label="dreknix - Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -645,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -692,7 +690,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../ha/index.html" class="md-nav__link ">
+            <a href="../ha/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -725,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ha/devices.html" class="md-nav__link">
+      <a href="../ha/devices.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -746,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ha/videos.html" class="md-nav__link">
+      <a href="../ha/videos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -771,6 +769,8 @@
       
   
   
+    
+  
   
   
     
@@ -793,17 +793,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../hardware/index.html" class="md-nav__link ">
+            <a href="index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -820,7 +820,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Hardware
@@ -833,10 +833,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../hardware/framework.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Framework 13 AMD
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="framework.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -845,6 +865,35 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#debian-13-trixie-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debian 13 trixie (testing)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -857,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware/lenovo.html" class="md-nav__link">
+      <a href="lenovo.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -878,7 +927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../hardware/nuc11atkc4.html" class="md-nav__link">
+      <a href="nuc11atkc4.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -903,10 +952,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -921,12 +968,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
@@ -940,7 +987,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Tools
@@ -997,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../container/debugging.html" class="md-nav__link">
+      <a href="../tools/container/debugging.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1059,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../container/baseimages/nixery.html" class="md-nav__link">
+      <a href="../tools/container/baseimages/nixery.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1093,8 +1140,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1112,17 +1157,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../index.html" class="md-nav__link ">
+            <a href="../tools/vi/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1139,7 +1184,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Vi
@@ -1155,7 +1200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vim.html" class="md-nav__link">
+      <a href="../tools/vi/vim.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1173,8 +1218,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1200,17 +1243,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="index.html" class="md-nav__link ">
+            <a href="../tools/vi/neovim/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1227,7 +1270,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2_3">
             <span class="md-nav__icon md-icon"></span>
             Neovim / NvChad
@@ -1243,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="chadrc_lua.html" class="md-nav__link">
+      <a href="../tools/vi/neovim/chadrc_lua.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1264,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="configs_lspconfig_lua.html" class="md-nav__link">
+      <a href="../tools/vi/neovim/configs_lspconfig_lua.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1285,7 +1328,7 @@
   
   
     <li class="md-nav__item">
-      <a href="configs_overrides_lua.html" class="md-nav__link">
+      <a href="../tools/vi/neovim/configs_overrides_lua.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1303,30 +1346,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    init.lua
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="init_lua.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../tools/vi/neovim/init_lua.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1335,53 +1358,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#general-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      General settings
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      File Types
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#securing-gopass" class="md-nav__link">
-    <span class="md-ellipsis">
-      Securing gopass
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1394,7 +1370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="mappings_lua.html" class="md-nav__link">
+      <a href="../tools/vi/neovim/mappings_lua.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1415,7 +1391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="plugins_lua.html" class="md-nav__link">
+      <a href="../tools/vi/neovim/plugins_lua.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1496,7 +1472,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../unix/index.html" class="md-nav__link ">
+            <a href="../unix/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1551,7 +1527,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../unix/bash/index.html" class="md-nav__link ">
+            <a href="../unix/bash/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1584,7 +1560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/bash/yaml.html" class="md-nav__link">
+      <a href="../unix/bash/yaml.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1635,7 +1611,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../unix/debian/index.html" class="md-nav__link ">
+            <a href="../unix/debian/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1668,7 +1644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/debian/install.html" class="md-nav__link">
+      <a href="../unix/debian/install.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1719,7 +1695,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../unix/proxmox/index.html" class="md-nav__link ">
+            <a href="../unix/proxmox/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1752,7 +1728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/proxmox/terminal.html" class="md-nav__link">
+      <a href="../unix/proxmox/terminal.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1823,7 +1799,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../unix/systemd/index.html" class="md-nav__link ">
+            <a href="../unix/systemd/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1856,7 +1832,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/systemd/bootctl.html" class="md-nav__link">
+      <a href="../unix/systemd/bootctl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1877,7 +1853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/systemd/journalctl.html" class="md-nav__link">
+      <a href="../unix/systemd/journalctl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1898,7 +1874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/systemd/localectl.html" class="md-nav__link">
+      <a href="../unix/systemd/localectl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1919,7 +1895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/systemd/loginctl.html" class="md-nav__link">
+      <a href="../unix/systemd/loginctl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1940,7 +1916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/systemd/machinectl.html" class="md-nav__link">
+      <a href="../unix/systemd/machinectl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1961,7 +1937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/systemd/networkctl.html" class="md-nav__link">
+      <a href="../unix/systemd/networkctl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1982,7 +1958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/systemd/portablectl.html" class="md-nav__link">
+      <a href="../unix/systemd/portablectl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2003,7 +1979,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/systemd/resolvectl.html" class="md-nav__link">
+      <a href="../unix/systemd/resolvectl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2024,7 +2000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/systemd/systemctl.html" class="md-nav__link">
+      <a href="../unix/systemd/systemctl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2045,7 +2021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/systemd/systemd.html" class="md-nav__link">
+      <a href="../unix/systemd/systemd.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2066,7 +2042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/systemd/timedatectl.html" class="md-nav__link">
+      <a href="../unix/systemd/timedatectl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2123,7 +2099,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../unix/tools/index.html" class="md-nav__link ">
+            <a href="../unix/tools/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2156,7 +2132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/tools/fun.html" class="md-nav__link">
+      <a href="../unix/tools/fun.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2177,7 +2153,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/tools/nvme.html" class="md-nav__link">
+      <a href="../unix/tools/nvme.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2198,7 +2174,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/tools/smartmontools.html" class="md-nav__link">
+      <a href="../unix/tools/smartmontools.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2219,7 +2195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/tools/tmux.html" class="md-nav__link">
+      <a href="../unix/tools/tmux.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2268,7 +2244,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../unix/truenas/index.html" class="md-nav__link ">
+            <a href="../unix/truenas/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2326,7 +2302,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../unix/ubuntu/index.html" class="md-nav__link ">
+            <a href="../unix/ubuntu/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2359,7 +2335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unix/ubuntu/apt.html" class="md-nav__link">
+      <a href="../unix/ubuntu/apt.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2420,7 +2396,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../windows/index.html" class="md-nav__link ">
+            <a href="../windows/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2479,7 +2455,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../windows/tools/index.html" class="md-nav__link ">
+            <a href="../windows/tools/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2512,7 +2488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../windows/tools/bitlocker.html" class="md-nav__link">
+      <a href="../windows/tools/bitlocker.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2533,7 +2509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../windows/tools/winget.html" class="md-nav__link">
+      <a href="../windows/tools/winget.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2554,7 +2530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../windows/tools/wt.html" class="md-nav__link">
+      <a href="../windows/tools/wt.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2615,7 +2591,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../writing/index.html" class="md-nav__link ">
+            <a href="../writing/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2688,7 +2664,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../writing/mkdocs/index.html" class="md-nav__link ">
+            <a href="../writing/mkdocs/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2721,7 +2697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../writing/mkdocs/admontion.html" class="md-nav__link">
+      <a href="../writing/mkdocs/admontion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2742,7 +2718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../writing/mkdocs/definition.html" class="md-nav__link">
+      <a href="../writing/mkdocs/definition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2763,7 +2739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../writing/mkdocs/formatting.html" class="md-nav__link">
+      <a href="../writing/mkdocs/formatting.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2784,7 +2760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../writing/mkdocs/icons.html" class="md-nav__link">
+      <a href="../writing/mkdocs/icons.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2805,7 +2781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../writing/mkdocs/images.html" class="md-nav__link">
+      <a href="../writing/mkdocs/images.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2826,7 +2802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../writing/mkdocs/magiclink.html" class="md-nav__link">
+      <a href="../writing/mkdocs/magiclink.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2847,7 +2823,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../writing/mkdocs/markdown.html" class="md-nav__link">
+      <a href="../writing/mkdocs/markdown.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2868,7 +2844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../writing/mkdocs/mermaid.html" class="md-nav__link">
+      <a href="../writing/mkdocs/mermaid.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2889,7 +2865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../writing/mkdocs/source.html" class="md-nav__link">
+      <a href="../writing/mkdocs/source.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2910,7 +2886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../writing/mkdocs/task.html" class="md-nav__link">
+      <a href="../writing/mkdocs/task.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2946,7 +2922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../tags.html" class="md-nav__link">
+      <a href="../tags.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2993,7 +2969,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../blog/index.html" class="md-nav__link ">
+            <a href="../blog/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3069,7 +3045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/archive/2023.html" class="md-nav__link">
+      <a href="../blog/archive/2023.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3149,7 +3125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/latex.html" class="md-nav__link">
+      <a href="../blog/category/latex.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3172,7 +3148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/neovim.html" class="md-nav__link">
+      <a href="../blog/category/neovim.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3195,7 +3171,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/tools.html" class="md-nav__link">
+      <a href="../blog/category/tools.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3218,7 +3194,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/unix.html" class="md-nav__link">
+      <a href="../blog/category/unix.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3241,7 +3217,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../blog/category/windows.html" class="md-nav__link">
+      <a href="../blog/category/windows.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3297,27 +3273,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#general-settings" class="md-nav__link">
+  <a href="#debian-13-trixie-testing" class="md-nav__link">
     <span class="md-ellipsis">
-      General settings
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-types" class="md-nav__link">
-    <span class="md-ellipsis">
-      File Types
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#securing-gopass" class="md-nav__link">
-    <span class="md-ellipsis">
-      Securing gopass
+      Debian 13 trixie (testing)
     </span>
   </a>
   
@@ -3341,53 +3299,18 @@
   
 
 
-<h1 id="initlua">init.lua<a class="headerlink" href="#initlua" title="Permanent link">&#128279;</a></h1>
-<p>General initialization of Neovim that is not handled by a plugin or NvChad.</p>
-<h2 id="general-settings">General settings<a class="headerlink" href="#general-settings" title="Permanent link">&#128279;</a></h2>
-<p>Highlight the columns <code>textwidth+0</code> and <code>textwidth+20</code>. The default value of
-<code>textwidth</code> is <code>80</code>.</p>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">colorcolumn</span> <span class="o">=</span> <span class="s1">&#39;+0,+20&#39;</span>
-</span></code></pre></div>
-<p><strong>TODO</strong> move to overrides or configs
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">-- LuaSnip uses rafamadriz/friendly-snippets</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">-- extend in snipmate format</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">snipmate_snippets_path</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">stdpath</span> <span class="s2">&quot;config&quot;</span> <span class="o">..</span> <span class="s2">&quot;/lua/custom/snippets&quot;</span>
-</span></code></pre></div></p>
-<h2 id="file-types">File Types<a class="headerlink" href="#file-types" title="Permanent link">&#128279;</a></h2>
-<p>Add file types to specific file name patterns (
-see <a href="https://neovim.io/doc/user/lua.html#vim.filetype" target="_blank">vim.filetype</a>). The file
-type <code>yaml.docker-compose</code> and <code>yaml.ansible</code> is used for choosing a more
-specific LSP server.</p>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">vim</span><span class="p">.</span><span class="n">filetype</span><span class="p">.</span><span class="n">add</span><span class="p">({</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>  <span class="n">pattern</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="c1">-- SSH config</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="p">[</span><span class="s1">&#39;.*/.ssh/config.d/.*&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;sshconfig&#39;</span><span class="p">,</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="c1">-- rofi config</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="p">[</span><span class="s1">&#39;.*/.*.rasi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;css&#39;</span><span class="p">,</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="c1">-- Docker compose</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="p">[</span><span class="s1">&#39;compose.ya?ml&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;yaml.docker-compose&#39;</span><span class="p">,</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="p">[</span><span class="s1">&#39;docker-compose.ya?ml&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;yaml.docker-compose&#39;</span><span class="p">,</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="c1">-- Ansible</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="p">[</span><span class="s1">&#39;.*/playbooks/.*.ya?ml&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;yaml.ansible&#39;</span><span class="p">,</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="p">[</span><span class="s1">&#39;.*/playbooks/.*/.*.ya?ml&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;yaml.ansible&#39;</span><span class="p">,</span>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="p">[</span><span class="s1">&#39;.*/roles/.*/tasks/.*.ya?ml&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;yaml.ansible&#39;</span><span class="p">,</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="p">[</span><span class="s1">&#39;.*/roles/.*/handlers/.*.ya?ml&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;yaml.ansible&#39;</span><span class="p">,</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>  <span class="p">},</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">})</span>
-</span></code></pre></div>
-<h2 id="securing-gopass">Securing gopass<a class="headerlink" href="#securing-gopass" title="Permanent link">&#128279;</a></h2>
-<p>The tool gopass might use Neovim for editing secrets. Therefore, backup files or
-other external information storage must be disabled.</p>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">vim</span><span class="p">.</span><span class="n">api</span><span class="p">.</span><span class="n">nvim_create_autocmd</span><span class="p">({</span><span class="s2">&quot;BufNewFile&quot;</span><span class="p">,</span> <span class="s2">&quot;BufRead&quot;</span><span class="p">},</span> <span class="p">{</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  <span class="n">pattern</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;/dev/shm/gopass*&#39;</span><span class="p">},</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="n">callback</span> <span class="o">=</span> <span class="kr">function</span><span class="p">(</span><span class="n">ev</span><span class="p">)</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">opt_local</span><span class="p">.</span><span class="n">swapfile</span> <span class="o">=</span> <span class="kc">false</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">opt_local</span><span class="p">.</span><span class="n">backup</span> <span class="o">=</span> <span class="kc">false</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">opt_local</span><span class="p">.</span><span class="n">undofile</span> <span class="o">=</span> <span class="kc">false</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="n">vim</span><span class="p">.</span><span class="n">opt_local</span><span class="p">.</span><span class="n">shadafile</span> <span class="o">=</span> <span class="s2">&quot;NONE&quot;</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>  <span class="kr">end</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">})</span>
-</span></code></pre></div>
+<h1 id="framework-13-amd">Framework 13 AMD<a class="headerlink" href="#framework-13-amd" title="Permanent link">&#128279;</a></h1>
+<p><a href="https://frame.work/de/en/products/laptop-diy-13-gen-amd" target="_blank">Framework 13 AMD</a></p>
+<ul>
+<li>AMD Ryzen 7 7840U</li>
+<li>AMD Radeon 780M Graphics</li>
+<li>DDR5-5600 - 32GB (2 x 16GB)</li>
+<li>WD Black SN850X 2TB</li>
+<li>MEDIATEK MT7922 802.11ax Wireless Network Adapter</li>
+</ul>
+<h2 id="debian-13-trixie-testing">Debian 13 trixie (testing)<a class="headerlink" href="#debian-13-trixie-testing" title="Permanent link">&#128279;</a></h2>
+<p>Basic <a href="../unix/debian/install.html">installation</a> from network installer (netisnt)
+ISO image with disk encryption and <code>btrfs</code> flat volume layout.</p>
 
 
 
@@ -3410,7 +3333,7 @@ other external information storage must be disabled.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 24, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 9, 2023</span>
   </span>
 
     
@@ -3420,7 +3343,7 @@ other external information storage must be disabled.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 9, 2023</span>
   </span>
 
     
@@ -3440,7 +3363,7 @@ other external information storage must be disabled.</p>
       
         <a href="https://github.com/dreknix" class="md-author" title="@dreknix">
           
-          <img src="../../../assets/external/avatars.githubusercontent.com/u/107855539.fe356448.png" alt="dreknix">
+          <img src="../assets/external/avatars.githubusercontent.com/u/107855539.fe356448.png" alt="dreknix">
         </a>
       
       
@@ -3557,10 +3480,10 @@ other external information storage must be disabled.</p>
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
     
   </body>
