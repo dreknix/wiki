@@ -1746,6 +1746,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Snapshots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-only-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read-only Snapshots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3436,6 +3451,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Snapshots">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-only-snapshots" class="md-nav__link">
+    <span class="md-ellipsis">
+      Read-only Snapshots
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -3492,7 +3522,20 @@
 <h1 id="btrfs">btrfs<a class="headerlink" href="#btrfs" title="Permanent link">&#128279;</a></h1>
 <p><a href="https://btrfs.readthedocs.io/" target="_blank">https://btrfs.readthedocs.io/</a></p>
 <h2 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">&#128279;</a></h2>
+<ul>
+<li><a href="https://sysguides.com/install-fedora-with-snapshot-and-rollback-support/">https://sysguides.com/install-fedora-with-snapshot-and-rollback-support/</a></li>
+<li><a href="https://youtu.be/JvfCieWkXxI?si=tFSJziZylZpbDwg0">https://youtu.be/JvfCieWkXxI?si=tFSJziZylZpbDwg0</a></li>
+</ul>
 <h2 id="snapshots">Snapshots<a class="headerlink" href="#snapshots" title="Permanent link">&#128279;</a></h2>
+<ul>
+<li><a href="https://youtu.be/_97JOyC1o2o?si=8W8XuKHa7o7yqSre">https://youtu.be/_97JOyC1o2o?si=8W8XuKHa7o7yqSre</a></li>
+</ul>
+<h3 id="read-only-snapshots">Read-only Snapshots<a class="headerlink" href="#read-only-snapshots" title="Permanent link">&#128279;</a></h3>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">sudo btrfs property get -t subvol /path/to/snapshot</span>
+</span></code></pre></div>
+<p>Make snapshot writeable:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="go">sudo btrfs property set -ts /path/to/snapshot ro false</span>
+</span></code></pre></div>
 <h2 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&#128279;</a></h2>
 <h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&#128279;</a></h3>
 <ul>
