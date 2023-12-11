@@ -10,31 +10,29 @@
         <meta name="author" content="dreknix">
       
       
-        <link rel="canonical" href="https://dreknix.github.io/wiki/ha/devices.html">
+        <link rel="canonical" href="https://dreknix.github.io/wiki/blog/2023/12/11/zram-and-swap.html">
       
       
-        <link rel="prev" href="index.html">
+        <link rel="prev" href="../04/qemu-and-windows-keys.html">
       
       
-        <link rel="next" href="videos.html">
       
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../feed_rss_updated.xml">
       
-        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../feed_rss_updated.xml">
-      
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
     
     
       
-        <title>Devices - dreknix - Documentation</title>
+        <title>zram and Swap - dreknix - Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.50c56a3b.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
   
@@ -220,12 +218,12 @@
         
         
         
-        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <link rel="stylesheet" href="../../../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -251,7 +249,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#devices" class="md-skip">
+        <a href="#zram-and-swap" class="md-skip">
           Skip to content
         </a>
       
@@ -267,7 +265,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../index.html" title="dreknix - Documentation" class="md-header__button md-logo" aria-label="dreknix - Documentation" data-md-component="logo">
+    <a href="../../../../index.html" title="dreknix - Documentation" class="md-header__button md-logo" aria-label="dreknix - Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -287,7 +285,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Devices
+              zram and Swap
             
           </span>
         </div>
@@ -405,7 +403,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../index.html" class="md-tabs__link">
+      <a href="../../../../index.html" class="md-tabs__link">
         
   
     
@@ -420,13 +418,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="index.html" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../ha/index.html" class="md-tabs__link">
           
   
     
@@ -446,7 +442,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../hardware/index.html" class="md-tabs__link">
+        <a href="../../../../hardware/index.html" class="md-tabs__link">
           
   
     
@@ -472,7 +468,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../tools/container/debugging.html" class="md-tabs__link">
+        <a href="../../../../tools/container/debugging.html" class="md-tabs__link">
           
   
     
@@ -495,7 +491,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../unix/index.html" class="md-tabs__link">
+        <a href="../../../../unix/index.html" class="md-tabs__link">
           
   
     
@@ -515,7 +511,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../windows/index.html" class="md-tabs__link">
+        <a href="../../../../windows/index.html" class="md-tabs__link">
           
   
     
@@ -535,7 +531,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../writing/index.html" class="md-tabs__link">
+        <a href="../../../../writing/index.html" class="md-tabs__link">
           
   
     
@@ -553,7 +549,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../tags.html" class="md-tabs__link">
+      <a href="../../../../tags.html" class="md-tabs__link">
         
   
     
@@ -568,11 +564,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../blog/index.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../index.html" class="md-tabs__link">
           
   
     
@@ -602,7 +600,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -613,7 +613,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../index.html" title="dreknix - Documentation" class="md-nav__button md-logo" aria-label="dreknix - Documentation" data-md-component="logo">
+    <a href="../../../../index.html" title="dreknix - Documentation" class="md-nav__button md-logo" aria-label="dreknix - Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -643,7 +643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../../../index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -660,8 +660,6 @@
       
   
   
-    
-  
   
   
     
@@ -682,17 +680,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="index.html" class="md-nav__link ">
+            <a href="../../../../ha/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -709,7 +707,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Home Assistent
@@ -722,30 +720,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Devices
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="devices.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../ha/devices.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -754,35 +732,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#shelly-plug-s" class="md-nav__link">
-    <span class="md-ellipsis">
-      Shelly Plug S
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -795,7 +744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="videos.html" class="md-nav__link">
+      <a href="../../../../ha/videos.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -852,7 +801,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../hardware/index.html" class="md-nav__link ">
+            <a href="../../../../hardware/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -885,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hardware/framework.html" class="md-nav__link">
+      <a href="../../../../hardware/framework.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -906,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hardware/lenovo.html" class="md-nav__link">
+      <a href="../../../../hardware/lenovo.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -927,7 +876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../hardware/nuc11atkc4.html" class="md-nav__link">
+      <a href="../../../../hardware/nuc11atkc4.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1044,7 +993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/container/debugging.html" class="md-nav__link">
+      <a href="../../../../tools/container/debugging.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1106,7 +1055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/container/baseimages/nixery.html" class="md-nav__link">
+      <a href="../../../../tools/container/baseimages/nixery.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1167,7 +1116,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tools/vi/index.html" class="md-nav__link ">
+            <a href="../../../../tools/vi/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1200,7 +1149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/vi/vim.html" class="md-nav__link">
+      <a href="../../../../tools/vi/vim.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1253,7 +1202,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tools/vi/neovim/index.html" class="md-nav__link ">
+            <a href="../../../../tools/vi/neovim/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1286,7 +1235,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/vi/neovim/chadrc_lua.html" class="md-nav__link">
+      <a href="../../../../tools/vi/neovim/chadrc_lua.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1307,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/vi/neovim/configs_lspconfig_lua.html" class="md-nav__link">
+      <a href="../../../../tools/vi/neovim/configs_lspconfig_lua.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1328,7 +1277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/vi/neovim/configs_overrides_lua.html" class="md-nav__link">
+      <a href="../../../../tools/vi/neovim/configs_overrides_lua.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1349,7 +1298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/vi/neovim/init_lua.html" class="md-nav__link">
+      <a href="../../../../tools/vi/neovim/init_lua.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1370,7 +1319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/vi/neovim/mappings_lua.html" class="md-nav__link">
+      <a href="../../../../tools/vi/neovim/mappings_lua.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1391,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/vi/neovim/plugins_lua.html" class="md-nav__link">
+      <a href="../../../../tools/vi/neovim/plugins_lua.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1474,7 +1423,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../unix/index.html" class="md-nav__link ">
+            <a href="../../../../unix/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1529,7 +1478,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../unix/bash/index.html" class="md-nav__link ">
+            <a href="../../../../unix/bash/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1562,7 +1511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/bash/yaml.html" class="md-nav__link">
+      <a href="../../../../unix/bash/yaml.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1613,7 +1562,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../unix/debian/index.html" class="md-nav__link ">
+            <a href="../../../../unix/debian/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1646,7 +1595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/debian/install.html" class="md-nav__link">
+      <a href="../../../../unix/debian/install.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1699,7 +1648,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../unix/filesystems/index.html" class="md-nav__link ">
+            <a href="../../../../unix/filesystems/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1732,7 +1681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/filesystems/btrfs.html" class="md-nav__link">
+      <a href="../../../../unix/filesystems/btrfs.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1753,7 +1702,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/filesystems/luks.html" class="md-nav__link">
+      <a href="../../../../unix/filesystems/luks.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1804,7 +1753,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../unix/proxmox/index.html" class="md-nav__link ">
+            <a href="../../../../unix/proxmox/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1837,7 +1786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/proxmox/terminal.html" class="md-nav__link">
+      <a href="../../../../unix/proxmox/terminal.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1908,7 +1857,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../unix/systemd/index.html" class="md-nav__link ">
+            <a href="../../../../unix/systemd/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1941,7 +1890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/systemd/bootctl.html" class="md-nav__link">
+      <a href="../../../../unix/systemd/bootctl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1962,7 +1911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/systemd/journalctl.html" class="md-nav__link">
+      <a href="../../../../unix/systemd/journalctl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1983,7 +1932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/systemd/localectl.html" class="md-nav__link">
+      <a href="../../../../unix/systemd/localectl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2004,7 +1953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/systemd/loginctl.html" class="md-nav__link">
+      <a href="../../../../unix/systemd/loginctl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2025,7 +1974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/systemd/machinectl.html" class="md-nav__link">
+      <a href="../../../../unix/systemd/machinectl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2046,7 +1995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/systemd/networkctl.html" class="md-nav__link">
+      <a href="../../../../unix/systemd/networkctl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2067,7 +2016,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/systemd/portablectl.html" class="md-nav__link">
+      <a href="../../../../unix/systemd/portablectl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2088,7 +2037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/systemd/resolvectl.html" class="md-nav__link">
+      <a href="../../../../unix/systemd/resolvectl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2109,7 +2058,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/systemd/systemctl.html" class="md-nav__link">
+      <a href="../../../../unix/systemd/systemctl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2130,7 +2079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/systemd/systemd.html" class="md-nav__link">
+      <a href="../../../../unix/systemd/systemd.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2151,7 +2100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/systemd/timedatectl.html" class="md-nav__link">
+      <a href="../../../../unix/systemd/timedatectl.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2210,7 +2159,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../unix/tools/index.html" class="md-nav__link ">
+            <a href="../../../../unix/tools/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2243,7 +2192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/tools/apt.html" class="md-nav__link">
+      <a href="../../../../unix/tools/apt.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2264,7 +2213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/tools/fun.html" class="md-nav__link">
+      <a href="../../../../unix/tools/fun.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2285,7 +2234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/tools/nvme.html" class="md-nav__link">
+      <a href="../../../../unix/tools/nvme.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2306,7 +2255,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/tools/smartmontools.html" class="md-nav__link">
+      <a href="../../../../unix/tools/smartmontools.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2327,7 +2276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../unix/tools/tmux.html" class="md-nav__link">
+      <a href="../../../../unix/tools/tmux.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2376,7 +2325,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../unix/truenas/index.html" class="md-nav__link ">
+            <a href="../../../../unix/truenas/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2432,7 +2381,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../unix/ubuntu/index.html" class="md-nav__link ">
+            <a href="../../../../unix/ubuntu/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2500,7 +2449,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../windows/index.html" class="md-nav__link ">
+            <a href="../../../../windows/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2559,7 +2508,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../windows/tools/index.html" class="md-nav__link ">
+            <a href="../../../../windows/tools/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2592,7 +2541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../windows/tools/bitlocker.html" class="md-nav__link">
+      <a href="../../../../windows/tools/bitlocker.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2613,7 +2562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../windows/tools/winget.html" class="md-nav__link">
+      <a href="../../../../windows/tools/winget.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2634,7 +2583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../windows/tools/wt.html" class="md-nav__link">
+      <a href="../../../../windows/tools/wt.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2695,7 +2644,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../writing/index.html" class="md-nav__link ">
+            <a href="../../../../writing/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2768,7 +2717,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../writing/mkdocs/index.html" class="md-nav__link ">
+            <a href="../../../../writing/mkdocs/index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2801,7 +2750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../writing/mkdocs/admontion.html" class="md-nav__link">
+      <a href="../../../../writing/mkdocs/admontion.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2822,7 +2771,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../writing/mkdocs/definition.html" class="md-nav__link">
+      <a href="../../../../writing/mkdocs/definition.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2843,7 +2792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../writing/mkdocs/formatting.html" class="md-nav__link">
+      <a href="../../../../writing/mkdocs/formatting.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2864,7 +2813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../writing/mkdocs/icons.html" class="md-nav__link">
+      <a href="../../../../writing/mkdocs/icons.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2885,7 +2834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../writing/mkdocs/images.html" class="md-nav__link">
+      <a href="../../../../writing/mkdocs/images.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2906,7 +2855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../writing/mkdocs/magiclink.html" class="md-nav__link">
+      <a href="../../../../writing/mkdocs/magiclink.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2927,7 +2876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../writing/mkdocs/markdown.html" class="md-nav__link">
+      <a href="../../../../writing/mkdocs/markdown.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2948,7 +2897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../writing/mkdocs/mermaid.html" class="md-nav__link">
+      <a href="../../../../writing/mkdocs/mermaid.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2969,7 +2918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../writing/mkdocs/source.html" class="md-nav__link">
+      <a href="../../../../writing/mkdocs/source.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2990,7 +2939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../writing/mkdocs/task.html" class="md-nav__link">
+      <a href="../../../../writing/mkdocs/task.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3026,7 +2975,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tags.html" class="md-nav__link">
+      <a href="../../../../tags.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3043,6 +2992,8 @@
       
   
   
+    
+  
   
   
     
@@ -3063,17 +3014,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../blog/index.html" class="md-nav__link ">
+            <a href="../../../index.html" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3090,7 +3041,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             Blog
@@ -3149,7 +3100,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/archive/2023.html" class="md-nav__link">
+      <a href="../../../archive/2023.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3229,7 +3180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/latex.html" class="md-nav__link">
+      <a href="../../../category/latex.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3252,7 +3203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/neovim.html" class="md-nav__link">
+      <a href="../../../category/neovim.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3275,7 +3226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/tools.html" class="md-nav__link">
+      <a href="../../../category/tools.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3298,7 +3249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/unix.html" class="md-nav__link">
+      <a href="../../../category/unix.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3321,7 +3272,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/windows.html" class="md-nav__link">
+      <a href="../../../category/windows.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3358,6 +3309,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -3377,9 +3330,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#shelly-plug-s" class="md-nav__link">
+  <a href="#install-zram" class="md-nav__link">
     <span class="md-ellipsis">
-      Shelly Plug S
+      Install zram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-zram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure zram
     </span>
   </a>
   
@@ -3394,62 +3356,105 @@
             
           
           
-            <div class="md-content" data-md-component="content">
-              <article class="md-content__inner md-typeset">
-                
-                  
-  
-<nav class="md-tags" >
-  
-    
-    
-      
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../index.html" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
+                        <time datetime="2023-12-11 00:00:00" class="md-ellipsis">December 11, 2023</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3H9m3 2 4 13 3-1-4-13-3 1M5 5v13h3V5H5M3 19v2h18v-2H3Z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../category/tools.html">Tools</a>, 
+                              <a href="../../../category/unix.html">UNIX</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
       
         
-      
-    
-    
-      <a href="../tags.html#homeassistant" class="md-tag md-tag-icon md-tag--homeassistant">HomeAssistant</a>
-    
-  
-</nav>
-
 
   
   
 
 
-<h1 id="devices">Devices<a class="headerlink" href="#devices" title="Permanent link">&#128279;</a></h1>
-<h2 id="shelly-plug-s">Shelly Plug S<a class="headerlink" href="#shelly-plug-s" title="Permanent link">&#128279;</a></h2>
-<p><a href="https://templates.blakadder.com/shelly_plug_S.html">Shelly Plug S</a> can be used
-with the <a href="https://tasmota.github.io/docs/">Tasmota firmware</a>.</p>
-<p>Connect to Wifi SSID of Shelly Plug S and connect to web interface
-<a href="http://192.168.33.1">http://192.168.33.1/</a> and configure local wifi network.</p>
-<p>Install the firmware:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>http://shellyip/ota?url=http://ota.tasmota.com/tasmota/shelly/mg2tasmota-ShellyPlugS.zip
+<h1 id="zram-and-swap">zram and Swap<a class="headerlink" href="#zram-and-swap" title="Permanent link">&#128279;</a></h1>
+<p>The zram kernel module creates compressed RAM-based block devices named
+<code>/dev/zramX</code>. These zram devices allow fast I/O and the compression provides
+RAM space savings.</p>
+<!-- more -->
+
+<h2 id="install-zram">Install zram<a class="headerlink" href="#install-zram" title="Permanent link">&#128279;</a></h2>
+<p>Install zram in Debian:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">sudo apt install zram-tools</span>
 </span></code></pre></div>
-<p>Connect to Tasmota Wifi SSID and configure the plug. After that open the URL
-<code>http://shellyip/</code>.</p>
-<p>Configure template (<code>Configure</code> &gt; <code>Configure Other</code>):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{&quot;NAME&quot;:&quot;Shelly Plug S&quot;,&quot;GPIO&quot;:[57,255,56,255,0,134,0,0,131,17,132,21,0],&quot;FLAG&quot;:2,&quot;BASE&quot;:45}
+<p>In order to enable zram, the computer needs to be rebooted.</p>
+<h2 id="configure-zram">Configure zram<a class="headerlink" href="#configure-zram" title="Permanent link">&#128279;</a></h2>
+<p>The status of the zram module can be queried with <code>systemctl status zramswap.service</code>.
+The configuration and usage can be shown with <code>zramctl</code>:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>zramctl
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="go">NAME       ALGORITHM DISKSIZE DATA COMPR TOTAL STREAMS MOUNTPOINT</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="go">/dev/zram0 lz4           256M   4K   63B   20K       8 [SWAP]</span>
 </span></code></pre></div>
-<p>Configure device (<code>Configure</code> &gt; <code>Configure Module</code>):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>BlitzWolf SHP (45)
+<p>Change the configuration parameters by editing the file <code>/etc/default/zramswap</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ALGO=zstd
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>PERCENT=25
 </span></code></pre></div>
-<p>Configure MQTT (<code>Configure</code> &gt; <code>Configure MQTT</code>:</p>
-<ul>
-<li>Host: //IP address of Home Assistant//</li>
-<li>User: //user in Home Assistant//</li>
-<li>Password: //user in Home Assistant//</li>
-</ul>
-<p>Calibrate the device (with readings of 235V and 35W):</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>savedata 1
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>VoltageSet 235
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>PowerSet 35.0
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>savedata 0
+<p>The will change the default compression algorithm from <code>lz4</code> to <code>zstd</code> and the
+default size from <code>256 MiB</code> to <code>25 %</code> of the total RAM.</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>zramctl
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">NAME       ALGORITHM DISKSIZE DATA COMPR TOTAL STREAMS MOUNTPOINT</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="go">/dev/zram0 zstd          7.8G   4K   59B   20K       8 [SWAP]</span>
 </span></code></pre></div>
-<p>The information can be found in this
-<a href="https://youtu.be/EjJSIUAlPxs">video</a>.</p>
+<p>If the computer has a configured swap file or swap partition, the zram swap gets
+a higher priority (<code>100</code>) instead of the default of <code>-2</code>:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>swapon
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">NAME       TYPE      SIZE USED PRIO</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="go">/dev/dm-2  partition   4G   0B   -2</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="go">/dev/zram0 partition 7.8G   0B  100</span>
+</span></code></pre></div>
+<p>When the computer uses suspend to disk, a swap file or swap partition is needed
+besides zram.</p>
 
 
 
@@ -3472,7 +3477,7 @@ with the <a href="https://tasmota.github.io/docs/">Tasmota firmware</a>.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 23, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 11, 2023</span>
   </span>
 
     
@@ -3482,7 +3487,7 @@ with the <a href="https://tasmota.github.io/docs/">Tasmota firmware</a>.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 11, 2023</span>
   </span>
 
     
@@ -3502,7 +3507,7 @@ with the <a href="https://tasmota.github.io/docs/">Tasmota firmware</a>.</p>
       
         <a href="https://github.com/dreknix" class="md-author" title="@dreknix">
           
-          <img src="../assets/external/avatars.githubusercontent.com/u/107855539.fe356448.png" alt="dreknix">
+          <img src="../../../../assets/external/avatars.githubusercontent.com/u/107855539.fe356448.png" alt="dreknix">
         </a>
       
       
@@ -3515,12 +3520,14 @@ with the <a href="https://tasmota.github.io/docs/">Tasmota firmware</a>.</p>
 
 
 
+  
 
 
-                
-              </article>
-            </div>
-          
+
+      
+    </article>
+  </div>
+
           
   <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 
@@ -3619,10 +3626,10 @@ with the <a href="https://tasmota.github.io/docs/">Tasmota firmware</a>.</p>
       </div>
       <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.f886a092.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
     
   </body>

@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Sat, 09 Dec 2023 20:40:01 -0000</pubDate>
-    <lastBuildDate>Sat, 09 Dec 2023 20:40:01 -0000</lastBuildDate>
+    <pubDate>Mon, 11 Dec 2023 17:41:51 -0000</pubDate>
+    <lastBuildDate>Mon, 11 Dec 2023 17:41:51 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -24,6 +24,30 @@
     
 
     
+    
+    <item>
+      <title>zram and Swap</title>
+      
+      
+      
+      
+        
+      <category>Tools</category>
+        
+      <category>UNIX</category>
+        
+      
+      <description>&lt;h1&gt;zram and Swap&lt;/h1&gt;
+&lt;p&gt;The zram kernel module creates compressed RAM-based block devices named
+&lt;code&gt;/dev/zramX&lt;/code&gt;. These zram devices allow fast I/O and the compression provides
+RAM space savings.&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2023/12/11/zram-and-swap.html</link>
+      <pubDate>Mon, 11 Dec 2023 00:00:00 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_created.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/12/11/zram-and-swap.html</guid>
+      
+    </item>
     
     <item>
       <title>QEMU and Windows Keys</title>
