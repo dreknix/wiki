@@ -199,7 +199,7 @@ Edit the `/target/etc/fstab` file:
     Append the following line to `/target/etc/fstab`:
 
     ```
-    tmpfs   /tmp   tmpfs   nosuid,nodev,strictatime,size=4GB,nr_inodes=1m,mode=1777   0   0
+    tmpfs   /tmp   tmpfs   nosuid,nodev,strictatime,size=4g,nr_inodes=1m,mode=1777   0   0
     ```
 
     Create the directory and mount it for installation:
