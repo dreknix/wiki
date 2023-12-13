@@ -46,3 +46,9 @@ sudo btrfs property set -ts /path/to/snapshot ro false
   Include btrfs snapshots as boot options in the Grub menu
 
 ### btrbk
+
+### compsize
+
+``` console
+sudo compsize -x /
+```
