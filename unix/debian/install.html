@@ -3645,16 +3645,16 @@ from Debian as daily build.</p>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="go">Create subvolume &#39;./@var_cache&#39;</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="go">/mnt # btrfs subvolume create @var_crash</span>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="go">Create subvolume &#39;./@var_crash&#39;</span>
-</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="go">/mnt # btrfs subvolume create @var/log</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="go">/mnt # btrfs subvolume create @var_log</span>
 </span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="go">Create subvolume &#39;./@var_log&#39;</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="go">/mnt # btrfs subvolume create @var_lib_AccountsService</span>
-</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="go">Create subvolume &#39;./@var_lib_AccountsService&#39;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="go">/mnt # btrfs subvolume create @var_lib_accountsservice</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="go">Create subvolume &#39;./@var_lib_accountsService&#39;</span>
 </span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="go">/mnt # btrfs subvolume create @var_lib_gdm3</span>
 </span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="go">Create subvolume &#39;./@var_lib_gdm3&#39;</span>
 </span></code></pre></div>
 <p>Create the new mount structure under <code>/target</code>:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">/mnt # cd /mnt</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">~ # mount -o compress=zstd:3,subvol=@ /dev/mapper/nvme0n1p3_crypt /target</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">/mnt # cd /</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="go">~ # mount -o noatime,compress=zstd:3,subvol=@ /dev/mapper/nvme0n1p3_crypt /target</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="go">~ # mount /dev/nvme0n1p2 /target/boot/</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="go">~ # mount /dev/nvme0n1p1 /target/boot/efi/</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="go">~ # mkdir /target/.btrfs</span>
@@ -3672,10 +3672,8 @@ from Debian as daily build.</p>
 </span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="go">~ # mount -o noatime,compress=zstd:3,subvol=@var_cache /dev/mapper/nvme0n1p3_crypt /target/var/cache</span>
 </span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="go">~ # mount -o noatime,compress=zstd:3,subvol=@var_crash /dev/mapper/nvme0n1p3_crypt /target/var/crash</span>
 </span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="go">~ # mount -o noatime,compress=zstd:3,subvol=@var_log /dev/mapper/nvme0n1p3_crypt /target/var/log</span>
-</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="go">~ # mount -o noatime,compress=zstd:3,subvol=@var_lib_AccountsService /dev/mapper/nvme0n1p3_crypt /target/var/lib/AccountsService</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="go">~ # mount -o noatime,compress=zstd:3,subvol=@var_lib_accountsservice /dev/mapper/nvme0n1p3_crypt /target/var/lib/AccountsService</span>
 </span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="go">~ # mount -o noatime,compress=zstd:3,subvol=@var_lib_gdm3 /dev/mapper/nvme0n1p3_crypt /target/var/lib/gdm3</span>
-</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="go">~ # chown root:sudo /target/.btrfs /target/.snapshots</span>
-</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="go">~ # chmod 0750 /target/.btrfs /target/.snapshots</span>
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
