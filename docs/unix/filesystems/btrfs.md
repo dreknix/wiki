@@ -14,16 +14,16 @@ subvolume.
 Example of `/etc/fstab`:
 
 ``` plaintext
-UUID=fa589e73-75e9-476c-a68c-d832d5396145 /                        btrfs   noatime,compress=zstd:3,subvol=@                          0   0
-UUID=fa589e73-75e9-476c-a68c-d832d5396145 /.snapshots              btrfs   noatime,compress=zstd:3,subvol=@snapshots                 0   0
-UUID=fa589e73-75e9-476c-a68c-d832d5396145 /home                    btrfs   noatime,compress=zstd:3,subvol=@home                      0   0
-UUID=fa589e73-75e9-476c-a68c-d832d5396145 /var/cache               btrfs   noatime,compress=zstd:3,subvol=@var_cache                 0   0
-UUID=fa589e73-75e9-476c-a68c-d832d5396145 /var/crash               btrfs   noatime,compress=zstd:3,subvol=@var_crash                 0   0
-UUID=fa589e73-75e9-476c-a68c-d832d5396145 /var/log                 btrfs   noatime,compress=zstd:3,subvol=@var_log                   0   0
-UUID=fa589e73-75e9-476c-a68c-d832d5396145 /var/lib/AccountsSerice  btrfs   noatime,compress=zstd:3,subvol=@var_lib_accountsservice   0   0
-UUID=fa589e73-75e9-476c-a68c-d832d5396145 /var/lib/gdm3            btrfs   noatime,compress=zstd:3,subvol=@var_lib_gdm3              0   0
+UUID=...   /                          btrfs   noatime,compress=zstd:3,subvol=@                          0   0
+UUID=...   /.snapshots                btrfs   noatime,compress=zstd:3,subvol=@snapshots                 0   0
+UUID=...   /home                      btrfs   noatime,compress=zstd:3,subvol=@home                      0   0
+UUID=...   /var/cache                 btrfs   noatime,compress=zstd:3,subvol=@var_cache                 0   0
+UUID=...   /var/crash                 btrfs   noatime,compress=zstd:3,subvol=@var_crash                 0   0
+UUID=...   /var/log                   btrfs   noatime,compress=zstd:3,subvol=@var_log                   0   0
+UUID=...   /var/lib/AccountsService   btrfs   noatime,compress=zstd:3,subvol=@var_lib_accountsservice   0   0
+UUID=...   /var/lib/gdm3              btrfs   noatime,compress=zstd:3,subvol=@var_lib_gdm3              0   0
 
-UUID=fa589e73-75e9-476c-a68c-d832d5396145 /.btrfs                  btrfs   defaults,subvolid=5                                       0   0
+UUID=...   /.btrfs                    btrfs   noatime,compress=zstd:3,subvolid=5                        0   0
 ```
 
 !!! info
@@ -41,6 +41,21 @@ UUID=fa589e73-75e9-476c-a68c-d832d5396145 /.btrfs                  btrfs   defau
     Due to LUKS disk encryption the `/boot` directory is not part of the root
     file system subvolume. Do not delete any kernels that are needed to boot an
     old snapshot.
+
+Depending on the usage of the computer, other subvolumes are also needed:
+
+* Docker: `/var/lib/docker`
+* podman: `/var/lib/container`
+* libvirt: `/var/lib/libvirt`
+* Other services: `/srv`
+
+``` plaintext title="/etc/fstab"
+UUID=...   /var/lib/docker            btrfs   noatime,compress=zstd:3,subvol=@var_lib_docker            0   0
+UUID=...   /var/lib/container         btrfs   noatime,compress=zstd:3,subvol=@var_lib_container         0   0
+UUID=...   /var/lib/libvirt           btrfs   noatime,compress=zstd:3,subvol=@var_lib_libvirt           0   0
+
+UUID=...   /srv                       btrfs   noatime,compress=zstd:3,subvol=@srv                       0   0
+```
 
 ## Snapshots
 
@@ -181,7 +196,7 @@ sudo btrbk run
 
 To perform a try-run add the option `-n`.
 
-#### Show diff between to Snapshots
+#### Show diff between two Snapshots
 
 Create a snapshot and install the package `htop` and create a second snapshot.
 After that the differences between both snapshots can be shown:

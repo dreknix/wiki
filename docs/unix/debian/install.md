@@ -148,6 +148,16 @@ Create other subvolumes:
 Create subvolume './@snapshots'
 /mnt # btrfs subvolume create @home
 Create subvolume './@home'
+/mnt # btrfs subvolume create @var_cache
+Create subvolume './@var_cache'
+/mnt # btrfs subvolume create @var_crash
+Create subvolume './@var_crash'
+/mnt # btrfs subvolume create @var/log
+Create subvolume './@var_log'
+/mnt # btrfs subvolume create @var_lib_AccountsService
+Create subvolume './@var_lib_AccountsService'
+/mnt # btrfs subvolume create @var_lib_gdm3
+Create subvolume './@var_lib_gdm3'
 ```
 
 Create the new mount structure under `/target`:
@@ -157,18 +167,30 @@ Create the new mount structure under `/target`:
 ~ # mount -o compress=zstd:3,subvol=@ /dev/mapper/nvme0n1p3_crypt /target
 ~ # mount /dev/nvme0n1p2 /target/boot/
 ~ # mount /dev/nvme0n1p1 /target/boot/efi/
+~ # mkdir /target/.btrfs
 ~ # mkdir /target/.snapshots
 ~ # mkdir /target/home
-~ # mount -o compress=zstd:3,subvol=@snapshots /dev/mapper/nvme0n1p3_crypt /target/.snapshots
-~ # mount -o compress=zstd:3,subvol=@home /dev/mapper/nvme0n1p3_crypt /target/home
+~ # mkdir /target/var
+~ # mkdir /target/var/cache
+~ # mkdir /target/var/crash
+~ # mkdir /target/var/log
+~ # mkdir /target/var/lib
+~ # mkdir /target/var/lib/AccountsService
+~ # mkdir /target/var/lib/gdm3
+~ # mount -o noatime,compress=zstd:3,subvol=@snapshots /dev/mapper/nvme0n1p3_crypt /target/.snapshots
+~ # mount -o noatime,compress=zstd:3,subvol=@home /dev/mapper/nvme0n1p3_crypt /target/home
+~ # mount -o noatime,compress=zstd:3,subvol=@var_cache /dev/mapper/nvme0n1p3_crypt /target/var/cache
+~ # mount -o noatime,compress=zstd:3,subvol=@var_crash /dev/mapper/nvme0n1p3_crypt /target/var/crash
+~ # mount -o noatime,compress=zstd:3,subvol=@var_log /dev/mapper/nvme0n1p3_crypt /target/var/log
+~ # mount -o noatime,compress=zstd:3,subvol=@var_lib_AccountsService /dev/mapper/nvme0n1p3_crypt /target/var/lib/AccountsService
+~ # mount -o noatime,compress=zstd:3,subvol=@var_lib_gdm3 /dev/mapper/nvme0n1p3_crypt /target/var/lib/gdm3
+~ # chown root:sudo /target/.btrfs /target/.snapshots
+~ # chmod 0750 /target/.btrfs /target/.snapshots
 ```
 
 !!! info
 
     The flags `ssd` and `space_cache=v2` are enabled by default.
-
-    The flag `noatime` is not needed anymore. The default flag is `relatime`
-    that prevents a lot of writes.
 
     The flag `discard=async` is also not needed anymore. **TODO**
 
@@ -181,9 +203,16 @@ Unmount the `btrfs` partition:
 Edit the `/target/etc/fstab` file:
 
 ```
-/dev/mapper/nvme0n1p3_crypt  /            btrfs  compress=zstd:3,subvol=@           0   0
-/dev/mapper/nvme0n1p3_crypt  /.snapshots  btrfs  compress=zstd:3,subvol=@snapshots  0   0
-/dev/mapper/nvme0n1p3_crypt  /home        btrfs  compress=zstd:3,subvol=@home       0   0
+/dev/mapper/nvme0n1p3_crypt  /                         btrfs  noatime,compress=zstd:3,subvol=@                         0   0
+/dev/mapper/nvme0n1p3_crypt  /.snapshots               btrfs  noatime,compress=zstd:3,subvol=@snapshots                0   0
+/dev/mapper/nvme0n1p3_crypt  /home                     btrfs  noatime,compress=zstd:3,subvol=@home                     0   0
+/dev/mapper/nvme0n1p3_crypt  /var/cache                btrfs  noatime,compress=zstd:3,subvol=@var_cache                0   0
+/dev/mapper/nvme0n1p3_crypt  /var/crash                btrfs  noatime,compress=zstd:3,subvol=@var_crash                0   0
+/dev/mapper/nvme0n1p3_crypt  /var/log                  btrfs  noatime,compress=zstd:3,subvol=@var_log                  0   0
+/dev/mapper/nvme0n1p3_crypt  /var/lib/AccountsService  btrfs  noatime,compress=zstd:3,subvol=@var_lib_accountsservice  0   0
+/dev/mapper/nvme0n1p3_crypt  /var/lib/gdm3             btrfs  noatime,compress=zstd:3,subvol=@var_lib_gdm3             0   0
+
+/dev/mapper/nvme0n1p3_crypt  /.btrfs                   btrfs  noatime,compress=zstd:3,subvolid=5                       0   0
 ```
 
 !!! info
