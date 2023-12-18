@@ -152,10 +152,10 @@ Create subvolume './@home'
 Create subvolume './@var_cache'
 /mnt # btrfs subvolume create @var_crash
 Create subvolume './@var_crash'
-/mnt # btrfs subvolume create @var/log
+/mnt # btrfs subvolume create @var_log
 Create subvolume './@var_log'
-/mnt # btrfs subvolume create @var_lib_AccountsService
-Create subvolume './@var_lib_AccountsService'
+/mnt # btrfs subvolume create @var_lib_accountsservice
+Create subvolume './@var_lib_accountsService'
 /mnt # btrfs subvolume create @var_lib_gdm3
 Create subvolume './@var_lib_gdm3'
 ```
@@ -163,8 +163,8 @@ Create subvolume './@var_lib_gdm3'
 Create the new mount structure under `/target`:
 
 ``` console
-/mnt # cd /mnt
-~ # mount -o compress=zstd:3,subvol=@ /dev/mapper/nvme0n1p3_crypt /target
+/mnt # cd /
+~ # mount -o noatime,compress=zstd:3,subvol=@ /dev/mapper/nvme0n1p3_crypt /target
 ~ # mount /dev/nvme0n1p2 /target/boot/
 ~ # mount /dev/nvme0n1p1 /target/boot/efi/
 ~ # mkdir /target/.btrfs
@@ -182,10 +182,8 @@ Create the new mount structure under `/target`:
 ~ # mount -o noatime,compress=zstd:3,subvol=@var_cache /dev/mapper/nvme0n1p3_crypt /target/var/cache
 ~ # mount -o noatime,compress=zstd:3,subvol=@var_crash /dev/mapper/nvme0n1p3_crypt /target/var/crash
 ~ # mount -o noatime,compress=zstd:3,subvol=@var_log /dev/mapper/nvme0n1p3_crypt /target/var/log
-~ # mount -o noatime,compress=zstd:3,subvol=@var_lib_AccountsService /dev/mapper/nvme0n1p3_crypt /target/var/lib/AccountsService
+~ # mount -o noatime,compress=zstd:3,subvol=@var_lib_accountsservice /dev/mapper/nvme0n1p3_crypt /target/var/lib/AccountsService
 ~ # mount -o noatime,compress=zstd:3,subvol=@var_lib_gdm3 /dev/mapper/nvme0n1p3_crypt /target/var/lib/gdm3
-~ # chown root:sudo /target/.btrfs /target/.snapshots
-~ # chmod 0750 /target/.btrfs /target/.snapshots
 ```
 
 !!! info
