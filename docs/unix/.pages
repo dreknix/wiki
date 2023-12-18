@@ -4,7 +4,6 @@ nav:
   - bash: bash
   - Debian: debian
   - Filesystems: filesystems
-  - Proxmox: proxmox
   - systemd: systemd
   - Tools: tools
   - TrueNAS: truenas
