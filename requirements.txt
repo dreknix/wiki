@@ -1,5 +1,6 @@
 mkdocs-material>=9.5,<9.6
 mkdocs-awesome-pages-plugin
+mkdocs-file-filter-plugin
 mkdocs-git-committers-plugin-2
 mkdocs-git-revision-date-localized-plugin
 mkdocs-rss-plugin

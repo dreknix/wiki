@@ -161,6 +161,11 @@ plugins:
   - blog:
       enabled: true
       post_readtime: false
+  - file-filter:
+      filter_nav: true
+      exclude_tag:
+        - braindump
+        - draft
   - git-committers:
       enabled: !ENV [CI, false]
       repository: dreknix/wiki
