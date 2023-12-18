@@ -181,16 +181,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dreknix.github.io/wiki/unix/proxmox/index.html</loc>
-         <lastmod>2023-12-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://dreknix.github.io/wiki/unix/proxmox/terminal.html</loc>
-         <lastmod>2023-12-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://dreknix.github.io/wiki/unix/systemd/index.html</loc>
          <lastmod>2023-12-18</lastmod>
          <changefreq>daily</changefreq>
@@ -292,6 +282,16 @@
     </url>
     <url>
          <loc>https://dreknix.github.io/wiki/unix/virtualization/index.html</loc>
+         <lastmod>2023-12-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dreknix.github.io/wiki/unix/virtualization/proxmox/index.html</loc>
+         <lastmod>2023-12-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dreknix.github.io/wiki/unix/virtualization/proxmox/terminal.html</loc>
          <lastmod>2023-12-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
