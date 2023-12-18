@@ -9,11 +9,9 @@
 
 With the following layout booting a read-only snapshot is possible since all
 directories that needs to be writable are not part of the root file system
-subvolume.
+subvolume:
 
-Example of `/etc/fstab`:
-
-``` plaintext
+``` plaintext title="/etc/fstab"
 UUID=...   /                          btrfs   noatime,compress=zstd:3,subvol=@                          0   0
 UUID=...   /.snapshots                btrfs   noatime,compress=zstd:3,subvol=@snapshots                 0   0
 UUID=...   /home                      btrfs   noatime,compress=zstd:3,subvol=@home                      0   0
@@ -147,6 +145,22 @@ $ mount | grep " / "
 
 ### Overview
 
+Used tools:
+
+* [:fontawesome-brands-github: digint/btrbk](
+   https://github.com/digint/btrbk){target="_blank"}<br />
+  A simple perl script that can be started by crontab or systemd timers. The
+  path of snapshots can be configured. The tool supports also backup via SSH to
+  remote servers.
+* [:fontawesome-brands-github: Antynea/grub-btrfs](
+   https://github.com/Antynea/grub-btrfs){target="_blank"}<br />
+  Include btrfs snapshots as boot options in the Grub menu.
+* [:fontawesome-brands-github: kilobyte/compsize](
+   https://github.com/kilobyte/compsize){target="_blank"}<br />
+  Display the compression type and ratio in btrfs.
+
+Other:
+
 * [:fontawesome-brands-github: linuxmint/timeshift](
    https://github.com/linuxmint/timeshift){target="_blank"}<br />
   A snapshot and restore tool that is maintained by the Linux Mint project. The
@@ -156,22 +170,18 @@ $ mount | grep " / "
    https://github.com/openSUSE/snapper){target="_blank"}<br />
   A snapshot and restore tool that is maintained by openSUSE. The tool creates a
   `.snapshot` subvolume for each volume to store there the snapshots.
-* [:fontawesome-brands-github: digint/btrbk](
-   https://github.com/digint/btrbk){target="_blank"}<br />
-  A simple perl script that can be started by crontab or systemd timers. The
-  path of snapshots can be configured. The tool supports also backup via SSH to
-  remote servers.
-* [:fontawesome-brands-github: Antynea/grub-btrfs](
-   https://github.com/Antynea/grub-btrfs){target="_blank"}<br />
-  Include btrfs snapshots as boot options in the Grub menu
 
 ### btrbk
 
+``` console
+sudo apt install btrbk
+```
+
 #### Config
 
-The content of `/etc/btrbk/btrbk.conf`:
+Example configuration for btrbk and the rootfs subvolume:
 
-``` plaintext
+``` plaintext title="/etc/btrbk/btrbk.conf"
 # Enable transaction log
 transaction_log            /var/log/btrbk.log
 
@@ -225,6 +235,10 @@ FLAGS  COUNT  SIZE        FILE
 ```
 
 The list of available snapshots can be shown with `btrbk list snapshots`.
+
+### grub-btrfs
+
+:construction: **TODO**
 
 ### compsize
 

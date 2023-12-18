@@ -11,7 +11,8 @@ Highlight the columns `textwidth+0` and `textwidth+20`. The default value of
 vim.opt.colorcolumn = '+0,+20'
 ```
 
-**TODO** move to overrides or configs
+:construction: **TODO** move to overrides or configs
+
 ```lua
 -- LuaSnip uses rafamadriz/friendly-snippets
 -- extend in snipmate format

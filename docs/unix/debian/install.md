@@ -192,7 +192,7 @@ Create the new mount structure under `/target`:
 
     The flags `ssd` and `space_cache=v2` are enabled by default.
 
-    The flag `discard=async` is also not needed anymore. **TODO**
+    The flag `discard=async` is also not needed anymore. :construction: **TODO**
 
 Unmount the `btrfs` partition:
 
@@ -223,7 +223,7 @@ Edit the `/target/etc/fstab` file:
 !!! info
 
     Optional: the directory `/tmp` can be configured as `tmpfs`.
-    **TODO** Why systemd tmp.mount should currently not be used in Debian
+    :construction: **TODO** Why systemd tmp.mount should currently not be used in Debian
 
     Append the following line to `/target/etc/fstab`:
 
