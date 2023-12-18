@@ -1,6 +1,12 @@
 # btrfs
 
+btrfs combines a filesystem with copy-on-write principles with a logical volume
+manager. The btrfs file system is marked as stable in the Linux kernel since
+2013.
+
 [https://btrfs.readthedocs.io/](https://btrfs.readthedocs.io/){target="_blank"}
+
+
 
 ## Layout
 
@@ -89,22 +95,23 @@ First boot to the last working snapshot. If you have `grub-btrfs` installed, you
 can choose the snapshot from the boot menu. Or you can add the snapshot as
 a kernel option.
 
-Normally btrfs adds the following option the kernel (`update-grub2`):
+Normally btrfs adds the following option the kernel (during `update-grub2`):
 
 ``` plaintext
 rootflags=subvol=@
 ```
 
-To select a different snapshot change the option during boot (press `e`) to:
+To select a different snapshot change the option during boot (press `e` in the
+GRUB menue) to:
 
 ``` plaintext
 rootflags=subvolid=<id>
 ```
 
 Now the snapshot is used as rootfs. Due to the chosen layout even a read-only
-snapshot can be booted.
+snapshot (i.e., create by `btrbk`) can be booted.
 
-After the system was successfully booted check if the right snapshot is mounted:
+After the system was successfully booted, check if the right snapshot is mounted:
 
 ``` console
 $ mount | grep " / "
@@ -113,6 +120,9 @@ $ mount | grep " / "
 
 Even if the mount option is `rw` the snapshot can be still read-only.
 
+To make the current snapshot the default for the rootfs subvolume, the following
+steps must be performed.
+
 Change into `/.btrfs` and create a read-only snapshot of the current system:
 
 ``` console
@@ -120,7 +130,7 @@ $ sudo btrfs subvolume snapshot -r @ @snapshots/broken-rootfs
 Create a readonly snapshot of '@' in '@snapshots/broken-rootfs'
 ```
 
-Delete to broken root file system:
+Delete the broken root file system:
 
 ``` console
 $ sudo btrfs subvolume snapshot delete @
@@ -141,6 +151,19 @@ $ mount | grep " / "
 /dev/mapper/vda3_crypt on / type btrfs (rw,noatime,compress=zstd:3,discard=async,space_cache=v2,subvolid=282,subvol=/@)
 ```
 
+## Disable COW
+
+Copy-on-write should be disabled when large files are frequently changed by
+random write (i.e., databases or VM images). In btrfs the copy-on-write
+mechanism can be disabled by mounting with the option `nodatacow` or with
+`chattr +C` for directories or files.
+
+Most tools are aware of this problem and are disabling copy-on-write by default:
+
+* libvirt: https://listman.redhat.com/archives/libvir-list/2020-July/msg01377.html
+* systemd: https://github.com/systemd/systemd/blob/main/tmpfiles.d/journal-nocow.conf
+* ... :construction: **TODO**
+
 ## Tools
 
 ### Overview
@@ -154,7 +177,7 @@ Used tools:
   remote servers.
 * [:fontawesome-brands-github: Antynea/grub-btrfs](
    https://github.com/Antynea/grub-btrfs){target="_blank"}<br />
-  Include btrfs snapshots as boot options in the Grub menu.
+  Include btrfs snapshots as boot options in the GRUB menu.
 * [:fontawesome-brands-github: kilobyte/compsize](
    https://github.com/kilobyte/compsize){target="_blank"}<br />
   Display the compression type and ratio in btrfs.
