@@ -29,23 +29,24 @@ The status of the zram module can be queried with `systemctl status zramswap.ser
 The configuration and usage can be shown with `zramctl`:
 
 ``` console
-$ zramctl
+$ sudo zramctl
 NAME       ALGORITHM DISKSIZE DATA COMPR TOTAL STREAMS MOUNTPOINT
 /dev/zram0 lz4           256M   4K   63B   20K       8 [SWAP]
 ```
 
 Change the configuration parameters by editing the file `/etc/default/zramswap`:
 
-```
+``` plaintext
 ALGO=zstd
 PERCENT=25
 ```
 
 The will change the default compression algorithm from `lz4` to `zstd` and the
-default size from `256 MiB` to `25 %` of the total RAM.
+default size from `256 MiB` to `25 %` of the total RAM. The changes are only
+visible after rebooting the computer.
 
 ``` console
-$ zramctl
+$ sudo zramctl
 NAME       ALGORITHM DISKSIZE DATA COMPR TOTAL STREAMS MOUNTPOINT
 /dev/zram0 zstd          7.8G   4K   59B   20K       8 [SWAP]
 ```
@@ -54,7 +55,7 @@ If the computer has a configured swap file or swap partition, the zram swap gets
 a higher priority (`100`) instead of the default of `-2`:
 
 ``` console
-$ swapon
+$ sudo swapon
 NAME       TYPE      SIZE USED PRIO
 /dev/dm-2  partition   4G   0B   -2
 /dev/zram0 partition 7.8G   0B  100

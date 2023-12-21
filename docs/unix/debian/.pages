@@ -1,3 +1,4 @@
 nav:
   - index.md
   - Install: install.md
+  - First Setup: tweak.md
