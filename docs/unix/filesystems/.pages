@@ -1,4 +1,4 @@
 nav:
-  - Overview: index.md
+  - index.md
   - btrfs: btrfs.md
   - LUKS: luks.md

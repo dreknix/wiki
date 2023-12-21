@@ -1,6 +1,6 @@
 title: UNIX
 nav:
-  - Overview: index.md
+  - index.md
   - bash: bash
   - Debian: debian
   - Filesystems: filesystems
