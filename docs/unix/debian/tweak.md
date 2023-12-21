@@ -109,6 +109,17 @@ See the blog article about [zram](../../blog/posts/zram-and-swap.md).
 * power button
 * time outs
 
+``` console
+gsettings set org.gnome.settings-daemon.plugins.power ambient-enabled false
+gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type 'nothing'
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
+
+gsettings set org.gnome.desktop.session idle-delay 600
+
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+```
+
 ## Install additional Packages
 
 ``` console
