@@ -123,7 +123,7 @@ gsettings set org.gnome.desktop.interface show-battery-percentage true
 ## Install additional Packages
 
 ``` console
-sudo apt install lshw
+sudo apt install curl git lshw htop
 ```
 
 :construction: **TODO** merge this with Ansible
