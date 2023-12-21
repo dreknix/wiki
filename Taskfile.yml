@@ -15,6 +15,14 @@ tasks:
     cmds:
       - mkdocs serve
 
+  offline:
+    desc: Build offline version
+    env:
+      OFFLINE: true
+      CI: true
+    cmds:
+      - mkdocs build --site-dir site_offline
+
   update:
     desc: Update all Python packages including Mkdocs Material
     cmds:
