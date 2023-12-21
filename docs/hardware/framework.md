@@ -49,4 +49,4 @@ wget -r \
 sudo mkdir /lib/firmware/amdgpu/
 sudo mv *.bin /lib/firmware/amdgpu/
 sudo update-initramfs -c -k all
-``
+```
