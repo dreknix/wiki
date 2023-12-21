@@ -63,6 +63,9 @@ theme:
     # - navigation.expand
     - navigation.indexes
     - navigation.instant
+    - navigation.instant.progress
+    - navigation.prune
+    # - navigation.sections
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.top
@@ -70,9 +73,9 @@ theme:
     - search.highlight
     - search.share
     - search.suggest
-    # # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#anchor-following
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#anchor-following
     - toc.follow
-    # # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-integration
+    # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-integration
     # # - toc.integrate
   icon:
     logo: material/library
