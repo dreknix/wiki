@@ -27,7 +27,7 @@
     
     
       
-        <title>Tweak the Fresh Installation - dreknix - Documentation</title>
+        <title>First Setup - dreknix - Documentation</title>
       
     
     
@@ -287,7 +287,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tweak the Fresh Installation
+              First Setup
             
           </span>
         </div>
@@ -489,10 +489,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../index.html" class="md-tabs__link">
           
   
@@ -1046,6 +1048,8 @@
       
   
   
+    
+  
   
   
     
@@ -1078,12 +1082,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           
@@ -1105,7 +1109,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             UNIX
@@ -1165,6 +1169,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1176,32 +1182,222 @@
       
         
       
-    
-    
-    
-    
-      
+        
       
     
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
-  
-  
-    <a href="index.html" class="md-nav__link">
-      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="index.html" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Debian
   </span>
   
 
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Debian
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="install.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install
+  </span>
   
 
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    First Setup
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tweak.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    First Setup
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#btrfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      btrfs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-uuid-in-etcfstab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use UUID in /etc/fstab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#luks" class="md-nav__link">
+    <span class="md-ellipsis">
+      LUKS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-ssh-for-unlocking-luks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable SSH for unlocking LUKS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plymouth" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plymouth
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-zram" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure zram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hibernation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hibernation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-power-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Power Settings
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-additional-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install additional Packages
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finalize-with-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finalize with Ansible
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -2004,6 +2200,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#enable-ssh-for-unlocking-luks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enable SSH for unlocking LUKS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#plymouth" class="md-nav__link">
     <span class="md-ellipsis">
       Plymouth
@@ -2016,6 +2221,24 @@
   <a href="#configure-zram" class="md-nav__link">
     <span class="md-ellipsis">
       Configure zram
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hibernation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hibernation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-power-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure Power Settings
     </span>
   </a>
   
@@ -2071,19 +2294,59 @@
 <p>Get with <code>sudo blkid</code> the UUIDs of each partition and use the UUID instead of
 the partition device name.</p>
 <h2 id="luks">LUKS<a class="headerlink" href="#luks" title="Permanent link">&#128279;</a></h2>
-<p><img alt="🚧" class="twemoji" src="../../assets/external/cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f6a7.svg" title=":construction:"> <strong>TODO</strong> unlock swap partition with file</p>
+<p>Unlock swap partition with key file instead of entering passphrase twice.</p>
+<p>Create key file with 8196 bytes of random data:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">sudo dd if=/dev/random bs=1024 count=8 of=/etc/cryptsetup-keys.d/nvme0n1p4_crypt.key</span>
+</span></code></pre></div>
+<p>Add key file to LUKS disk encryption:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">sudo cryptsetup luksAddKey /dev/nvme0n1p4 /etc/cryptsetup-keys.d/nvme0n1p4_crypt.key</span>
+</span></code></pre></div>
+<p>Add key file to <code>/etc/crypttab</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nvme0n1p4_crypt UUID=415d02ee-fa95-41ba-9f18-f47df34dea0e /etc/cryptsetup-keys.d/nvme0n1p4_crypt.key luks,swap,discard
+</span></code></pre></div>
+<p>The key file must be present during boot time, so it must be included into the
+initramfs image. Therefore, the path <code>/etc/cryptsetup-keys.d/</code> must be included
+in the file <code>/etc/cryptsetup-initramfs/conf-hook</code>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>KEYFILE_PATTERN=&quot;/etc/cryptsetup-keys.d/*.key&quot;
+</span></code></pre></div>
+<p>Since now the key file is part of the initramfs image, the permissions need to
+be set. Therefore, create a file <code>/etc/initramfs-tools/conf.d/umask</code> with the
+following content:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>UMASK=0077
+</span></code></pre></div>
+<p>Create the initramfs image:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo update-initramfs -u
+</span></code></pre></div>
+<p>Reboot the computer and test, if the swap partition is available.</p>
+<h2 id="enable-ssh-for-unlocking-luks">Enable SSH for unlocking LUKS<a class="headerlink" href="#enable-ssh-for-unlocking-luks" title="Permanent link">&#128279;</a></h2>
+<p><img alt="🚧" class="twemoji" src="../../assets/external/cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f6a7.svg" title=":construction:"> <strong>TODO</strong></p>
 <h2 id="plymouth">Plymouth<a class="headerlink" href="#plymouth" title="Permanent link">&#128279;</a></h2>
 <p>Activate plymouth during boot for LUKS prompt.</p>
 <p>Add <code>splash</code> to <code>GRUB_CMDLINE_LINUX_DEFAULT</code>:</p>
-<div class="language-text highlight"><span class="filename">/etc/default/grub</span><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
+<div class="language-text highlight"><span class="filename">/etc/default/grub</span><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
 </span></code></pre></div>
 <p>Update GRUB configuration:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">sudo update-grub2</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="go">sudo update-grub2</span>
 </span></code></pre></div>
 <h2 id="configure-zram">Configure zram<a class="headerlink" href="#configure-zram" title="Permanent link">&#128279;</a></h2>
+<p>See the blog article about <a href="../../blog/2023/12/11/zram-and-swap.html">zram</a>.</p>
+<h2 id="hibernation">Hibernation<a class="headerlink" href="#hibernation" title="Permanent link">&#128279;</a></h2>
 <p><img alt="🚧" class="twemoji" src="../../assets/external/cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f6a7.svg" title=":construction:"> <strong>TODO</strong></p>
+<ul>
+<li>disable secure boot</li>
+<li><code>cat /sys/power/state</code></li>
+<li><code>/etc/initramfs-tools/conf.d/resume</code></li>
+<li><code>systemctl hibernate</code></li>
+</ul>
+<h2 id="configure-power-settings">Configure Power Settings<a class="headerlink" href="#configure-power-settings" title="Permanent link">&#128279;</a></h2>
+<p><img alt="🚧" class="twemoji" src="../../assets/external/cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f6a7.svg" title=":construction:"> <strong>TODO</strong></p>
+<ul>
+<li>lid close</li>
+<li>power button</li>
+<li>time outs</li>
+</ul>
 <h2 id="install-additional-packages">Install additional Packages<a class="headerlink" href="#install-additional-packages" title="Permanent link">&#128279;</a></h2>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="go">sudo apt install lshw</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="go">sudo apt install lshw</span>
 </span></code></pre></div>
 <p><img alt="🚧" class="twemoji" src="../../assets/external/cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f6a7.svg" title=":construction:"> <strong>TODO</strong> merge this with Ansible</p>
 <h2 id="finalize-with-ansible">Finalize with Ansible<a class="headerlink" href="#finalize-with-ansible" title="Permanent link">&#128279;</a></h2>
@@ -2110,7 +2373,7 @@ the partition device name.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 18, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 21, 2023</span>
   </span>
 
     
