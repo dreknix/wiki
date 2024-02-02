@@ -1,0 +1,106 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "dreknix - Documentation",
+    "home_page_url": "https://dreknix.github.io/wiki/",
+    "feed_url": "https://dreknix.github.io/wiki/feed_json_updated.json",
+    "description": null,
+    "icon": null,
+    "authors": [
+        {
+            "name": "dreknix"
+        }
+    ],
+    "language": "en",
+    "items": [
+        {
+            "id": "https://dreknix.github.io/wiki/blog/2023/12/11/zram-and-swap.html",
+            "url": "https://dreknix.github.io/wiki/blog/2023/12/11/zram-and-swap.html",
+            "title": "zram and Swap",
+            "content_html": "<h1>zram and Swap</h1>\n<p>The zram kernel module creates compressed RAM-based block devices named\n<code>/dev/zramX</code>. These zram devices allow fast I/O and the compression provides\nRAM space savings.</p>",
+            "image": null,
+            "date_modified": "2023-12-21T13:56:04+00:00",
+            "authors": [],
+            "tags": [
+                "Tools",
+                "UNIX"
+            ]
+        },
+        {
+            "id": "https://dreknix.github.io/wiki/blog/2023/12/04/qemu-and-windows-keys.html",
+            "url": "https://dreknix.github.io/wiki/blog/2023/12/04/qemu-and-windows-keys.html",
+            "title": "QEMU and Windows Keys",
+            "content_html": "<h1>QEMU and Windows Keys</h1>\n<p>OEM Windows keys are often stored in the software licensing (SLIC) or Microsoft\ndata management (MSDM) table. When a key is stored the unattended installation\ncan use a generic key and the stored key is than used and activated. The usage\nof such a key can be tested with QEMU/libvirt.</p>",
+            "image": null,
+            "date_modified": "2023-12-04T14:06:14+00:00",
+            "authors": [],
+            "tags": [
+                "Tools",
+                "Windows"
+            ]
+        },
+        {
+            "id": "https://dreknix.github.io/wiki/blog/2023/11/21/enable-gx-in-nvchad.html",
+            "url": "https://dreknix.github.io/wiki/blog/2023/11/21/enable-gx-in-nvchad.html",
+            "title": "Enable gx in NvChad",
+            "content_html": "<h1>Enable <code>gx</code> in NvChad</h1>\n<p>The command <code>gx</code> opens the filename under the the cursor with <code>vim.ui.open()</code>\n(see <a href=\"https://neovim.io/doc/user/pi_netrw.html#netrw-gx\"><code>:help netrw-gx</code></a>{target=\"_blank\"}).\nThen handling is provided by the internal <code>netrw</code> plugin. This plugin is\ndisabled when using <a href=\"../../tools/vi/neovim/index.md\">NvChad</a>.</p>",
+            "image": null,
+            "date_modified": "2023-11-22T14:27:32+00:00",
+            "authors": [],
+            "tags": [
+                "Neovim"
+            ]
+        },
+        {
+            "id": "https://dreknix.github.io/wiki/blog/2023/11/20/finding-glyph-in-fonts.html",
+            "url": "https://dreknix.github.io/wiki/blog/2023/11/20/finding-glyph-in-fonts.html",
+            "title": "Finding Glyph in Fonts",
+            "content_html": "<h1>Finding Glyph in Fonts</h1>\n<p>Sometimes it is necessary to find fonts that contain a specific glyph. The tool\n<a href=\"https://ctan.org/pkg/albatross\">albatross</a>{target=\"_blank\"} can be used for\nthat task.</p>",
+            "image": null,
+            "date_modified": "2023-11-22T14:27:32+00:00",
+            "authors": [],
+            "tags": [
+                "LaTeX",
+                "Tools"
+            ]
+        },
+        {
+            "id": "https://dreknix.github.io/wiki/blog/2023/11/20/imap-based-authentication-in-php.html",
+            "url": "https://dreknix.github.io/wiki/blog/2023/11/20/imap-based-authentication-in-php.html",
+            "title": "IMAP-based Authentication in PHP",
+            "content_html": "<h1>IMAP-based Authentication in PHP</h1>\n<p>When using IMAP-based user authentication in applications written in PHP (i.e.\nNextcloud, DokuWiki, etc.), debugging with a test script is essential. The\nidea of using <code>curl</code> for authentication, is based on the external user\nauthentication plugin (see: <a href=\"https://github.com/nextcloud/user_external\">:fontawesome-brands-github: nextcloud/user_external</a>{:target=\"_blank\"}) of Nextcloud.</p>",
+            "image": null,
+            "date_modified": "2023-11-22T14:27:32+00:00",
+            "authors": [],
+            "tags": [
+                "Tools",
+                "UNIX"
+            ]
+        },
+        {
+            "id": "https://dreknix.github.io/wiki/blog/2023/11/22/using-spice-with-truenas-scale-cobia-2310.html",
+            "url": "https://dreknix.github.io/wiki/blog/2023/11/22/using-spice-with-truenas-scale-cobia-2310.html",
+            "title": "Using SPICE with TrueNAS Scale Cobia (23.10)",
+            "content_html": "<h1>Using SPICE with TrueNAS Scale Cobia (23.10)</h1>\n<p>TrueNAS Scale Cobia (23.10) disabled the option to access VM displays via VNC.\nThe connection method is changed to\n<a href=\"https://www.spice-space.org/\">SPICE</a>{target=\"_blank\"}.</p>",
+            "image": null,
+            "date_modified": "2023-11-22T14:27:32+00:00",
+            "authors": [],
+            "tags": [
+                "Tools",
+                "UNIX"
+            ]
+        },
+        {
+            "id": "https://dreknix.github.io/wiki/blog/2023/11/20/using-tex-files-in-vi.html",
+            "url": "https://dreknix.github.io/wiki/blog/2023/11/20/using-tex-files-in-vi.html",
+            "title": "Using TeX files in Vi",
+            "content_html": "<h1>Using TeX files in Vi</h1>\n<p>In Vim/Neovim the filetype plugin uses three different type for different TeX\nflavors (see <a href=\"https://neovim.io/doc/user/filetype.html#ft-tex-plugin\"><code>:help ft-tex-plugin</code></a>{target=\"_blank\"}).</p>",
+            "image": null,
+            "date_modified": "2023-11-22T12:40:54+00:00",
+            "authors": [],
+            "tags": [
+                "LaTeX",
+                "Neovim"
+            ]
+        }
+    ]
+}
