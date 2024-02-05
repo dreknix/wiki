@@ -83,7 +83,7 @@ sudo lvm lvs
 
 Mount the directory structure:
 
-```
+``` console
 mkdir /target
 sudo mount /dev/XXXXX /target
 sudo mount /dev/XXXXX /target/boot
@@ -91,9 +91,28 @@ sudo mount /dev/XXXXX /target/boot/efi
 ...
 ```
 
-TODO: mount proc/sys/dev
+In order to use `grub-install` or other tools, the directories `/proc`, `/dev`,
+and `/sys` must be mounted:
 
-TODO: add hint for unmounting
+``` console
+sudo mount -t proc -o nosuid,nodev,noexec proc /target/proc
+sudo mount --rbind --make-rslave /dev /target/dev
+sudo mount --rbind --make-rslave /sys /target/sys
+```
+
+!!! info
+
+    Unmounting the file systems is simple. Only the `/dev` and `/sys` file
+    system must be unmounted with the option `--recursive`.
+
+    ``` console
+    sudo umount --recursive /target/sys
+    sudo umount --recursive /target/dev
+    sudo umount /target/proc
+    sudo umount /target/boot/efi
+    sudo umount /target/boot
+    sudo umount /target
+    ```
 
 ## Rescue
 
@@ -104,6 +123,8 @@ sudo chroot /target /bin/bash -il
 ```
 
 ### GRUB
+
+**TODO**
 
 * `update-grub`
 * `grub-install`
