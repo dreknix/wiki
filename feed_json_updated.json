@@ -13,6 +13,19 @@
     "language": "en",
     "items": [
         {
+            "id": "https://dreknix.github.io/wiki/blog/2024/02/15/brltty-and-generic-serial-converter.html",
+            "url": "https://dreknix.github.io/wiki/blog/2024/02/15/brltty-and-generic-serial-converter.html",
+            "title": "brltty and Generic Serial Converter",
+            "content_html": "<h1>brltty and Generic Serial Converter</h1>\n<p>Distributions based on Ubuntu have\n<a href=\"https://brltty.app/\">brltty</a>{target=\"_blank\"} enabled by default. Some braille\ndisplays do not change the ids of those converters and therefore brltty prevent\nthe serial converter showing up as a serial device under <code>/dev/ttyUSBx</code>.</p>",
+            "image": null,
+            "date_modified": "2024-02-15T12:40:27+00:00",
+            "authors": [],
+            "tags": [
+                "Tools",
+                "UNIX"
+            ]
+        },
+        {
             "id": "https://dreknix.github.io/wiki/blog/2023/12/11/zram-and-swap.html",
             "url": "https://dreknix.github.io/wiki/blog/2023/12/11/zram-and-swap.html",
             "title": "zram and Swap",

@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dreknix.github.io/wiki/blog/2024/02/15/brltty-and-generic-serial-converter.html</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dreknix.github.io/wiki/blog/2023/11/21/enable-gx-in-nvchad.html</loc>
          <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
@@ -62,6 +67,11 @@
     </url>
     <url>
          <loc>https://dreknix.github.io/wiki/ha/videos.html</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dreknix.github.io/wiki/ha/devices/ulanzi_tc001.html</loc>
          <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -392,6 +402,11 @@
     </url>
     <url>
          <loc>https://dreknix.github.io/wiki/writing/mkdocs/task.html</loc>
+         <lastmod>2024-02-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dreknix.github.io/wiki/blog/archive/2024.html</loc>
          <lastmod>2024-02-15</lastmod>
          <changefreq>daily</changefreq>
     </url>
