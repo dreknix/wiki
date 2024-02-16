@@ -1,3 +1,3 @@
-# resolvectl
+# localectl
 
-* [resolvectl(1)](https://manpages.debian.org/resolvectl.1.en.html){target="_blank"}
+* [localectl(1)](https://manpages.debian.org/localectl.1.en.html){target="_blank"}
