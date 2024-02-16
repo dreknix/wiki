@@ -9,8 +9,9 @@ categories:
 
 Distributions based on Ubuntu have
 [brltty](https://brltty.app/){target="_blank"} enabled by default. Some braille
-displays do not change the ids of those converters and therefore brltty prevent
-the serial converter showing up as a serial device under `/dev/ttyUSBx`.
+displays do not change the ids of those converters and therefore brltty claims
+the serial device and no device file `/dev/ttyUSBx` is created. In the following
+some solutions to this problem are presented.
 
 <!-- more -->
 
@@ -45,10 +46,10 @@ $ lsusb | grep "serial"
 Bus 001 Device 037: ID 1a86:7523 QinHeng Electronics CH340 serial converter
 ```
 
-In the log files the following can be found:
+In the kernel logs the following can be found:
 
 ``` console
-$ sudo journalctl -b
+$ sudo journalctl -b -t kernel
 ...
 Feb 10 10:00:00 chumbucket kernel: ch341 1-3:1.0: device disconnected
 Feb 10 10:00:00 chumbucket kernel: usb 1-3: new full-speed USB device number 37 using xhci_hcd
@@ -67,11 +68,11 @@ $ ls -l /dev/ttyUSB0
 crw-re---- 1 root dialout 188, 0 Feb 10 10:00 /dev/ttyUSB0
 ```
 
-If brltty is interfering the device file is not existing and in the log files
-the following lines show that brltty is catching the serial device:
+If brltty claims the serial device no device file is created and in the kernel
+logs the following lines show that brltty is catching the serial device:
 
 ``` console
-$ sudo journalctl -b
+$ sudo journalctl -b -t kernel
 ...
 Feb 10 12:07:44 chumbucket kernel: usb 1-3: usbfs: interface 0 claimed by ch341 while 'brltty' sets config #1
 Feb 10 12:07:44 chumbucket kernel: ch341-uart ttyUSB0: ch341-uart converter now disconnected from ttyUSB0
@@ -88,13 +89,18 @@ ENV{PRODUCT}=="1a86/7523/*", ENV{BRLTTY_BRAILLE_DRIVER}="bm", GOTO="brltty_usb_r
 ```
 
 Here every chipset with vendor id `1a86` and product id `7523` will be handled
-as braille display. You can comment out these lines or adapt the patch of the
+as a braille display. You can comment out these lines or adapt the patch of the
 above bug description. In order to change the rules copy the file into
 `/etc/udev/rules.d`:
 
 ``` console
 cp /usr/lib/udev/rules.d/85-brltty.rules /etc/udev/rules.d/85-brltty.rules
 ```
+
+!!! info
+
+    The directory `/etc/udev/rules.d` takes precedence over
+    `/usr/lib/udev/rules.d` and is not changed by brltty package updates.
 
 And change the lines into:
 
@@ -107,8 +113,8 @@ And change the lines into:
 ENV{PRODUCT}=="1a86/7523/*", ATTRS{idVendor}=="1a40", ATTRS{idProduct}=="0101", ENV{BRLTTY_BRAILLE_DRIVER}="bm", GOTO="brltty_usb_run"
 ```
 
-Now only a specific braille display will be used from brltty. All other `ch341`
-serial converter will be ignored.
+Now only a specific braille display will be claimed from brltty. All other
+serial converter with chipset `ch341` will be ignored.
 
 The changed rule set must be loaded via udev:
 
