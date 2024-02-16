@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Fri, 16 Feb 2024 16:10:18 -0000</pubDate>
-    <lastBuildDate>Fri, 16 Feb 2024 16:10:18 -0000</lastBuildDate>
+    <pubDate>Fri, 16 Feb 2024 16:12:36 -0000</pubDate>
+    <lastBuildDate>Fri, 16 Feb 2024 16:12:36 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -43,7 +43,7 @@ mechanisms behind the scenes. Before modern concepts like cgroups etc. are
 described, the main idea behind bundling an execution environment is introduced
 by using a chroot environment.&lt;/p&gt;</description>
       <link>https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html</link>
-      <pubDate>Fri, 16 Feb 2024 16:09:47 +0000</pubDate>
+      <pubDate>Fri, 16 Feb 2024 16:12:10 +0000</pubDate>
       <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
       
       <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html</guid>
