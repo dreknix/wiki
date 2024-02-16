@@ -60,7 +60,7 @@ command [strace(1)](https://manpages.debian.org/strace.1.en.html){target="_blank
 can be used. This commands provides a trace of system calls.
 
 ``` console
-$ sudo chroot target
+$ sudo strace chroot target
 ...
 chroot("target")                        = 0
 chdir("/")                              = 0
@@ -140,7 +140,7 @@ In the static executable the function `puts` is present and can be called by
 existing address:
 
 ``` console
-nm app | grep " puts"
+$ nm app | grep " puts"
 000000000040c180 W puts
 ```
 
@@ -148,7 +148,7 @@ When omitting the option `-static` the function `puts` is not part of the
 executable:
 
 ``` console
-nm app | grep " puts"
+$ nm app | grep " puts"
                  U puts@GLIBC_2.2.5
 ```
 
