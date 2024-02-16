@@ -181,7 +181,7 @@ handling shared libraries
     `linux-vdso` is a virtual dynamic shared object library that is
     automatically mapped by the kernel into the address space of all programs.
     For more information see [vdso(7)](
-    https://manpages.debian.org/vdso.7.en.html){target="_blank"}
+    https://manpages.debian.org/vdso.7.en.html){target="_blank"}.
 
 ``` console
 $ mkdir target/lib64
