@@ -16,7 +16,7 @@
             "id": "https://dreknix.github.io/wiki/blog/2024/02/15/brltty-and-generic-serial-converter.html",
             "url": "https://dreknix.github.io/wiki/blog/2024/02/15/brltty-and-generic-serial-converter.html",
             "title": "brltty and Generic Serial Converter",
-            "content_html": "<h1>brltty and Generic Serial Converter</h1>\n<p>Distributions based on Ubuntu have\n<a href=\"https://brltty.app/\">brltty</a>{target=\"_blank\"} enabled by default. Some braille\ndisplays do not change the ids of those converters and therefore brltty prevent\nthe serial converter showing up as a serial device under <code>/dev/ttyUSBx</code>.</p>",
+            "content_html": "<h1>brltty and Generic Serial Converter</h1>\n<p>Distributions based on Ubuntu have\n<a href=\"https://brltty.app/\">brltty</a>{target=\"_blank\"} enabled by default. Some braille\ndisplays do not change the ids of those converters and therefore brltty claims\nthe serial device and no device file <code>/dev/ttyUSBx</code> is created. In the following\nsome solutions to this problem are presented.</p>",
             "image": null,
             "date_published": "2024-02-15T00:00:00+00:00",
             "authors": [],

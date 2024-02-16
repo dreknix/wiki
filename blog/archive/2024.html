@@ -1298,8 +1298,9 @@
     <h2 id="brltty-and-generic-serial-converter"><a class="toclink" href="../2024/02/15/brltty-and-generic-serial-converter.html">brltty and Generic Serial Converter</a></h2>
 <p>Distributions based on Ubuntu have
 <a href="https://brltty.app/" target="_blank">brltty</a> enabled by default. Some braille
-displays do not change the ids of those converters and therefore brltty prevent
-the serial converter showing up as a serial device under <code>/dev/ttyUSBx</code>.</p>
+displays do not change the ids of those converters and therefore brltty claims
+the serial device and no device file <code>/dev/ttyUSBx</code> is created. In the following
+some solutions to this problem are presented.</p>
 
     <nav class="md-post__action">
       <a href="../2024/02/15/brltty-and-generic-serial-converter.html">

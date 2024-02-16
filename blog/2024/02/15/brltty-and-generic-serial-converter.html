@@ -1271,8 +1271,9 @@
 <h1 id="brltty-and-generic-serial-converter">brltty and Generic Serial Converter<a class="headerlink" href="#brltty-and-generic-serial-converter" title="Permanent link">&#128279;</a></h1>
 <p>Distributions based on Ubuntu have
 <a href="https://brltty.app/" target="_blank">brltty</a> enabled by default. Some braille
-displays do not change the ids of those converters and therefore brltty prevent
-the serial converter showing up as a serial device under <code>/dev/ttyUSBx</code>.</p>
+displays do not change the ids of those converters and therefore brltty claims
+the serial device and no device file <code>/dev/ttyUSBx</code> is created. In the following
+some solutions to this problem are presented.</p>
 <!-- more -->
 
 <p>In early versions of brltty several generic serial converters (e.g., <code>cp210x</code>)
@@ -1294,8 +1295,8 @@ other generic serial converters that are disabled by brltty.</p>
 <div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>lsusb<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;serial&quot;</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="go">Bus 001 Device 037: ID 1a86:7523 QinHeng Electronics CH340 serial converter</span>
 </span></code></pre></div>
-<p>In the log files the following can be found:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>sudo<span class="w"> </span>journalctl<span class="w"> </span>-b
+<p>In the kernel logs the following can be found:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>sudo<span class="w"> </span>journalctl<span class="w"> </span>-b<span class="w"> </span>-t<span class="w"> </span>kernel
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">...</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">Feb 10 10:00:00 chumbucket kernel: ch341 1-3:1.0: device disconnected</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="go">Feb 10 10:00:00 chumbucket kernel: usb 1-3: new full-speed USB device number 37 using xhci_hcd</span>
@@ -1310,9 +1311,9 @@ other generic serial converters that are disabled by brltty.</p>
 <div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="gp">$ </span>ls<span class="w"> </span>-l<span class="w"> </span>/dev/ttyUSB0
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">crw-re---- 1 root dialout 188, 0 Feb 10 10:00 /dev/ttyUSB0</span>
 </span></code></pre></div>
-<p>If brltty is interfering the device file is not existing and in the log files
-the following lines show that brltty is catching the serial device:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>sudo<span class="w"> </span>journalctl<span class="w"> </span>-b
+<p>If brltty claims the serial device no device file is created and in the kernel
+logs the following lines show that brltty is catching the serial device:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>sudo<span class="w"> </span>journalctl<span class="w"> </span>-b<span class="w"> </span>-t<span class="w"> </span>kernel
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="go">...</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="go">Feb 10 12:07:44 chumbucket kernel: usb 1-3: usbfs: interface 0 claimed by ch341 while &#39;brltty&#39; sets config #1</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="go">Feb 10 12:07:44 chumbucket kernel: ch341-uart ttyUSB0: ch341-uart converter now disconnected from ttyUSB0</span>
@@ -1325,11 +1326,16 @@ the following lines show that brltty is catching the serial device:</p>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>ENV{PRODUCT}==&quot;1a86/7523/*&quot;, ENV{BRLTTY_BRAILLE_DRIVER}=&quot;bm&quot;, GOTO=&quot;brltty_usb_run&quot;
 </span></code></pre></div>
 <p>Here every chipset with vendor id <code>1a86</code> and product id <code>7523</code> will be handled
-as braille display. You can comment out these lines or adapt the patch of the
+as a braille display. You can comment out these lines or adapt the patch of the
 above bug description. In order to change the rules copy the file into
 <code>/etc/udev/rules.d</code>:</p>
 <div class="language-console highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">cp /usr/lib/udev/rules.d/85-brltty.rules /etc/udev/rules.d/85-brltty.rules</span>
 </span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The directory <code>/etc/udev/rules.d</code> takes precedence over
+<code>/usr/lib/udev/rules.d</code> and is not changed by brltty package updates.</p>
+</div>
 <p>And change the lines into:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a># Device: 1A86:7523
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a># Generic Identifier
@@ -1338,8 +1344,8 @@ above bug description. In order to change the rules copy the file into
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a># Baum [NLS eReader Zoomax (20 cells)]
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>ENV{PRODUCT}==&quot;1a86/7523/*&quot;, ATTRS{idVendor}==&quot;1a40&quot;, ATTRS{idProduct}==&quot;0101&quot;, ENV{BRLTTY_BRAILLE_DRIVER}=&quot;bm&quot;, GOTO=&quot;brltty_usb_run&quot;
 </span></code></pre></div>
-<p>Now only a specific braille display will be used from brltty. All other <code>ch341</code>
-serial converter will be ignored.</p>
+<p>Now only a specific braille display will be claimed from brltty. All other
+serial converter with chipset <code>ch341</code> will be ignored.</p>
 <p>The changed rule set must be loaded via udev:</p>
 <div class="language-console highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="go">sudo udevadm control --reload &amp;&amp; sudo udevadm trigger</span>
 </span></code></pre></div>
@@ -1368,7 +1374,7 @@ serial converter will be ignored.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 15, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2024</span>
   </span>
 
     

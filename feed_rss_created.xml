@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Thu, 15 Feb 2024 12:40:57 -0000</pubDate>
-    <lastBuildDate>Thu, 15 Feb 2024 12:40:57 -0000</lastBuildDate>
+    <pubDate>Fri, 16 Feb 2024 08:37:35 -0000</pubDate>
+    <lastBuildDate>Fri, 16 Feb 2024 08:37:35 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -40,8 +40,9 @@
       <description>&lt;h1&gt;brltty and Generic Serial Converter&lt;/h1&gt;
 &lt;p&gt;Distributions based on Ubuntu have
 &lt;a href=&#34;https://brltty.app/&#34;&gt;brltty&lt;/a&gt;{target=&#34;_blank&#34;} enabled by default. Some braille
-displays do not change the ids of those converters and therefore brltty prevent
-the serial converter showing up as a serial device under &lt;code&gt;/dev/ttyUSBx&lt;/code&gt;.&lt;/p&gt;</description>
+displays do not change the ids of those converters and therefore brltty claims
+the serial device and no device file &lt;code&gt;/dev/ttyUSBx&lt;/code&gt; is created. In the following
+some solutions to this problem are presented.&lt;/p&gt;</description>
       <link>https://dreknix.github.io/wiki/blog/2024/02/15/brltty-and-generic-serial-converter.html</link>
       <pubDate>Thu, 15 Feb 2024 00:00:00 +0000</pubDate>
       <source url="https://dreknix.github.io/wiki/feed_rss_created.xml">dreknix - Documentation</source>
