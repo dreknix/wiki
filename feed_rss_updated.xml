@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Fri, 16 Feb 2024 08:37:35 -0000</pubDate>
-    <lastBuildDate>Fri, 16 Feb 2024 08:37:35 -0000</lastBuildDate>
+    <pubDate>Fri, 16 Feb 2024 11:23:41 -0000</pubDate>
+    <lastBuildDate>Fri, 16 Feb 2024 11:23:41 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -24,6 +24,31 @@
     
 
     
+    
+    <item>
+      <title>Containers 101 - chroot (Part I)</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      <category>UNIX</category>
+        
+      
+      <description>&lt;h1&gt;Containers 101 - chroot (Part I)&lt;/h1&gt;
+&lt;p&gt;In this series the concept of containerization is presented by looking at the
+mechanisms behind the scenes. Before modern concepts like cgroups etc. are
+described, the main idea behind bundling an execution environment is introduced
+by using a chroot environment.&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html</link>
+      <pubDate>Fri, 16 Feb 2024 10:45:46 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html</guid>
+      
+    </item>
     
     <item>
       <title>brltty and Generic Serial Converter</title>

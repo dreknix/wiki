@@ -13,6 +13,19 @@
     "language": "en",
     "items": [
         {
+            "id": "https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html",
+            "url": "https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html",
+            "title": "Containers 101 - chroot (Part I)",
+            "content_html": "<h1>Containers 101 - chroot (Part I)</h1>\n<p>In this series the concept of containerization is presented by looking at the\nmechanisms behind the scenes. Before modern concepts like cgroups etc. are\ndescribed, the main idea behind bundling an execution environment is introduced\nby using a chroot environment.</p>",
+            "image": null,
+            "date_modified": "2024-02-16T10:45:46+00:00",
+            "authors": [],
+            "tags": [
+                "Containers",
+                "UNIX"
+            ]
+        },
+        {
             "id": "https://dreknix.github.io/wiki/blog/2024/02/15/brltty-and-generic-serial-converter.html",
             "url": "https://dreknix.github.io/wiki/blog/2024/02/15/brltty-and-generic-serial-converter.html",
             "title": "brltty and Generic Serial Converter",

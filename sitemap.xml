@@ -21,6 +21,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html</loc>
+         <lastmod>2024-02-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://dreknix.github.io/wiki/blog/2023/11/21/enable-gx-in-nvchad.html</loc>
          <lastmod>2024-02-16</lastmod>
          <changefreq>daily</changefreq>
@@ -416,12 +421,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://dreknix.github.io/wiki/blog/category/tools.html</loc>
+         <loc>https://dreknix.github.io/wiki/blog/category/containers.html</loc>
          <lastmod>2024-02-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://dreknix.github.io/wiki/blog/category/unix.html</loc>
+         <lastmod>2024-02-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://dreknix.github.io/wiki/blog/category/tools.html</loc>
          <lastmod>2024-02-16</lastmod>
          <changefreq>daily</changefreq>
     </url>

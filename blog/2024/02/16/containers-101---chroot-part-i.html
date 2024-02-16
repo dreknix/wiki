@@ -10,11 +10,11 @@
         <meta name="author" content="dreknix">
       
       
-        <link rel="canonical" href="https://dreknix.github.io/wiki/blog/2023/11/20/using-tex-files-in-vi.html">
+        <link rel="canonical" href="https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html">
       
       
+        <link rel="prev" href="../15/brltty-and-generic-serial-converter.html">
       
-        <link rel="next" href="imap-based-authentication-in-php.html">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
@@ -25,7 +25,7 @@
     
     
       
-        <title>Using TeX files in Vi - dreknix - Documentation</title>
+        <title>Containers 101 - chroot (Part I) - dreknix - Documentation</title>
       
     
     
@@ -249,7 +249,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#using-tex-files-in-vi" class="md-skip">
+        <a href="#containers-101-chroot-part-i" class="md-skip">
           Skip to content
         </a>
       
@@ -285,7 +285,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Using TeX files in Vi
+              Containers 101 - chroot (Part I)
             
           </span>
         </div>
@@ -1236,7 +1236,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-11-20 00:00:00" class="md-ellipsis">November 20, 2023</time>
+                        <time datetime="2024-02-16 00:00:00" class="md-ellipsis">February 16, 2024</time>
                       </div>
                     </li>
                     
@@ -1247,8 +1247,8 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../category/latex.html">LaTeX</a>, 
-                              <a href="../../../category/neovim.html">Neovim</a></span>
+                              <a href="../../../category/containers.html">Containers</a>, 
+                              <a href="../../../category/unix.html">UNIX</a></span>
                         </div>
                       </li>
                     
@@ -1270,40 +1270,194 @@
   
 
 
-<h1 id="using-tex-files-in-vi">Using TeX files in Vi<a class="headerlink" href="#using-tex-files-in-vi" title="Permanent link">&#128279;</a></h1>
-<p>In Vim/Neovim the filetype plugin uses three different type for different TeX
-flavors (see <a href="https://neovim.io/doc/user/filetype.html#ft-tex-plugin" target="_blank"><code>:help ft-tex-plugin</code></a>).</p>
+<h1 id="containers-101-chroot-part-i">Containers 101 - chroot (Part I)<a class="headerlink" href="#containers-101-chroot-part-i" title="Permanent link">&#128279;</a></h1>
+<p>In this series the concept of containerization is presented by looking at the
+mechanisms behind the scenes. Before modern concepts like cgroups etc. are
+described, the main idea behind bundling an execution environment is introduced
+by using a chroot environment.</p>
 <!-- more -->
 
+<p>The <a href="https://manpages.debian.org/chroot.8.en.html" target="_blank">chroot(8)</a>
+command allows to run a command or an interactive shell inside a context with a
+different root directory. In order to execute this command root privileges are
+necessary.</p>
+<p>But a simple test will fail:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>mkdir<span class="w"> </span>target
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">$ </span>sudo<span class="w"> </span>chroot<span class="w"> </span>target
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">chroot: failed to run command ‘/bin/bash’: No such file or directory</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>If no additional parameters (the second is optional and secifies the
+command to run) are provided, <code>chroot</code> executes <code>${SHELL} -i</code>.</p>
+</div>
+<p>The problem with this example is, that the executable <code>/bin/bash</code> does not
+exist under the new root directory <code>target</code>. The new root directory must provide
+everything that is required to run the command. And here are we with the same
+issues as in containerization.</p>
+<p>When creating a container image often a base image is used, which is based on
+Alpine, Debian or Ubuntu distribution. In this case a complete distribution is
+present within the new root directory. This mechanism is often hidden when using
+<code>docker</code> or <code>podman</code> commands. When creating a so-called distroless container
+for an application the environment can easily be tested with the <code>chroot</code>
+command.</p>
+<p>Let's start building a simple chroot environment.</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>mkdir<span class="w"> </span>target/bin
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="gp">$ </span>cp<span class="w"> </span>/bin/bash<span class="w"> </span>target/bin
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gp">$ </span>ls<span class="w"> </span>-l<span class="w"> </span>target/bin/bash
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="go">-rwxr-xr-x 1 dreknix dreknix 1396520 Feb 10 10:00 target/bin/bash</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="gp">$ </span>sudo<span class="w"> </span>chroot<span class="w"> </span>target
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="go">chroot: failed to run command ‘/bin/bash’: No such file or directory</span>
+</span></code></pre></div>
+<p>Providing just the command is apparently not enough. To debug the execution the
+command <a href="https://manpages.debian.org/strace.1.en.html" target="_blank">strace(1)</a>
+can be used. This commands provides a trace of system calls.</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>sudo<span class="w"> </span>chroot<span class="w"> </span>target
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">...</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">chroot(&quot;target&quot;)                        = 0</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="go">chdir(&quot;/&quot;)                              = 0</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="go">execve(&quot;/bin/bash&quot;, [&quot;/bin/bash&quot;, &quot;-i&quot;], 0x7ffc6f2e7f10 /* 20 vars */) = -1 ENOENT (No such file or directory)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="go">...</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The command <code>chroot</code> is using the C system call
+<a href="https://manpages.debian.org/chroot.2.en.html" target="_blank">chroot(2)</a>.
+In this man page more information about creating a chroot environment can be
+found.</p>
+</div>
+<p>From the trace it is apparent that executing <code>/bin/bash</code> is failing. But the
+error code <code>ENOENT</code> is misleading in the case, since the file is existing and
+executable.</p>
+<p>For a better understanding of this issue, lets write a small application
+<code>app.c</code> in C.</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello Containerization World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">EXIT_SUCCESS</span><span class="p">;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>Compile the program and execute the program.</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>gcc<span class="w"> </span>-static<span class="w"> </span>app.c<span class="w"> </span>-o<span class="w"> </span>app
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="gp">$ </span>ls<span class="w"> </span>-l<span class="w"> </span>app
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="go">-rwxr-xr-x 1 dreknix dreknix 900344 Feb 10 10:00 app</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="gp">$ </span>./app
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="go">Hello Containerization World!</span>
+</span></code></pre></div>
+<p>Everything works like expected. So let's try to run this application within the
+chroot environment.</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gp">$ </span>cp<span class="w"> </span>app<span class="w"> </span>target
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="gp">$ </span>sudo<span class="w"> </span>chroot<span class="w"> </span>target<span class="w"> </span>/app
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="go">Hello Containerization World!</span>
+</span></code></pre></div>
+<p>Surprisingly the application can be executed within the chroot environment. The
+answer to this is the compiler option <code>-static</code>.</p>
+<p>What happens, if we do not provide this parameter?</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gp">$ </span>gcc<span class="w"> </span>-static<span class="w"> </span>app.c<span class="w"> </span>-o<span class="w"> </span>app
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="gp">$ </span>ls<span class="w"> </span>-l<span class="w"> </span>app
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="go">-rwxr-xr-x 1 dreknix dreknix 15960 Feb 10 10:00 app</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="gp">$ </span>./app
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="go">Hello Containerization World!</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="gp">$ </span>cp<span class="w"> </span>app<span class="w"> </span>target
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="gp">$ </span>sudo<span class="w"> </span>chroot<span class="w"> </span>target<span class="w"> </span>/app
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="go">chroot: failed to run command ‘/app’: No such file or directory</span>
+</span></code></pre></div>
+<p>Without this parameter the application can also not be executed within the
+chroot environment. When omitting the option <code>-static</code> the resulting executable
+is much smaller. Something is missing in the executable.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The function <code>printf</code> is provided by the C standard library and is using the
+underlying function <code>puts</code>.</p>
+</div>
+<p>In the static executable the function <code>puts</code> is present and can be called by
+existing address:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="go">nm app | grep &quot; puts&quot;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="go">000000000040c180 W puts</span>
+</span></code></pre></div>
+<p>When omitting the option <code>-static</code> the function <code>puts</code> is not part of the
+executable:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="go">nm app | grep &quot; puts&quot;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">                 U puts@GLIBC_2.2.5</span>
+</span></code></pre></div>
+<p>Since all executable programs share the same standard libraries memory can be
+saved by not embedding the same code in every running process. Therefore, all
+libraries are shared libraries and are loaded only once into memory. The
+programs contains only references to this external shared libraries and the
+references are resolved during run-time instead at compile time.</p>
+<p>Since these shared libraries are not available inside the chroot environment
+the non-static programs can not be started.</p>
+<p>Which libraries are needed for the non-static application?</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">$ </span>ldd<span class="w"> </span>app
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="go">        linux-vdso.so.1 (0x00007ffcb21af000)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="go">        libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00007f7723e23000)</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="go">        /lib64/ld-linux-x86-64.so.2 (0x00007f7724075000)</span>
+</span></code></pre></div>
+<p>The simple application needs two shared libraries to be copied:</p>
 <ul>
-<li>TeX: <code>plaintex</code></li>
-<li>LaTeX: <code>tex</code></li>
-<li>ConTeXt: <code>context</code></li>
+<li><code>ld-linux</code>: the dynamic linker/loader that is responsible for loading and
+handling shared libraries</li>
+<li><code>libc</code>: the standard C library</li>
 </ul>
-<p>Which filetype the current buffer was assigned, can be shown with <code>:set
-filetype?</code> (or <code>:LspInfo</code> if LSP is enabled).</p>
-<p>All files with the extension <code>*.tex</code> are of type <code>plaintex</code>. When the file type
-plugin finds specific keywords the file type is than changed to <code>tex</code> or
-<code>context</code>.</p>
-<p>The automatic guessing can be disabled with the following two mechanisms.</p>
-<p>Add the TeX flavor in the first line of a <code>*.tex</code> file:</p>
-<div class="language-tex highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">%&amp;latex</span>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p><code>linux-vdso</code> is a virtual dynamic shared object library that is
+automatically mapped by the kernel into the address space of all programs.
+For more information see <a href="https://manpages.debian.org/vdso.7.en.html" target="_blank">vdso(7)</a></p>
+</div>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="gp">$ </span>mkdir<span class="w"> </span>target/lib64
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="gp">$ </span>mkdir<span class="w"> </span>-p<span class="w"> </span>target/lib/x86_64-linux-gnu
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="gp">$ </span>cp<span class="w"> </span>/lib64/ld-linux-x86-64.so.2<span class="w"> </span>target/lib64/
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="gp">$ </span>cp<span class="w"> </span>/lib/x86_64-linux-gnu/libc.so.6<span class="w"> </span>target/lib/x86_64-linux-gnu/
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="gp">$ </span>sudo<span class="w"> </span>chroot<span class="w"> </span>target<span class="w"> </span>/app
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="go">Hello Containerization World!</span>
 </span></code></pre></div>
-<p>Or set the global variable <code>tex_flavor</code>:</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="vim" name="__tabbed_1" type="radio" /><input id="neovim" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="vim">Vim</label><label for="neovim">Neovim</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">let</span> <span class="k">g</span>:tex_flavour <span class="p">=</span> <span class="s2">&quot;latex&quot;</span>
+<p>With the necessary libraries in place also the non-static application can be
+executed inside the chroot environment.</p>
+<p>Now let's try to run the shell:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="gp">$ </span>ldd<span class="w"> </span>/bin/bash
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="go">        linux-vdso.so.1 (0x00007ffd187cb000)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="go">        libtinfo.so.6 =&gt; /lib/x86_64-linux-gnu/libtinfo.so.6 (0x00007f673d9ea000)</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="go">        libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00007f673d7c1000)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="go">        /lib64/ld-linux-x86-64.so.2 (0x00007f673dba1000)</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="gp">$ </span>cp<span class="w"> </span>/lib/x86_64-linux-gnu/libtinfo.so.6<span class="w"> </span>target/lib/x86_64-linux-gnu/
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="gp">$ </span>sudo<span class="w"> </span>chroot<span class="w"> </span>target
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="go">bash-5.1#</span>
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">tex_flavor</span> <span class="o">=</span> <span class="s1">&#39;latex&#39;</span>
+<p>Hurray, the interactive shell is now running inside the newly created chroot
+environment under the directory <code>target</code>. The complete layout of the
+environment is as follows:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="gp">$ </span>tree<span class="w"> </span>target/
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="go">target/</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="go">├── app</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="go">├── bin</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="go">│   └── bash</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="go">├── lib</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="go">│   └── x86_64-linux-gnu</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="go">│       ├── libc.so.6</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="go">│       └── libtinfo.so.6</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="go">└── lib64</span>
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="go">    └── ld-linux-x86-64.so.2</span>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="go">4 directories, 5 files</span>
 </span></code></pre></div>
-<p>See <a href="https://neovim.io/doc/user/lua-guide.html#lua-guide-variables" target="_blank"><code>:help lua-guide-variables</code></a>
-for more information about the Lua wrappers for different variable scopes.</p>
-</div>
-</div>
-</div>
+<p>The simple application is now bundled similar to a distroless container image.
+The interactive shell has still limited features, due to the nature of shells:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="go">bash-5.1# pwd</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="go">/</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="go">bash-5.1# ls</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="go">bash: ls: command not found</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="go">bash-5.1# echo *</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="go">app bin lib lib64</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="go">bash-5.1# exit</span>
+</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="go">exit</span>
+</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="gp">$</span>
+</span></code></pre></div>
+<p>The build-in commands <code>pwd</code>, <code>echo</code>, <code>exit</code>, and the file name expansion are
+working, since these are all part of the shell program. Other commands are not
+available since the corresponding programs are missing.</p>
 
 
 
@@ -1326,7 +1480,7 @@ for more information about the Lua wrappers for different variable scopes.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 22, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2024</span>
   </span>
 
     
@@ -1336,7 +1490,7 @@ for more information about the Lua wrappers for different variable scopes.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2024</span>
   </span>
 
     
