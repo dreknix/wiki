@@ -1,3 +1,8 @@
+---
+tags:
+  - HomeAssistant
+---
+
 # Ulanzi TC001 Desktop Clock
 
 ## AWTRIX Light

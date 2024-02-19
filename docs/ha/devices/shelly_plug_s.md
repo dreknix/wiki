@@ -3,10 +3,7 @@ tags:
   - HomeAssistant
 ---
 
-# Devices
-
-## Shelly Plug S
-
+# Shelly Plug S
 
 [Shelly Plug S](https://templates.blakadder.com/shelly_plug_S.html) can be used
 with the [Tasmota firmware](https://tasmota.github.io/docs/).
