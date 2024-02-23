@@ -10,13 +10,11 @@
         <meta name="author" content="dreknix">
       
       
-        <link rel="canonical" href="https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html">
+        <link rel="canonical" href="https://dreknix.github.io/wiki/blog/2024/02/23/using-openssh-with-fido2-hardware-keys.html">
       
       
-        <link rel="prev" href="../15/brltty-and-generic-serial-converter.html">
+        <link rel="prev" href="../16/containers-101---chroot-part-i.html">
       
-      
-        <link rel="next" href="../23/using-openssh-with-fido2-hardware-keys.html">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../../feed_rss_created.xml">
@@ -27,7 +25,7 @@
     
     
       
-        <title>Containers 101 - chroot (Part I) - dreknix - Documentation</title>
+        <title>Using OpenSSH with FIDO2 Hardware Keys - dreknix - Documentation</title>
       
     
     
@@ -251,7 +249,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#containers-101-chroot-part-i" class="md-skip">
+        <a href="#using-openssh-with-fido2-hardware-keys" class="md-skip">
           Skip to content
         </a>
       
@@ -287,7 +285,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Containers 101 - chroot (Part I)
+              Using OpenSSH with FIDO2 Hardware Keys
             
           </span>
         </div>
@@ -1201,6 +1199,56 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configure-the-hardware-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configure the Hardware Key
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-openssh-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Create OpenSSH Keys
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Create OpenSSH Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#non-resident-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Non-Resident Keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resident-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resident Keys
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1236,7 +1284,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2024-02-16 00:00:00" class="md-ellipsis">February 16, 2024</time>
+                        <time datetime="2024-02-23 00:00:00" class="md-ellipsis">February 23, 2024</time>
                       </div>
                     </li>
                     
@@ -1247,7 +1295,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../category/containers.html">Containers</a>, 
+                              <a href="../../../category/tools.html">Tools</a>, 
                               <a href="../../../category/unix.html">UNIX</a></span>
                         </div>
                       </li>
@@ -1270,194 +1318,148 @@
   
 
 
-<h1 id="containers-101-chroot-part-i">Containers 101 - chroot (Part I)<a class="headerlink" href="#containers-101-chroot-part-i" title="Permanent link">&#128279;</a></h1>
-<p>In this series the concept of containerization is presented by looking at the
-mechanisms behind the scenes. Before modern concepts like cgroups etc. are
-described, the main idea behind bundling an execution environment is introduced
-by using a chroot environment.</p>
+<h1 id="using-openssh-with-fido2-hardware-keys">Using OpenSSH with FIDO2 Hardware Keys<a class="headerlink" href="#using-openssh-with-fido2-hardware-keys" title="Permanent link">&#128279;</a></h1>
+<p>OpenSSH supports FIDO2 hardware keys for additional protection. The private key
+is securely stored on hardware. The file in the <code>~/.ssh/</code> directory contains
+only the credential id with other non-sensitive meta-data.</p>
 <!-- more -->
 
-<p>The <a href="https://manpages.debian.org/chroot.8.en.html" target="_blank">chroot(8)</a>
-command allows to run a command or an interactive shell inside a context with a
-different root directory. In order to execute this command root privileges are
-necessary.</p>
-<p>But a simple test will fail:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="gp">$ </span>mkdir<span class="w"> </span>target
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="gp">$ </span>sudo<span class="w"> </span>chroot<span class="w"> </span>target
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="go">chroot: failed to run command ‘/bin/bash’: No such file or directory</span>
+<h2 id="configure-the-hardware-key">Configure the Hardware Key<a class="headerlink" href="#configure-the-hardware-key" title="Permanent link">&#128279;</a></h2>
+<p>First install the tool <a href="https://manpages.debian.org/fido2-token.1.en.html" target="_blank">fido2-token(1)</a>:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">sudo apt install fido2-tools</span>
 </span></code></pre></div>
+<p>Get list of all available hardware keys:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>fido2-token<span class="w"> </span>-L
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="go">/dev/hidraw3: vendor=0x1050, product=0x0407 (Yubico YubiKey OTP+FIDO+CCID)</span>
+</span></code></pre></div>
+<p>Get information about a specific hardware key:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>fido2-token<span class="w"> </span>-I<span class="w"> </span>/dev/hidraw3
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">proto: 0x02</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">major: 0x05</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="go">minor: 0x04</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="go">build: 0x03</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="go">caps: 0x05 (wink, cbor, msg)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="go">version strings: U2F_V2, FIDO_2_0, FIDO_2_1_PRE</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="go">extension strings: credProtect, hmac-secret</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="go">transport strings: nfc, usb</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="go">algorithms: es256 (public-key), eddsa (public-key)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="go">aaguid: 2fc0579f811347eab116bb5a8db9202a</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="go">options: rk, up, noplat, clientPin, credentialMgmtPreview</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="go">maxmsgsiz: 1200</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="go">maxcredcntlst: 8</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="go">maxcredlen: 128</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="go">fwversion: 0x50403</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="go">pin protocols: 2, 1</span>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="go">pin retries: 8</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="go">uv retries: undefined</span>
+</span></code></pre></div>
+<p>Some of the features of FIDO2 (i.e. resident keys) requires a PIN protection of
+FIDO2. To set a PIN for first time:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">fido2-token -S /dev/hidraw3</span>
+</span></code></pre></div>
+<p>Or change the current PIN:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="go">fido2-token -C /dev/hidraw3</span>
+</span></code></pre></div>
+<p>If the PIN gets lost a factory reset is needed.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>After a factory reset all keys that are created by this hardware key can not
+be used anymore.</p>
+</div>
+<p>The factory reset can only be performed in the first five seconds after the
+hardware key is plugged in:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="go">fido2-token -R /dev/hidraw3</span>
+</span></code></pre></div>
+<h2 id="create-openssh-keys">Create OpenSSH Keys<a class="headerlink" href="#create-openssh-keys" title="Permanent link">&#128279;</a></h2>
+<p>When creating keys with a FIDO2 hardware key two options exist. Resident or
+non-resident keys. In the case of non-resident keys the private key file is
+needed besides the hardware key and offers security even the hardware key is
+lost or stolen. A resident key has the advantage that moving to another client
+machine is simple, since the key file can be generated with the hardware key
+and the PIN.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You should configure at least two hardware keys so that in case of a
+hardware failure or the key is lost a login into the remote machine is still
+possible.</p>
+</div>
+<h3 id="non-resident-keys">Non-Resident Keys<a class="headerlink" href="#non-resident-keys" title="Permanent link">&#128279;</a></h3>
+<p>Create a non-resident key with <a href="https://manpages.debian.org/ssh-keygen.1.en.html" target="_blank">ssh-keygen(1)</a>:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="go">ssh-keygen -t ed25519-sk -f ~/.ssh/id_dreknix_fido2_a -C &quot;dreknix fido2 a&quot;</span>
+</span></code></pre></div>
+<p>The suffix <code>-sk</code> identicates that a secure key is used. Optional the key type
+<code>ecdsa-sk</code> can be used, when an older hardware key is used that does not support
+the prefered <code>ed25519-sk</code> key type.</p>
+<p>This key was called <code>a</code> to emphasize that more than one hardware key should be
+configured.</p>
+<p>For using this SSH key, the file <code>~/.ssh/id_dreknix_fido2_a</code> and the hardware
+key is needed. When using the key the passphrase (optional) must be provided and
+the key needs to be touched.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>If no additional parameters (the second is optional and secifies the
-command to run) are provided, <code>chroot</code> executes <code>${SHELL} -i</code>.</p>
+<p>If touching the key is not feasible for a specific szenario the key can be
+created with the option <code>-O no-touch-required</code>. In the file
+<code>~/.ssh/authorized_keys</code> the public key must have the option
+<code>no-touch-required</code> in the beginning of the line, see <a href="https://manpages.debian.org/authorized_keys.5.en.html" target="_blank">authorized_keys(5)</a>.</p>
 </div>
-<p>The problem with this example is, that the executable <code>/bin/bash</code> does not
-exist under the new root directory <code>target</code>. The new root directory must provide
-everything that is required to run the command. And here are we with the same
-issues as in containerization.</p>
-<p>When creating a container image often a base image is used, which is based on
-Alpine, Debian or Ubuntu distribution. In this case a complete distribution is
-present within the new root directory. This mechanism is often hidden when using
-<code>docker</code> or <code>podman</code> commands. When creating a so-called distroless container
-for an application the environment can easily be tested with the <code>chroot</code>
-command.</p>
-<p>Let's start building a simple chroot environment.</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>mkdir<span class="w"> </span>target/bin
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="gp">$ </span>cp<span class="w"> </span>/bin/bash<span class="w"> </span>target/bin
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="gp">$ </span>ls<span class="w"> </span>-l<span class="w"> </span>target/bin/bash
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="go">-rwxr-xr-x 1 dreknix dreknix 1396520 Feb 10 10:00 target/bin/bash</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="gp">$ </span>sudo<span class="w"> </span>chroot<span class="w"> </span>target
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="go">chroot: failed to run command ‘/bin/bash’: No such file or directory</span>
+<p>To increase security the key can require the PIN when used. In order to create
+such a key, the option <code>-O verification-required</code> can be used:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="go">ssh-keygen -t ed25519-sk \</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="go">           -f ~/.ssh/id_dreknix_fido2_a \</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="go">           -O verification-required \</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="go">           -C &quot;dreknix fido2 a&quot;</span>
 </span></code></pre></div>
-<p>Providing just the command is apparently not enough. To debug the execution the
-command <a href="https://manpages.debian.org/strace.1.en.html" target="_blank">strace(1)</a>
-can be used. This commands provides a trace of system calls.</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>sudo<span class="w"> </span>strace<span class="w"> </span>chroot<span class="w"> </span>target
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">...</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="go">chroot(&quot;target&quot;)                        = 0</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="go">chdir(&quot;/&quot;)                              = 0</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="go">execve(&quot;/bin/bash&quot;, [&quot;/bin/bash&quot;, &quot;-i&quot;], 0x7ffc6f2e7f10 /* 20 vars */) = -1 ENOENT (No such file or directory)</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="go">...</span>
-</span></code></pre></div>
+<p>Now every time the key is used, the PIN of the hardware key needs to be
+provided.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The command <code>chroot</code> is using the C system call
-<a href="https://manpages.debian.org/chroot.2.en.html" target="_blank">chroot(2)</a>.
-In this man page more information about creating a chroot environment can be
-found.</p>
+<p>This kind of key can not be stored by an agent. So the option <code>-o IdentyAgent=none</code>
+may be required by <code>ssh</code>.</p>
 </div>
-<p>From the trace it is apparent that executing <code>/bin/bash</code> is failing. But the
-error code <code>ENOENT</code> is misleading in the case, since the file is existing and
-executable.</p>
-<p>For a better understanding of this issue, lets write a small application
-<code>app.c</code> in C.</p>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello Containerization World!</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">EXIT_SUCCESS</span><span class="p">;</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">}</span>
+<p>The SSH daemon can be configured to only accept PIN protected keys with the
+option <code>PubkeyAuthOptions verify-required</code> in the <code>/etc/ssh/sshd_config</code> file.
+The public key can also by marked with the option <code>verify-required</code>.</p>
+<h3 id="resident-keys">Resident Keys<a class="headerlink" href="#resident-keys" title="Permanent link">&#128279;</a></h3>
+<p>To store the private key on the hardware key the option <code>-O resident</code> must be
+used when creating the key:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="go">ssh-keygen -t ed25519-sk \</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">           -f ~/.ssh/id_dreknix_fido2_a \</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="go">           -O verification-required \</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="go">           -O resident \</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="go">           -O application=ssh:dreknix_fido2_a</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="go">           -C &quot;dreknix fido2 a&quot;</span>
 </span></code></pre></div>
-<p>Compile the program and execute the program.</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>gcc<span class="w"> </span>-static<span class="w"> </span>app.c<span class="w"> </span>-o<span class="w"> </span>app
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="gp">$ </span>ls<span class="w"> </span>-l<span class="w"> </span>app
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="go">-rwxr-xr-x 1 dreknix dreknix 900344 Feb 10 10:00 app</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="gp">$ </span>./app
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="go">Hello Containerization World!</span>
+<p>The option <code>-O application=ssh:xxx</code> is a comment that is helpful with the key
+management, when more than one key are stored. All other option of the
+non-resident keys can be uses also with resident keys.</p>
+<p>To see which keys are stored:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">$ </span>fido2-token<span class="w"> </span>-L<span class="w"> </span>-r<span class="w"> </span>/dev/hidraw3
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="go">Enter PIN for /dev/hidraw3:</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="go">00: yIxr1XK+loMkBeD0mZe1RQWNB321S5MvvbRRPfG/nxY= ssh:dreknix_fido2_a</span>
 </span></code></pre></div>
-<p>Everything works like expected. So let's try to run this application within the
-chroot environment.</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="gp">$ </span>cp<span class="w"> </span>app<span class="w"> </span>target
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="gp">$ </span>sudo<span class="w"> </span>chroot<span class="w"> </span>target<span class="w"> </span>/app
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="go">Hello Containerization World!</span>
+<p>Each hardware device can store only a limited amount of keys:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="gp">$ </span>fido2-token<span class="w"> </span>-I<span class="w"> </span>-c<span class="w"> </span>/dev/hidraw3
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="go">Enter PIN for /dev/hidraw3:</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="go">existing rk(s): 1</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="go">remaining rk(s): 24</span>
 </span></code></pre></div>
-<p>Surprisingly the application can be executed within the chroot environment. The
-answer to this is the compiler option <code>-static</code>.</p>
-<p>What happens, if we do not provide this parameter?</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="gp">$ </span>gcc<span class="w"> </span>-static<span class="w"> </span>app.c<span class="w"> </span>-o<span class="w"> </span>app
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="gp">$ </span>ls<span class="w"> </span>-l<span class="w"> </span>app
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="go">-rwxr-xr-x 1 dreknix dreknix 15960 Feb 10 10:00 app</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="gp">$ </span>./app
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="go">Hello Containerization World!</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="gp">$ </span>cp<span class="w"> </span>app<span class="w"> </span>target
-</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="gp">$ </span>sudo<span class="w"> </span>chroot<span class="w"> </span>target<span class="w"> </span>/app
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="go">chroot: failed to run command ‘/app’: No such file or directory</span>
+<p>In this case the total of 25 resident keys can be stored on this device.</p>
+<p>When the key file is deleted or the hardware key is used on another computer,
+the key file can be created with:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="gp">$ </span>ssh-keygen<span class="w"> </span>-K
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="go">Enter PIN for authenticator:</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="go">You may need to touch your authenticator to authorize key download.</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="go">Enter passphrase (empty for no passphrase):</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="go">Enter same passphrase again:</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="go">Saved ED25519-SK key ssh:dreknix_fido2_a to id_ed25519_sk_rk_dreknix_fido2_a</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="gp">$ </span>ls<span class="w"> </span>-l<span class="w"> </span>id_ed25519_sk_rk_*
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="go">-rw------- 1 dreknix dreknix 505 Feb 10 10:00 id_ed25519_sk_rk_dreknix_fido2_a</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="go">-rw-r--r-- 1 dreknix dreknix 168 Feb 10 10:00 id_ed25519_sk_rk_dreknix_fido2_a.pub</span>
 </span></code></pre></div>
-<p>Without this parameter the application can also not be executed within the
-chroot environment. When omitting the option <code>-static</code> the resulting executable
-is much smaller. Something is missing in the executable.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>The function <code>printf</code> is provided by the C standard library and is using the
-underlying function <code>puts</code>.</p>
-</div>
-<p>In the static executable the function <code>puts</code> is present and can be called by
-existing address:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gp">$ </span>nm<span class="w"> </span>app<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot; puts&quot;</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="go">000000000040c180 W puts</span>
-</span></code></pre></div>
-<p>When omitting the option <code>-static</code> the function <code>puts</code> is not part of the
-executable:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">$ </span>nm<span class="w"> </span>app<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot; puts&quot;</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="go">                 U puts@GLIBC_2.2.5</span>
-</span></code></pre></div>
-<p>Since all executable programs share the same standard libraries memory can be
-saved by not embedding the same code in every running process. Therefore, all
-libraries are shared libraries and are loaded only once into memory. The
-programs contains only references to this external shared libraries and the
-references are resolved during run-time instead at compile time.</p>
-<p>Since these shared libraries are not available inside the chroot environment
-the non-static programs can not be started.</p>
-<p>Which libraries are needed for the non-static application?</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="gp">$ </span>ldd<span class="w"> </span>app
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="go">        linux-vdso.so.1 (0x00007ffcb21af000)</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="go">        libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00007f7723e23000)</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="go">        /lib64/ld-linux-x86-64.so.2 (0x00007f7724075000)</span>
-</span></code></pre></div>
-<p>The simple application needs two shared libraries to be copied:</p>
-<ul>
-<li><code>ld-linux</code>: the dynamic linker/loader that is responsible for loading and
-handling shared libraries</li>
-<li><code>libc</code>: the standard C library</li>
-</ul>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p><code>linux-vdso</code> is a virtual dynamic shared object library that is
-automatically mapped by the kernel into the address space of all programs.
-For more information see <a href="https://manpages.debian.org/vdso.7.en.html" target="_blank">vdso(7)</a>.</p>
-</div>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="gp">$ </span>mkdir<span class="w"> </span>target/lib64
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="gp">$ </span>mkdir<span class="w"> </span>-p<span class="w"> </span>target/lib/x86_64-linux-gnu
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="gp">$ </span>cp<span class="w"> </span>/lib64/ld-linux-x86-64.so.2<span class="w"> </span>target/lib64/
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="gp">$ </span>cp<span class="w"> </span>/lib/x86_64-linux-gnu/libc.so.6<span class="w"> </span>target/lib/x86_64-linux-gnu/
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="gp">$ </span>sudo<span class="w"> </span>chroot<span class="w"> </span>target<span class="w"> </span>/app
-</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="go">Hello Containerization World!</span>
-</span></code></pre></div>
-<p>With the necessary libraries in place also the non-static application can be
-executed inside the chroot environment.</p>
-<p>Now let's try to run the shell:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="gp">$ </span>ldd<span class="w"> </span>/bin/bash
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="go">        linux-vdso.so.1 (0x00007ffd187cb000)</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="go">        libtinfo.so.6 =&gt; /lib/x86_64-linux-gnu/libtinfo.so.6 (0x00007f673d9ea000)</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="go">        libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00007f673d7c1000)</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="go">        /lib64/ld-linux-x86-64.so.2 (0x00007f673dba1000)</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="gp">$ </span>cp<span class="w"> </span>/lib/x86_64-linux-gnu/libtinfo.so.6<span class="w"> </span>target/lib/x86_64-linux-gnu/
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="gp">$ </span>sudo<span class="w"> </span>chroot<span class="w"> </span>target
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="go">bash-5.1#</span>
-</span></code></pre></div>
-<p>Hurray, the interactive shell is now running inside the newly created chroot
-environment under the directory <code>target</code>. The complete layout of the
-environment is as follows:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="gp">$ </span>tree<span class="w"> </span>target/
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="go">target/</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="go">├── app</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="go">├── bin</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="go">│   └── bash</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="go">├── lib</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="go">│   └── x86_64-linux-gnu</span>
-</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="go">│       ├── libc.so.6</span>
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="go">│       └── libtinfo.so.6</span>
-</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="go">└── lib64</span>
-</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="go">    └── ld-linux-x86-64.so.2</span>
-</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
-</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="go">4 directories, 5 files</span>
-</span></code></pre></div>
-<p>The simple application is now bundled similar to a distroless container image.
-The interactive shell has still limited features, due to the nature of shells:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="go">bash-5.1# pwd</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="go">/</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="go">bash-5.1# ls</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="go">bash: ls: command not found</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="go">bash-5.1# echo *</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="go">app bin lib lib64</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="go">bash-5.1# exit</span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="go">exit</span>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="gp">$</span>
-</span></code></pre></div>
-<p>The build-in commands <code>pwd</code>, <code>echo</code>, <code>exit</code>, and the file name expansion are
-working, since these are all part of the shell program. Other commands are not
-available since the corresponding programs are missing.</p>
+<p>The name of the files is taken from the option <code>application=ssh:xxx</code>. Therefore,
+this option is very important, when handling multiple keys. If more than one
+hardware key is present, <code>ssh-keygen -K</code> extract the all keys from the device
+that is touched first.</p>
 
 
 
@@ -1480,7 +1482,7 @@ available since the corresponding programs are missing.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2024</span>
   </span>
 
     
@@ -1490,7 +1492,7 @@ available since the corresponding programs are missing.</p>
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3h-2Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2024</span>
   </span>
 
     

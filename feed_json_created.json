@@ -13,6 +13,19 @@
     "language": "en",
     "items": [
         {
+            "id": "https://dreknix.github.io/wiki/blog/2024/02/23/using-openssh-with-fido2-hardware-keys.html",
+            "url": "https://dreknix.github.io/wiki/blog/2024/02/23/using-openssh-with-fido2-hardware-keys.html",
+            "title": "Using OpenSSH with FIDO2 Hardware Keys",
+            "content_html": "<h1>Using OpenSSH with FIDO2 Hardware Keys</h1>\n<p>OpenSSH supports FIDO2 hardware keys for additional protection. The private key\nis securely stored on hardware. The file in the <code>~/.ssh/</code> directory contains\nonly the credential id with other non-sensitive meta-data.</p>",
+            "image": null,
+            "date_published": "2024-02-23T00:00:00+00:00",
+            "authors": [],
+            "tags": [
+                "Tools",
+                "UNIX"
+            ]
+        },
+        {
             "id": "https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html",
             "url": "https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html",
             "title": "Containers 101 - chroot (Part I)",
