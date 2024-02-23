@@ -201,3 +201,17 @@ The name of the files is taken from the option `application=ssh:xxx`. Therefore,
 this option is very important, when handling multiple keys. If more than one
 hardware key is present, `ssh-keygen -K` extract the all keys from the device
 that is touched first.
+
+To delete a key the key id must be extracted:
+
+``` console
+$ fido2-token -L -k ssh:dreknix_fido2_a /dev/hidraw3
+Enter PIN for /dev/hidraw3:
+00: odsCLGbpNYWCCE9qiDTks+8pKfwj+D8aTC8XYwB498lAThY/Ftf35UP/E2O9N+8I openssh AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA= eddsa uvopt+id
+```
+
+Delete the key:
+
+``` console
+fido2-token -D -i odsCLGbpNYWCCE9qiDTks+8pKfwj+D8aTC8XYwB498lAThY/Ftf35UP/E2O9N+8I  /dev/hidraw3
+```
