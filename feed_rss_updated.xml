@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Fri, 23 Feb 2024 11:53:34 -0000</pubDate>
-    <lastBuildDate>Fri, 23 Feb 2024 11:53:34 -0000</lastBuildDate>
+    <pubDate>Fri, 23 Feb 2024 13:40:52 -0000</pubDate>
+    <lastBuildDate>Fri, 23 Feb 2024 13:40:52 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -42,7 +42,7 @@
 is securely stored on hardware. The file in the &lt;code&gt;~/.ssh/&lt;/code&gt; directory contains
 only the credential id with other non-sensitive meta-data.&lt;/p&gt;</description>
       <link>https://dreknix.github.io/wiki/blog/2024/02/23/using-openssh-with-fido2-hardware-keys.html</link>
-      <pubDate>Fri, 23 Feb 2024 11:52:58 +0000</pubDate>
+      <pubDate>Fri, 23 Feb 2024 13:40:17 +0000</pubDate>
       <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
       
       <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2024/02/23/using-openssh-with-fido2-hardware-keys.html</guid>

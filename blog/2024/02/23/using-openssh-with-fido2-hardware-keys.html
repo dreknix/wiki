@@ -1460,6 +1460,14 @@ the key file can be created with:</p>
 this option is very important, when handling multiple keys. If more than one
 hardware key is present, <code>ssh-keygen -K</code> extract the all keys from the device
 that is touched first.</p>
+<p>To delete a key the key id must be extracted:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="gp">$ </span>fido2-token<span class="w"> </span>-L<span class="w"> </span>-k<span class="w"> </span>ssh:dreknix_fido2_a<span class="w"> </span>/dev/hidraw3
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="go">Enter PIN for /dev/hidraw3:</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="go">00: odsCLGbpNYWCCE9qiDTks+8pKfwj+D8aTC8XYwB498lAThY/Ftf35UP/E2O9N+8I openssh AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA= eddsa uvopt+id</span>
+</span></code></pre></div>
+<p>Delete the key:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="go">fido2-token -D -i odsCLGbpNYWCCE9qiDTks+8pKfwj+D8aTC8XYwB498lAThY/Ftf35UP/E2O9N+8I  /dev/hidraw3</span>
+</span></code></pre></div>
 
 
 

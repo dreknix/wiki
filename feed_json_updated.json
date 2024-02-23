@@ -18,7 +18,7 @@
             "title": "Using OpenSSH with FIDO2 Hardware Keys",
             "content_html": "<h1>Using OpenSSH with FIDO2 Hardware Keys</h1>\n<p>OpenSSH supports FIDO2 hardware keys for additional protection. The private key\nis securely stored on hardware. The file in the <code>~/.ssh/</code> directory contains\nonly the credential id with other non-sensitive meta-data.</p>",
             "image": null,
-            "date_modified": "2024-02-23T11:52:58+00:00",
+            "date_modified": "2024-02-23T13:40:17+00:00",
             "authors": [],
             "tags": [
                 "Tools",
