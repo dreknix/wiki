@@ -116,7 +116,7 @@ Highlighting inline code is done with the `#!` characters, e.g.,
         ````
 
     For each code annotation a link can be set
-    ([example](http://localhost:8000/writing/mkdocs/source.html#__code_3_annotation_1)).
+    ([example](#__code_6_annotation_2)).
 
 ## Available Languages/Lexer
 
