@@ -111,7 +111,7 @@ theme:
       json: material/code-json
       markdown: simple/markdown
       neovim: simple/neovim
-      powershell: simple/powershell
+      powershell: material/powershell
       proxmox: simple/proxmox
       python: simple/python
       tmux: simple/tmux
