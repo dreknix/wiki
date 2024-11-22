@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Fri, 22 Nov 2024 12:00:25 -0000</pubDate>
-    <lastBuildDate>Fri, 22 Nov 2024 12:00:25 -0000</lastBuildDate>
+    <pubDate>Fri, 22 Nov 2024 12:16:07 -0000</pubDate>
+    <lastBuildDate>Fri, 22 Nov 2024 12:16:07 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -47,7 +47,7 @@ installation comes with a wide variety of scripts (&lt;code&gt;/usr/share/nmap/s
 The scripts can be applied for each host or service found during network
 discovery, or before and after the scan.&lt;/p&gt;</description>
       <link>https://dreknix.github.io/wiki/blog/2024/11/22/scripts-for-nmap.html</link>
-      <pubDate>Fri, 22 Nov 2024 11:59:58 +0000</pubDate>
+      <pubDate>Fri, 22 Nov 2024 12:15:39 +0000</pubDate>
       <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
       
       <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2024/11/22/scripts-for-nmap.html</guid>

@@ -18,7 +18,7 @@
             "title": "Scripts for Nmap",
             "content_html": "<h1>Scripts for Nmap</h1>\n<p><a href=\"https://nmap.org/\">Nmap</a>{target=\"_blank\"} (\"Network Mapper\") is a utility for network discovery\nand security auditing.</p>\n<p>Besides basic network discovery and port scanning, Nmap has a builtin scripting\nengine (<a href=\"https://nmap.org/book/man-nse.html\">NSE</a>{target=\"_blank\"}). With this\nscripting engine more complex network tasks can be created. The Nmap\ninstallation comes with a wide variety of scripts (<code>/usr/share/nmap/scripts</code>).\nThe scripts can be applied for each host or service found during network\ndiscovery, or before and after the scan.</p>",
             "image": null,
-            "date_modified": "2024-11-22T11:59:58+00:00",
+            "date_modified": "2024-11-22T12:15:39+00:00",
             "authors": [],
             "tags": [
                 "Tools",
