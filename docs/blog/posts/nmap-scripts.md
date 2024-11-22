@@ -69,5 +69,3 @@ Find possible subdomains:
 ``` sh
 nmap --script=dns-brute --script-args dns-brute.domain=example.com
 ```
-
-...
