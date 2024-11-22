@@ -13,6 +13,19 @@
     "language": "en",
     "items": [
         {
+            "id": "https://dreknix.github.io/wiki/blog/2024/11/22/scripts-for-nmap.html",
+            "url": "https://dreknix.github.io/wiki/blog/2024/11/22/scripts-for-nmap.html",
+            "title": "Scripts for Nmap",
+            "content_html": "<h1>Scripts for Nmap</h1>\n<p><a href=\"https://nmap.org/\">Nmap</a> (\"Network Mapper\") is a utility for network discovery\nand security auditing.</p>\n<p>Besides basic network discovery and port scanning, Nmap has a builtin scripting\nengine (NSE). With this scripting engine more complex network tasks can be\ncreated. The Nmap installation comes with a wide variety of scripts\n(<code>/usr/share/nmap/scripts</code>). The scripts can be applied for each host or service\nfound during network discovery, or before and after the scan.</p>",
+            "image": null,
+            "date_modified": "2024-11-22T11:57:08+00:00",
+            "authors": [],
+            "tags": [
+                "Tools",
+                "UNIX"
+            ]
+        },
+        {
             "id": "https://dreknix.github.io/wiki/blog/2024/02/23/using-openssh-with-fido2-hardware-keys.html",
             "url": "https://dreknix.github.io/wiki/blog/2024/02/23/using-openssh-with-fido2-hardware-keys.html",
             "title": "Using OpenSSH with FIDO2 Hardware Keys",
