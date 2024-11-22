@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Fri, 22 Nov 2024 11:57:39 -0000</pubDate>
-    <lastBuildDate>Fri, 22 Nov 2024 11:57:39 -0000</lastBuildDate>
+    <pubDate>Fri, 22 Nov 2024 12:00:25 -0000</pubDate>
+    <lastBuildDate>Fri, 22 Nov 2024 12:00:25 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -38,13 +38,14 @@
         
       
       <description>&lt;h1&gt;Scripts for Nmap&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://nmap.org/&#34;&gt;Nmap&lt;/a&gt; (&#34;Network Mapper&#34;) is a utility for network discovery
+&lt;p&gt;&lt;a href=&#34;https://nmap.org/&#34;&gt;Nmap&lt;/a&gt;{target=&#34;_blank&#34;} (&#34;Network Mapper&#34;) is a utility for network discovery
 and security auditing.&lt;/p&gt;
 &lt;p&gt;Besides basic network discovery and port scanning, Nmap has a builtin scripting
-engine (NSE). With this scripting engine more complex network tasks can be
-created. The Nmap installation comes with a wide variety of scripts
-(&lt;code&gt;/usr/share/nmap/scripts&lt;/code&gt;). The scripts can be applied for each host or service
-found during network discovery, or before and after the scan.&lt;/p&gt;</description>
+engine (&lt;a href=&#34;https://nmap.org/book/man-nse.html&#34;&gt;NSE&lt;/a&gt;{target=&#34;_blank&#34;}). With this
+scripting engine more complex network tasks can be created. The Nmap
+installation comes with a wide variety of scripts (&lt;code&gt;/usr/share/nmap/scripts&lt;/code&gt;).
+The scripts can be applied for each host or service found during network
+discovery, or before and after the scan.&lt;/p&gt;</description>
       <link>https://dreknix.github.io/wiki/blog/2024/11/22/scripts-for-nmap.html</link>
       <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
       <source url="https://dreknix.github.io/wiki/feed_rss_created.xml">dreknix - Documentation</source>
