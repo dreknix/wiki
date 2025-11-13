@@ -1,5 +1,5 @@
 {
-    "version": "https://jsonfeed.org/version/1",
+    "version": "https://jsonfeed.org/version/1.1",
     "title": "dreknix - Documentation",
     "home_page_url": "https://dreknix.github.io/wiki/",
     "feed_url": "https://dreknix.github.io/wiki/feed_json_created.json",
@@ -18,6 +18,7 @@
             "title": "Scripts for Nmap",
             "content_html": "<h1>Scripts for Nmap</h1>\n<p><a href=\"https://nmap.org/\">Nmap</a>{target=\"_blank\"} (\"Network Mapper\") is a utility for network discovery\nand security auditing.</p>\n<p>Besides basic network discovery and port scanning, Nmap has a builtin scripting\nengine (<a href=\"https://nmap.org/book/man-nse.html\">NSE</a>{target=\"_blank\"}). With this\nscripting engine more complex network tasks can be created. The Nmap\ninstallation comes with a wide variety of scripts (<code>/usr/share/nmap/scripts</code>).\nThe scripts can be applied for each host or service found during network\ndiscovery, or before and after the scan.</p>",
             "image": null,
+            "date_modified": "2024-11-22T12:15:39+00:00",
             "date_published": "2024-11-22T00:00:00+00:00",
             "authors": [],
             "tags": [
@@ -31,6 +32,7 @@
             "title": "Using OpenSSH with FIDO2 Hardware Keys",
             "content_html": "<h1>Using OpenSSH with FIDO2 Hardware Keys</h1>\n<p>OpenSSH supports FIDO2 hardware keys for additional protection. The private key\nis securely stored on hardware. The file in the <code>~/.ssh/</code> directory contains\nonly the credential id with other non-sensitive meta-data.</p>",
             "image": null,
+            "date_modified": "2024-02-23T13:40:17+00:00",
             "date_published": "2024-02-23T00:00:00+00:00",
             "authors": [],
             "tags": [
@@ -44,6 +46,7 @@
             "title": "Containers 101 - chroot (Part I)",
             "content_html": "<h1>Containers 101 - chroot (Part I)</h1>\n<p>In this series the concept of containerization is presented by looking at the\nmechanisms behind the scenes. Before modern concepts like cgroups etc. are\ndescribed, the main idea behind bundling an execution environment is introduced\nby using a chroot environment.</p>",
             "image": null,
+            "date_modified": "2024-02-16T16:12:10+00:00",
             "date_published": "2024-02-16T00:00:00+00:00",
             "authors": [],
             "tags": [
@@ -57,6 +60,7 @@
             "title": "brltty and Generic Serial Converter",
             "content_html": "<h1>brltty and Generic Serial Converter</h1>\n<p>Distributions based on Ubuntu have\n<a href=\"https://brltty.app/\">brltty</a>{target=\"_blank\"} enabled by default. Some braille\ndisplays do not change the ids of those converters and therefore brltty claims\nthe serial device and no device file <code>/dev/ttyUSBx</code> is created. In the following\nsome solutions to this problem are presented.</p>",
             "image": null,
+            "date_modified": "2024-02-16T08:36:58+00:00",
             "date_published": "2024-02-15T00:00:00+00:00",
             "authors": [],
             "tags": [
@@ -70,6 +74,7 @@
             "title": "zram and Swap",
             "content_html": "<h1>zram and Swap</h1>\n<p>The zram kernel module creates compressed RAM-based block devices named\n<code>/dev/zramX</code>. These zram devices allow fast I/O and the compression provides\nRAM space savings.</p>",
             "image": null,
+            "date_modified": "2023-12-21T13:56:04+00:00",
             "date_published": "2023-12-11T00:00:00+00:00",
             "authors": [],
             "tags": [
@@ -83,6 +88,7 @@
             "title": "QEMU and Windows Keys",
             "content_html": "<h1>QEMU and Windows Keys</h1>\n<p>OEM Windows keys are often stored in the software licensing (SLIC) or Microsoft\ndata management (MSDM) table. When a key is stored the unattended installation\ncan use a generic key and the stored key is than used and activated. The usage\nof such a key can be tested with QEMU/libvirt.</p>",
             "image": null,
+            "date_modified": "2023-12-04T14:06:14+00:00",
             "date_published": "2023-12-04T00:00:00+00:00",
             "authors": [],
             "tags": [
@@ -96,6 +102,7 @@
             "title": "Using SPICE with TrueNAS Scale Cobia (23.10)",
             "content_html": "<h1>Using SPICE with TrueNAS Scale Cobia (23.10)</h1>\n<p>TrueNAS Scale Cobia (23.10) disabled the option to access VM displays via VNC.\nThe connection method is changed to\n<a href=\"https://www.spice-space.org/\">SPICE</a>{target=\"_blank\"}.</p>",
             "image": null,
+            "date_modified": "2023-11-22T14:27:32+00:00",
             "date_published": "2023-11-22T00:00:00+00:00",
             "authors": [],
             "tags": [
@@ -109,6 +116,7 @@
             "title": "Enable gx in NvChad",
             "content_html": "<h1>Enable <code>gx</code> in NvChad</h1>\n<p>The command <code>gx</code> opens the filename under the the cursor with <code>vim.ui.open()</code>\n(see <a href=\"https://neovim.io/doc/user/pi_netrw.html#netrw-gx\"><code>:help netrw-gx</code></a>{target=\"_blank\"}).\nThen handling is provided by the internal <code>netrw</code> plugin. This plugin is\ndisabled when using <a href=\"../../tools/vi/neovim/index.md\">NvChad</a>.</p>",
             "image": null,
+            "date_modified": "2023-11-22T14:27:32+00:00",
             "date_published": "2023-11-21T00:00:00+00:00",
             "authors": [],
             "tags": [
@@ -121,6 +129,7 @@
             "title": "Finding Glyph in Fonts",
             "content_html": "<h1>Finding Glyph in Fonts</h1>\n<p>Sometimes it is necessary to find fonts that contain a specific glyph. The tool\n<a href=\"https://ctan.org/pkg/albatross\">albatross</a>{target=\"_blank\"} can be used for\nthat task.</p>",
             "image": null,
+            "date_modified": "2023-11-22T14:27:32+00:00",
             "date_published": "2023-11-20T00:00:00+00:00",
             "authors": [],
             "tags": [
@@ -134,6 +143,7 @@
             "title": "IMAP-based Authentication in PHP",
             "content_html": "<h1>IMAP-based Authentication in PHP</h1>\n<p>When using IMAP-based user authentication in applications written in PHP (i.e.\nNextcloud, DokuWiki, etc.), debugging with a test script is essential. The\nidea of using <code>curl</code> for authentication, is based on the external user\nauthentication plugin (see: <a href=\"https://github.com/nextcloud/user_external\">:fontawesome-brands-github: nextcloud/user_external</a>{:target=\"_blank\"}) of Nextcloud.</p>",
             "image": null,
+            "date_modified": "2023-11-22T14:27:32+00:00",
             "date_published": "2023-11-20T00:00:00+00:00",
             "authors": [],
             "tags": [
@@ -147,6 +157,7 @@
             "title": "Using TeX files in Vi",
             "content_html": "<h1>Using TeX files in Vi</h1>\n<p>In Vim/Neovim the filetype plugin uses three different type for different TeX\nflavors (see <a href=\"https://neovim.io/doc/user/filetype.html#ft-tex-plugin\"><code>:help ft-tex-plugin</code></a>{target=\"_blank\"}).</p>",
             "image": null,
+            "date_modified": "2023-11-22T12:40:54+00:00",
             "date_published": "2023-11-20T00:00:00+00:00",
             "authors": [],
             "tags": [
