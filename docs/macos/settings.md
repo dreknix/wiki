@@ -1,5 +1,9 @@
 # Settings in macOS
 
+Open macOS settings:
+[`open x-apple.systempreferences:com.apple.preference.general`](
+x-apple.systempreferences:com.apple.preference.general)
+
 To find the settings you can use the GUI and compare the output of `defaults
 read <domain>` before and after the change.
 
