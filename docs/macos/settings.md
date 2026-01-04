@@ -8,8 +8,8 @@ read <domain>` before and after the change.
 ### Dock
 
 Open Dock settings:
-[`open x-apple.systempreferences:com.apple.preferemce.dock`](
-x-apple.systempreferences:com.apple.preferemce.dock)
+[`open x-apple.systempreferences:com.apple.preference.dock`](
+x-apple.systempreferences:com.apple.preference.dock)
 
 * Auto hide the Dock
 
