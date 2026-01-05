@@ -115,9 +115,6 @@ Highlighting inline code is done with the `#!` characters, e.g.,
         2.  Annotation with stripping comments
         ````
 
-    For each code annotation a link can be set
-    ([example](#__code_6_annotation_2)).
-
 ## Available Languages/Lexer
 
 See:
