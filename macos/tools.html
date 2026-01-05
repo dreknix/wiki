@@ -10,34 +10,34 @@
         <meta name="author" content="dreknix">
       
       
-        <link rel="canonical" href="https://dreknix.github.io/wiki/unix/systemd/index.html">
+        <link rel="canonical" href="https://dreknix.github.io/wiki/macos/tools.html">
       
       
-        <link rel="prev" href="../filesystems/luks.html">
+        <link rel="prev" href="settings.html">
       
       
-        <link rel="next" href="bootctl.html">
+        <link rel="next" href="../tools/container/debugging.html">
       
       
         
       
       
-        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>systemd - dreknix - Documentation</title>
+        <title>Tools for macOS - dreknix - Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
   
@@ -289,12 +289,12 @@
         
         
         
-        <link rel="stylesheet" href="../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -319,7 +319,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#systemd" class="md-skip">
+        <a href="#tools-for-macos" class="md-skip">
           Skip to content
         </a>
       
@@ -335,7 +335,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../index.html" title="dreknix - Documentation" class="md-header__button md-logo" aria-label="dreknix - Documentation" data-md-component="logo">
+    <a href="../index.html" title="dreknix - Documentation" class="md-header__button md-logo" aria-label="dreknix - Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -355,7 +355,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              systemd
+              Tools for macOS
             
           </span>
         </div>
@@ -477,7 +477,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../index.html" class="md-tabs__link">
+      <a href="../index.html" class="md-tabs__link">
         
   
   
@@ -498,7 +498,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../ha/index.html" class="md-tabs__link">
+        <a href="../ha/index.html" class="md-tabs__link">
           
   
   
@@ -520,7 +520,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../hardware/index.html" class="md-tabs__link">
+        <a href="../hardware/index.html" class="md-tabs__link">
           
   
   
@@ -538,11 +538,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../macos/index.html" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="index.html" class="md-tabs__link">
           
   
   
@@ -571,7 +573,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../tools/container/debugging.html" class="md-tabs__link">
+        <a href="../tools/container/debugging.html" class="md-tabs__link">
           
   
   
@@ -592,13 +594,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../index.html" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../unix/index.html" class="md-tabs__link">
           
   
   
@@ -620,7 +620,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../windows/index.html" class="md-tabs__link">
+        <a href="../windows/index.html" class="md-tabs__link">
           
   
   
@@ -642,7 +642,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../writing/index.html" class="md-tabs__link">
+        <a href="../writing/index.html" class="md-tabs__link">
           
   
   
@@ -662,7 +662,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../tags.html" class="md-tabs__link">
+      <a href="../tags.html" class="md-tabs__link">
         
   
   
@@ -683,7 +683,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../blog/index.html" class="md-tabs__link">
+        <a href="../blog/index.html" class="md-tabs__link">
           
   
   
@@ -725,7 +725,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../index.html" title="dreknix - Documentation" class="md-nav__button md-logo" aria-label="dreknix - Documentation" data-md-component="logo">
+    <a href="../index.html" title="dreknix - Documentation" class="md-nav__button md-logo" aria-label="dreknix - Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -755,7 +755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -810,7 +810,7 @@
   
   
   
-    <a href="../../ha/index.html" class="md-nav__link">
+    <a href="../ha/index.html" class="md-nav__link">
       
   
   
@@ -873,7 +873,7 @@
   
   
   
-    <a href="../../hardware/index.html" class="md-nav__link">
+    <a href="../hardware/index.html" class="md-nav__link">
       
   
   
@@ -903,134 +903,6 @@
       
   
   
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../macos/index.html" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    macOS
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    
-  
-  
-  
-    <a href="../../tools/container/debugging.html" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tools
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-  
-
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -1040,16 +912,6 @@
       
         
           
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
         
       
         
@@ -1074,18 +936,18 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../index.html" class="md-nav__link ">
+            <a href="index.html" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
     
   
-    UNIX
+    macOS
   
 
     
@@ -1096,295 +958,18 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
   
-    UNIX
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../bash/index.html" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    bash
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../debian/index.html" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Debian
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../filesystems/index.html" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Filesystems
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" checked>
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="index.html" class="md-nav__link md-nav__link--active">
-              
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    systemd
-  
-
-    
-  </span>
-  
-  
-
-            </a>
-            
-              
-              <label class="md-nav__link md-nav__link--active" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    systemd
+    macOS
   
 
           </label>
@@ -1399,14 +984,14 @@
   
   
     <li class="md-nav__item">
-      <a href="bootctl.html" class="md-nav__link">
+      <a href="brew.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    bootctl
+    Homebrew
   
 
     
@@ -1427,14 +1012,14 @@
   
   
     <li class="md-nav__item">
-      <a href="journalctl.html" class="md-nav__link">
+      <a href="settings.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    journalctl
+    Settings in macOS
   
 
     
@@ -1452,17 +1037,44 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="localectl.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools for macOS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tools.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    localectl
+    Tools for macOS
   
 
     
@@ -1471,230 +1083,81 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="loginctl.html" class="md-nav__link">
+      
         
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
-  <span class="md-ellipsis">
+  
     
   
-    loginctl
   
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="machinectl.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    machinectl
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="networkctl.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    networkctl
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="portablectl.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    portablectl
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="resolvectl.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    resolvectl
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="systemctl.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    systemctl
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="systemd.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    systemd Tools
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="timedatectl.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    timedatectl
-  
-
-    
-  </span>
-  
-  
-
-      </a>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#alttab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AltTab
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hidden-bar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hidden Bar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#karabiner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Karabiner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raycast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raycast
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rectangle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rectangle
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1706,24 +1169,15 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
   
     
     
-      
-        
-          
-        
-      
-        
-      
-        
       
         
       
@@ -1749,7 +1203,11 @@
   
   
   
-    <a href="../tools/index.html" class="md-nav__link">
+    
+  
+  
+  
+    <a href="../tools/container/debugging.html" class="md-nav__link">
       
   
   
@@ -1770,14 +1228,15 @@
     </a>
   
 
+  
+
       
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
@@ -1787,6 +1246,22 @@
       
         
           
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
         
       
     
@@ -1807,14 +1282,14 @@
   
   
   
-    <a href="../truenas/index.html" class="md-nav__link">
+    <a href="../unix/index.html" class="md-nav__link">
       
   
   
   <span class="md-ellipsis">
     
   
-    TrueNAS
+    UNIX
   
 
     
@@ -1832,132 +1307,6 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../ubuntu/index.html" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Ubuntu
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../virtualization/index.html" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Virtualization
-  
-
-    
-  </span>
-  
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
@@ -1992,7 +1341,7 @@
   
   
   
-    <a href="../../windows/index.html" class="md-nav__link">
+    <a href="../windows/index.html" class="md-nav__link">
       
   
   
@@ -2051,7 +1400,7 @@
   
   
   
-    <a href="../../writing/index.html" class="md-nav__link">
+    <a href="../writing/index.html" class="md-nav__link">
       
   
   
@@ -2084,7 +1433,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tags.html" class="md-nav__link">
+      <a href="../tags.html" class="md-nav__link">
         
   
   
@@ -2139,7 +1488,7 @@
   
   
   
-    <a href="../../blog/index.html" class="md-nav__link">
+    <a href="../blog/index.html" class="md-nav__link">
       
   
   
@@ -2192,10 +1541,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#add-a-service-timer" class="md-nav__link">
+  <a href="#alttab" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Add a service, timer, ...
+        AltTab
       
     </span>
   </a>
@@ -2203,30 +1552,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
+  <a href="#hidden-bar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Documentation
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Documentation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#systemd-for-administrators" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        systemd for Administrators
+        Hidden Bar
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#karabiner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Karabiner
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raycast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raycast
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rectangle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rectangle
+      
+    </span>
+  </a>
   
 </li>
       
@@ -2250,40 +1615,13 @@
   
 
 
-<h1 id="systemd">systemd<a class="headerlink" href="#systemd" title="Permanent link">&#128279;</a></h1>
-<ul>
-<li><a href="https://github.com/systemd/systemd/releases">https://github.com/systemd/systemd/releases</a></li>
-<li><a href="https://systemd.io/">https://systemd.io/</a></li>
-</ul>
-<h2 id="add-a-service-timer">Add a service, timer, ...<a class="headerlink" href="#add-a-service-timer" title="Permanent link">&#128279;</a></h2>
-<p>Create file in <code>/usr/local/lib/systemd/system</code>.</p>
-<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&#128279;</a></h2>
-<h3 id="systemd-for-administrators">systemd for Administrators<a class="headerlink" href="#systemd-for-administrators" title="Permanent link">&#128279;</a></h3>
-<ul>
-<li><a href="https://0pointer.de/blog/projects/systemd-for-admins-1.html">Part I</a> -
-   Verifying Bootup</li>
-<li><a href="https://0pointer.de/blog/projects/systemd-for-admins-2.html">Part II</a> -
-   Which Service Owns Which Processes?</li>
-<li><a href="https://0pointer.de/blog/projects/systemd-for-admins-3.html">Part III</a> -
-   How Do I Convert A SysV Init Script Into A systemd Service File?</li>
-<li><a href="https://0pointer.de/blog/projects/systemd-for-admins-4.html">Part IV</a></li>
-<li><a href="http://0pointer.de/blog/projects/three-levels-of-off.html">Part V</a></li>
-<li><a href="http://0pointer.de/blog/projects/changing-roots">Part VI</a></li>
-<li><a href="http://0pointer.de/blog/projects/blame-game.html">Part VII</a></li>
-<li><a href="http://0pointer.de/blog/projects/the-new-configuration-files.html">Part VIII</a></li>
-<li><a href="http://0pointer.net/blog/projects/on-etc-sysinit.html">Part IX</a></li>
-<li><a href="http://0pointer.de/blog/projects/instances.html">Part X</a></li>
-<li><a href="http://0pointer.de/blog/projects/inetd.html">Part XI</a></li>
-<li><a href="http://0pointer.de/blog/projects/security.html">Part XII</a></li>
-<li><a href="http://0pointer.de/blog/projects/systemctl-journal.html">Part XIII</a></li>
-<li><a href="http://0pointer.de/blog/projects/self-documented-boot.html">Part XIV</a></li>
-<li><a href="http://0pointer.de/blog/projects/watchdog.html">Part XV</a></li>
-<li><a href="http://0pointer.de/blog/projects/serial-console.html">Part XVI</a></li>
-<li><a href="http://0pointer.de/blog/projects/journalctl.html">Part XVII</a></li>
-<li><a href="http://0pointer.de/blog/projects/resources.html">Part XVIII</a></li>
-<li><a href="http://0pointer.de/blog/projects/detect-virt.html">Part XIX</a></li>
-<li><a href="http://0pointer.de/blog/projects/socket-activated-containers.html">Part XX</a></li>
-</ul>
+<h1 id="tools-for-macos">Tools for macOS<a class="headerlink" href="#tools-for-macos" title="Permanent link">&#128279;</a></h1>
+<p>These tools are specific for macOS.</p>
+<h2 id="alttab">AltTab<a class="headerlink" href="#alttab" title="Permanent link">&#128279;</a></h2>
+<h2 id="hidden-bar">Hidden Bar<a class="headerlink" href="#hidden-bar" title="Permanent link">&#128279;</a></h2>
+<h2 id="karabiner">Karabiner<a class="headerlink" href="#karabiner" title="Permanent link">&#128279;</a></h2>
+<h2 id="raycast">Raycast<a class="headerlink" href="#raycast" title="Permanent link">&#128279;</a></h2>
+<h2 id="rectangle">Rectangle<a class="headerlink" href="#rectangle" title="Permanent link">&#128279;</a></h2>
 
 
 
@@ -2306,7 +1644,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 12, 2022 10:41:06 UTC">August 12, 2022</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 5, 2026 15:36:08 UTC">January 5, 2026</span>
   </span>
 
     
@@ -2316,7 +1654,7 @@
     <span class="md-icon" title="Created">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="August 12, 2022 10:41:06 UTC">August 12, 2022</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 5, 2026 15:36:08 UTC">January 5, 2026</span>
   </span>
 
     
@@ -2438,10 +1776,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
