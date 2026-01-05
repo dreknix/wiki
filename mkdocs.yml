@@ -200,7 +200,6 @@ plugins:
         - categories
   - tags:
       enabled: !ENV [CI, false]
-      tags_file: tags.md
 
 # Extensions
 markdown_extensions:
