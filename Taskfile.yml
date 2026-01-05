@@ -13,7 +13,7 @@ tasks:
   serve:
     desc: Start local wiki page
     cmds:
-      - mkdocs serve
+      - mkdocs serve --watch docs
 
   offline:
     desc: Build offline version
