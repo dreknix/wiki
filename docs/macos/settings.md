@@ -9,6 +9,46 @@ read <domain>` before and after the change.
 
 ## General Settings
 
+### FileVault
+
+Enable FileVault for encrypting the SSD in the laptop. Open the settings:
+[`open x-apple.systempreferences:com.apple.preference.security?FileVault`](
+x-apple.systempreferences:com.apple.preference.security?FileVault)
+
+In order to store the recovery key do this setting via the GUI.
+
+### Software Updates
+
+Open software updates:
+[`open x-apple.systempreferences:com.apple.preferences.softwareupdate`](
+x-apple.systempreferences:com.apple.preferences.softwareupdate)
+
+* Enable automatic install of updates
+
+  ``` bash
+  sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist "AutomaticDownload" -bool true
+  sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist "AutomaticallyInstallMacOSUpdates" -bool true
+  sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist "ConfigDataInstall" -bool true
+  sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist "CriticalUpdateInstall" -bool true
+  ```
+
+  **Important:** The properties are not visible via direct path
+  `com.apple.softwareupdate`.
+
+### Trackpad
+
+Open trackpad settings:
+[`open x-apple.systempreferences:com.apple.Trackpad-Settings`](
+x-apple.systempreferences:com.apple.Trackpad-Settings)
+
+* Enable tap to click **TODO**
+
+* Disable natural scrolling
+
+  ``` bash
+  defaults write -g com.apple.swipescrolldirection -bool false
+  ```
+
 ### Dock
 
 Open Dock settings:
@@ -39,6 +79,18 @@ x-apple.systempreferences:com.apple.preference.dock)
   ``` bash
   defaults write com.apple.dock "magnification" -bool false
   defaults write com.apple.dock "tilesize" -int 40
+  ```
+
+* Minimize windows into application icon
+
+  ``` bash
+  defaults write com.apple.dock "minimize-to-application" -bool true
+  ```
+
+* Group applications in mission control
+
+  ``` bash
+  defaults write com.apple.dock "expose-group-apps" -bool true
   ```
 
 Finally restart the Dock: `killall Dock`
@@ -78,6 +130,14 @@ x-apple.systempreferences:com.apple.preference.dock)
 ## macOS Applications
 
 ### Finder
+
+Open Finder setting
+
+``` bash
+osascript \
+    -e 'tell application "Finder" to activate' \
+    -e 'tell application "System Events" to keystroke "," using command down'
+```
 
 * Set home directory a default start directory
 
