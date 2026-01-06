@@ -1084,6 +1084,39 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#filevault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FileVault
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trackpad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trackpad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dock" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1576,6 +1609,39 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#filevault" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FileVault
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Software Updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trackpad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trackpad
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dock" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1667,36 +1733,82 @@
 <p>To find the settings you can use the GUI and compare the output of <code>defaults
 read &lt;domain&gt;</code> before and after the change.</p>
 <h2 id="general-settings">General Settings<a class="headerlink" href="#general-settings" title="Permanent link">&#128279;</a></h2>
+<h3 id="filevault">FileVault<a class="headerlink" href="#filevault" title="Permanent link">&#128279;</a></h3>
+<p>Enable FileVault for encrypting the SSD in the laptop. Open the settings:
+<a href="x-apple.systempreferences:com.apple.preference.security?FileVault"><code>open x-apple.systempreferences:com.apple.preference.security?FileVault</code></a></p>
+<p>In order to store the recovery key do this setting via the GUI.</p>
+<h3 id="software-updates">Software Updates<a class="headerlink" href="#software-updates" title="Permanent link">&#128279;</a></h3>
+<p>Open software updates:
+<a href="x-apple.systempreferences:com.apple.preferences.softwareupdate"><code>open x-apple.systempreferences:com.apple.preferences.softwareupdate</code></a></p>
+<ul>
+<li>
+<p>Enable automatic install of updates</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>defaults<span class="w"> </span>write<span class="w"> </span>/Library/Preferences/com.apple.SoftwareUpdate.plist<span class="w"> </span><span class="s2">&quot;AutomaticDownload&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>sudo<span class="w"> </span>defaults<span class="w"> </span>write<span class="w"> </span>/Library/Preferences/com.apple.SoftwareUpdate.plist<span class="w"> </span><span class="s2">&quot;AutomaticallyInstallMacOSUpdates&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>sudo<span class="w"> </span>defaults<span class="w"> </span>write<span class="w"> </span>/Library/Preferences/com.apple.SoftwareUpdate.plist<span class="w"> </span><span class="s2">&quot;ConfigDataInstall&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>sudo<span class="w"> </span>defaults<span class="w"> </span>write<span class="w"> </span>/Library/Preferences/com.apple.SoftwareUpdate.plist<span class="w"> </span><span class="s2">&quot;CriticalUpdateInstall&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+</span></code></pre></div>
+<p><strong>Important:</strong> The properties are not visible via direct path
+<code>com.apple.softwareupdate</code>.</p>
+</li>
+</ul>
+<h3 id="trackpad">Trackpad<a class="headerlink" href="#trackpad" title="Permanent link">&#128279;</a></h3>
+<p>Open trackpad settings:
+<a href="x-apple.systempreferences:com.apple.Trackpad-Settings"><code>open x-apple.systempreferences:com.apple.Trackpad-Settings</code></a></p>
+<ul>
+<li>Enable tap to click <strong>TODO</strong></li>
+</ul>
+<ul>
+<li>
+<p>Disable natural scrolling</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>-g<span class="w"> </span>com.apple.swipescrolldirection<span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
+</span></code></pre></div>
+</li>
+</ul>
 <h3 id="dock">Dock<a class="headerlink" href="#dock" title="Permanent link">&#128279;</a></h3>
 <p>Open Dock settings:
 <a href="x-apple.systempreferences:com.apple.preference.dock"><code>open x-apple.systempreferences:com.apple.preference.dock</code></a></p>
 <ul>
 <li>
 <p>Auto hide the Dock</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;autohide&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;autohide&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
 </span></code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>Do not display recent apps in the Dock</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;show-recents&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;show-recents&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
 </span></code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>Disable launch animations and minimize effect</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;launchanim&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;mineffect&quot;</span><span class="w"> </span><span class="s2">&quot;scale&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;launchanim&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;mineffect&quot;</span><span class="w"> </span><span class="s2">&quot;scale&quot;</span>
 </span></code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>Set Dock size and disable magnification</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;magnification&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;tilesize&quot;</span><span class="w"> </span>-int<span class="w"> </span><span class="m">40</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;magnification&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;tilesize&quot;</span><span class="w"> </span>-int<span class="w"> </span><span class="m">40</span>
+</span></code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p>Minimize windows into application icon</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;minimize-to-application&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+</span></code></pre></div>
+</li>
+</ul>
+<ul>
+<li>
+<p>Group applications in mission control</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.dock<span class="w"> </span><span class="s2">&quot;expose-group-apps&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
 </span></code></pre></div>
 </li>
 </ul>
@@ -1707,85 +1819,90 @@ read &lt;domain&gt;</code> before and after the change.</p>
 <ul>
 <li>
 <p>Disable reveal desktop on click</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.WindowManager<span class="w"> </span><span class="s2">&quot;EnableStandardClickToShowDesktop&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.WindowManager<span class="w"> </span><span class="s2">&quot;EnableStandardClickToShowDesktop&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
 </span></code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>Hide files on desktop and stage manager</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.WindowManager<span class="w"> </span><span class="s2">&quot;HideDesktop&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.WindowManager<span class="w"> </span><span class="s2">&quot;StandardHideDesktopIcons&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.WindowManager<span class="w"> </span><span class="s2">&quot;HideDesktop&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.WindowManager<span class="w"> </span><span class="s2">&quot;StandardHideDesktopIcons&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
 </span></code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>Do not show recent apps in stage manager</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.WindowManager<span class="w"> </span><span class="s2">&quot;AutoHide&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.WindowManager<span class="w"> </span><span class="s2">&quot;AutoHide&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
 </span></code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>Disable widgets on desktop and stage manager</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.WindowManager<span class="w"> </span><span class="s2">&quot;StandardHideWidgets&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.WindowManager<span class="w"> </span><span class="s2">&quot;StageManagerHideWidgets&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.WindowManager<span class="w"> </span><span class="s2">&quot;StandardHideWidgets&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.WindowManager<span class="w"> </span><span class="s2">&quot;StageManagerHideWidgets&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
 </span></code></pre></div>
 </li>
 </ul>
 <h2 id="macos-applications">macOS Applications<a class="headerlink" href="#macos-applications" title="Permanent link">&#128279;</a></h2>
 <h3 id="finder">Finder<a class="headerlink" href="#finder" title="Permanent link">&#128279;</a></h3>
+<p>Open Finder setting</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>osascript<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span>-e<span class="w"> </span><span class="s1">&#39;tell application &quot;Finder&quot; to activate&#39;</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span>-e<span class="w"> </span><span class="s1">&#39;tell application &quot;System Events&quot; to keystroke &quot;,&quot; using command down&#39;</span>
+</span></code></pre></div>
 <ul>
 <li>
 <p>Set home directory a default start directory</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;NewWindowTarget&quot;</span><span class="w"> </span><span class="s2">&quot;PfHm&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;NewWindowTarget&quot;</span><span class="w"> </span><span class="s2">&quot;PfHm&quot;</span>
 </span></code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>Open new folder in new tab</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;FinderSpawnTab&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;FinderSpawnTab&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
 </span></code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>Do not show drives and servers</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;ShowExternalHardDrivesOnDesktop&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;ShowHardDrivesOnDesktop&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;ShowMountedServersOnDesktop&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;ShowRemovableMediaOnDesktop&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;ShowExternalHardDrivesOnDesktop&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;ShowHardDrivesOnDesktop&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;ShowMountedServersOnDesktop&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;ShowRemovableMediaOnDesktop&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
 </span></code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>Do not show a warning when changing file extensions</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;FXEnableExtensionChangeWarning&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;FXEnableExtensionChangeWarning&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">false</span>
 </span></code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>Set default search scope to current folder</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;FXDefaultSearchScope&quot;</span><span class="w"> </span><span class="s2">&quot;SCcf&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;FXDefaultSearchScope&quot;</span><span class="w"> </span><span class="s2">&quot;SCcf&quot;</span>
 </span></code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>Remove old files (older than 30 days) from trash</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;FXRemoveOldTrashItems&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;FXRemoveOldTrashItems&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
 </span></code></pre></div>
 </li>
 </ul>
 <ul>
 <li>
 <p>Show path and status bar</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;ShowPathbar&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;ShowStatusBar&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;ShowPathbar&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.finder<span class="w"> </span><span class="s2">&quot;ShowStatusBar&quot;</span><span class="w"> </span>-bool<span class="w"> </span><span class="nb">true</span>
 </span></code></pre></div>
 </li>
 </ul>
@@ -1793,7 +1910,7 @@ read &lt;domain&gt;</code> before and after the change.</p>
 <ul>
 <li>
 <p>Change location for screenshots</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.screencapture<span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="w"> </span><span class="s2">&quot;~/Downloads/Screenshots&quot;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>defaults<span class="w"> </span>write<span class="w"> </span>com.apple.screencapture<span class="w"> </span><span class="s2">&quot;location&quot;</span><span class="w"> </span><span class="s2">&quot;~/Downloads/Screenshots&quot;</span>
 </span></code></pre></div>
 <p>You must also create the directory.</p>
 </li>
@@ -1820,7 +1937,7 @@ read &lt;domain&gt;</code> before and after the change.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 5, 2026 15:36:30 UTC">January 5, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 6, 2026 13:52:41 UTC">January 6, 2026</span>
   </span>
 
     
