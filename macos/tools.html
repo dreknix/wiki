@@ -1154,6 +1154,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dmenu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dmenu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automator-for-running-shell-script-via-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automator for running shell script via shortcuts
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1595,6 +1617,28 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dmenu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dmenu
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automator-for-running-shell-script-via-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automator for running shell script via shortcuts
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1622,6 +1666,51 @@
 <h2 id="karabiner">Karabiner<a class="headerlink" href="#karabiner" title="Permanent link">&#128279;</a></h2>
 <h2 id="raycast">Raycast<a class="headerlink" href="#raycast" title="Permanent link">&#128279;</a></h2>
 <h2 id="rectangle">Rectangle<a class="headerlink" href="#rectangle" title="Permanent link">&#128279;</a></h2>
+<h2 id="dmenu">dmenu<a class="headerlink" href="#dmenu" title="Permanent link">&#128279;</a></h2>
+<p>The version of <a href="https://tools.suckless.org/dmenu/"><code>dmenu</code></a> in <code>HomeBrew</code> is not
+working. The call to open <code>XOpenIM</code> is failing. Therefore, the tool must the
+compiled to support <a href="https://www.xquartz.org/"><code>XQuartz</code></a>.</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="go">brew install --cask xquartz</span>
+</span></code></pre></div>
+<p>Download the sources of <code>dmenu</code> and change the following three lines in the
+file <code>config.mk</code>:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>X11INC = /opt/X11/include
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>X11LIB = /opt/X11/lib
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>...
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>FREETYPEINC = /opt/X11/include/freetype2
+</span></code></pre></div>
+<p>Now <code>dmenu</code> is using the libraries of <code>XQuartz</code> and not those of <code>Homebrew</code>.</p>
+<p>In order to use <code>dmenu</code> the focus must first be changed to the newly opened
+window and afterwards back to the previous application.</p>
+<p>This can be achieved with the following snippet:</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="go">open -a XQuartz; ls | dmenu -i; \</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="go">  osascript -e &#39;tell application &quot;System Events&quot; to keystroke tab using {command down}&#39;</span>
+</span></code></pre></div>
+<h2 id="automator-for-running-shell-script-via-shortcuts">Automator for running shell script via shortcuts<a class="headerlink" href="#automator-for-running-shell-script-via-shortcuts" title="Permanent link">&#128279;</a></h2>
+<ul>
+<li>Open the application <code>Automator</code></li>
+</ul>
+<ul>
+<li>Choose type from list: <code>Application</code></li>
+</ul>
+<ul>
+<li>Select <code>Run Shell Script</code> from the list and drag into the right space</li>
+</ul>
+<ul>
+<li>
+<p>Write the shell script, e.g.,</p>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="go">source ~/.zprofile</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="go">~/bin/gnome-key-gopass.sh</span>
+</span></code></pre></div>
+<p>Sourcing the file <code>~/.zprofile</code> give access to all tools installed via
+<code>HomeBrew</code>.</p>
+<p>To allow <code>oascript</code> send a keystroke within the script, the application
+<code>Automator</code> needs additional privileges. Open <code>Settings</code> &gt; <code>Privacy &amp;
+Security</code> &gt; <code>Accessibility</code>. Allow the application <code>Automator</code>.</p>
+</li>
+</ul>
 
 
 
@@ -1644,7 +1733,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="January 5, 2026 15:36:08 UTC">January 5, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="March 27, 2026 14:34:34 UTC">March 27, 2026</span>
   </span>
 
     
