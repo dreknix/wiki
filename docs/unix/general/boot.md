@@ -17,6 +17,14 @@ $ sudo mokutil --list-enrolled
 ...
 ```
 
+If you find a module verification error in `dmesg` that tainting the kernel:
+
+``` plain
+[   12.141441] nvidia: module verification failed: signature and/or required key missing - tainting kernel
+```
+
+You need to add the key `/var/lib/dkms/mok.pub` to the enrolled keys.
+
 View the certificate that is used to sign modules build with the DKMS:
 
 ``` console
