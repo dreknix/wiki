@@ -23,3 +23,12 @@ MANPATH="$(brew --prefix findutils)/libexec/gnuman:${MANPATH}"
 export PATH
 export MANPATH
 ```
+
+## Install older version
+
+``` console
+brew tap-new local/neovim
+brew tap homebrew/core --force
+brew extract --version 0.11.7 neovim local/neovim
+brew install local/neovim/neovim@0.11.7
+```
