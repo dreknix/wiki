@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Wed, 24 Jun 2026 05:05:34 -0000</pubDate>
-    <lastBuildDate>Wed, 24 Jun 2026 05:05:34 -0000</lastBuildDate>
+    <pubDate>Sat, 18 Jul 2026 11:00:14 -0000</pubDate>
+    <lastBuildDate>Sat, 18 Jul 2026 11:00:14 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,80 @@
     
 
     
+    
+    <item>
+      <title>brltty and Generic Serial Converter</title>
+      
+      
+      
+      
+        
+      <category>Tools</category>
+        
+      <category>UNIX</category>
+        
+      
+      <description>&lt;h1&gt;brltty and Generic Serial Converter&lt;/h1&gt;
+&lt;p&gt;Distributions based on Ubuntu have
+&lt;a href=&#34;https://brltty.app/&#34;&gt;brltty&lt;/a&gt;{target=&#34;_blank&#34;} enabled by default. Some braille
+displays do not change the ids of those converters and therefore brltty claims
+the serial device and no device file &lt;code&gt;/dev/ttyUSBx&lt;/code&gt; is created. In the following
+some solutions to this problem are presented.&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2024/02/15/brltty-and-generic-serial-converter.html</link>
+      <pubDate>Sat, 18 Jul 2026 10:57:22 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2024/02/15/brltty-and-generic-serial-converter.html</guid>
+      
+    </item>
+    
+    <item>
+      <title>Containers 101 - chroot (Part I)</title>
+      
+      
+      
+      
+        
+      <category>Containers</category>
+        
+      <category>UNIX</category>
+        
+      
+      <description>&lt;h1&gt;Containers 101 - chroot (Part I)&lt;/h1&gt;
+&lt;p&gt;In this series the concept of containerization is presented by looking at the
+mechanisms behind the scenes. Before modern concepts like cgroups etc. are
+described, the main idea behind bundling an execution environment is introduced
+by using a chroot environment.&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html</link>
+      <pubDate>Sat, 18 Jul 2026 10:57:22 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html</guid>
+      
+    </item>
+    
+    <item>
+      <title>Enable gx in NvChad</title>
+      
+      
+      
+      
+        
+      <category>Neovim</category>
+        
+      
+      <description>&lt;h1&gt;Enable &lt;code&gt;gx&lt;/code&gt; in NvChad&lt;/h1&gt;
+&lt;p&gt;The command &lt;code&gt;gx&lt;/code&gt; opens the filename under the cursor with &lt;code&gt;vim.ui.open()&lt;/code&gt;
+(see &lt;a href=&#34;https://neovim.io/doc/user/pi_netrw.html#netrw-gx&#34;&gt;&lt;code&gt;:help netrw-gx&lt;/code&gt;&lt;/a&gt;{target=&#34;_blank&#34;}).
+Then handling is provided by the internal &lt;code&gt;netrw&lt;/code&gt; plugin. This plugin is
+disabled when using &lt;a href=&#34;../../tools/vi/neovim/index.md&#34;&gt;NvChad&lt;/a&gt;.&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2023/11/21/enable-gx-in-nvchad.html</link>
+      <pubDate>Sat, 18 Jul 2026 10:57:22 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/11/21/enable-gx-in-nvchad.html</guid>
+      
+    </item>
     
     <item>
       <title>Scripts for Nmap</title>
@@ -53,10 +127,35 @@ installation comes with a wide variety of scripts (&lt;code&gt;/usr/share/nmap/s
 The scripts can be applied for each host or service found during network
 discovery, or before and after the scan.&lt;/p&gt;</description>
       <link>https://dreknix.github.io/wiki/blog/2024/11/22/scripts-for-nmap.html</link>
-      <pubDate>Fri, 22 Nov 2024 12:15:39 +0000</pubDate>
+      <pubDate>Sat, 18 Jul 2026 10:57:22 +0000</pubDate>
       <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
       
       <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2024/11/22/scripts-for-nmap.html</guid>
+      
+    </item>
+    
+    <item>
+      <title>QEMU and Windows Keys</title>
+      
+      
+      
+      
+        
+      <category>Tools</category>
+        
+      <category>Windows</category>
+        
+      
+      <description>&lt;h1&gt;QEMU and Windows Keys&lt;/h1&gt;
+&lt;p&gt;OEM Windows keys are often stored in the software licensing (SLIC) or Microsoft
+data management (MSDM) table. When a key is stored the unattended installation
+can use a generic key and the stored key is then used and activated. The usage
+of such a key can be tested with QEMU/libvirt.&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2023/12/04/qemu-and-windows-keys.html</link>
+      <pubDate>Sat, 18 Jul 2026 10:57:22 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/12/04/qemu-and-windows-keys.html</guid>
       
     </item>
     
@@ -77,7 +176,7 @@ discovery, or before and after the scan.&lt;/p&gt;</description>
 is securely stored on hardware. The file in the &lt;code&gt;~/.ssh/&lt;/code&gt; directory contains
 only the credential id with other non-sensitive meta-data.&lt;/p&gt;</description>
       <link>https://dreknix.github.io/wiki/blog/2024/02/23/using-openssh-with-fido2-hardware-keys.html</link>
-      <pubDate>Fri, 23 Feb 2024 13:40:17 +0000</pubDate>
+      <pubDate>Sat, 18 Jul 2026 10:57:22 +0000</pubDate>
       <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
       
       <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2024/02/23/using-openssh-with-fido2-hardware-keys.html</guid>
@@ -85,32 +184,7 @@ only the credential id with other non-sensitive meta-data.&lt;/p&gt;</descriptio
     </item>
     
     <item>
-      <title>Containers 101 - chroot (Part I)</title>
-      
-      
-      
-      
-        
-      <category>Containers</category>
-        
-      <category>UNIX</category>
-        
-      
-      <description>&lt;h1&gt;Containers 101 - chroot (Part I)&lt;/h1&gt;
-&lt;p&gt;In this series the concept of containerization is presented by looking at the
-mechanisms behind the scenes. Before modern concepts like cgroups etc. are
-described, the main idea behind bundling an execution environment is introduced
-by using a chroot environment.&lt;/p&gt;</description>
-      <link>https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html</link>
-      <pubDate>Fri, 16 Feb 2024 16:12:10 +0000</pubDate>
-      <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
-      
-      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2024/02/16/containers-101---chroot-part-i.html</guid>
-      
-    </item>
-    
-    <item>
-      <title>brltty and Generic Serial Converter</title>
+      <title>Using SPICE with TrueNAS Scale Cobia (23.10)</title>
       
       
       
@@ -121,17 +195,38 @@ by using a chroot environment.&lt;/p&gt;</description>
       <category>UNIX</category>
         
       
-      <description>&lt;h1&gt;brltty and Generic Serial Converter&lt;/h1&gt;
-&lt;p&gt;Distributions based on Ubuntu have
-&lt;a href=&#34;https://brltty.app/&#34;&gt;brltty&lt;/a&gt;{target=&#34;_blank&#34;} enabled by default. Some braille
-displays do not change the ids of those converters and therefore brltty claims
-the serial device and no device file &lt;code&gt;/dev/ttyUSBx&lt;/code&gt; is created. In the following
-some solutions to this problem are presented.&lt;/p&gt;</description>
-      <link>https://dreknix.github.io/wiki/blog/2024/02/15/brltty-and-generic-serial-converter.html</link>
-      <pubDate>Fri, 16 Feb 2024 08:36:58 +0000</pubDate>
+      <description>&lt;h1&gt;Using SPICE with TrueNAS Scale Cobia (23.10)&lt;/h1&gt;
+&lt;p&gt;TrueNAS Scale Cobia (23.10) disabled the option to access VM displays via VNC.
+The connection method is changed to
+&lt;a href=&#34;https://www.spice-space.org/&#34;&gt;SPICE&lt;/a&gt;{target=&#34;_blank&#34;}.&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2023/11/22/using-spice-with-truenas-scale-cobia-2310.html</link>
+      <pubDate>Sat, 18 Jul 2026 10:57:22 +0000</pubDate>
       <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
       
-      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2024/02/15/brltty-and-generic-serial-converter.html</guid>
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/11/22/using-spice-with-truenas-scale-cobia-2310.html</guid>
+      
+    </item>
+    
+    <item>
+      <title>Using TeX files in Vi</title>
+      
+      
+      
+      
+        
+      <category>LaTeX</category>
+        
+      <category>Neovim</category>
+        
+      
+      <description>&lt;h1&gt;Using TeX files in Vi&lt;/h1&gt;
+&lt;p&gt;In Vim/Neovim the filetype plugin uses three different type for different TeX
+flavors (see &lt;a href=&#34;https://neovim.io/doc/user/filetype.html#ft-tex-plugin&#34;&gt;&lt;code&gt;:help ft-tex-plugin&lt;/code&gt;&lt;/a&gt;{target=&#34;_blank&#34;}).&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2023/11/20/using-tex-files-in-vi.html</link>
+      <pubDate>Sat, 18 Jul 2026 10:57:22 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/11/20/using-tex-files-in-vi.html</guid>
       
     </item>
     
@@ -156,54 +251,6 @@ RAM space savings.&lt;/p&gt;</description>
       <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
       
       <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/12/11/zram-and-swap.html</guid>
-      
-    </item>
-    
-    <item>
-      <title>QEMU and Windows Keys</title>
-      
-      
-      
-      
-        
-      <category>Tools</category>
-        
-      <category>Windows</category>
-        
-      
-      <description>&lt;h1&gt;QEMU and Windows Keys&lt;/h1&gt;
-&lt;p&gt;OEM Windows keys are often stored in the software licensing (SLIC) or Microsoft
-data management (MSDM) table. When a key is stored the unattended installation
-can use a generic key and the stored key is than used and activated. The usage
-of such a key can be tested with QEMU/libvirt.&lt;/p&gt;</description>
-      <link>https://dreknix.github.io/wiki/blog/2023/12/04/qemu-and-windows-keys.html</link>
-      <pubDate>Mon, 04 Dec 2023 14:06:14 +0000</pubDate>
-      <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
-      
-      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/12/04/qemu-and-windows-keys.html</guid>
-      
-    </item>
-    
-    <item>
-      <title>Enable gx in NvChad</title>
-      
-      
-      
-      
-        
-      <category>Neovim</category>
-        
-      
-      <description>&lt;h1&gt;Enable &lt;code&gt;gx&lt;/code&gt; in NvChad&lt;/h1&gt;
-&lt;p&gt;The command &lt;code&gt;gx&lt;/code&gt; opens the filename under the the cursor with &lt;code&gt;vim.ui.open()&lt;/code&gt;
-(see &lt;a href=&#34;https://neovim.io/doc/user/pi_netrw.html#netrw-gx&#34;&gt;&lt;code&gt;:help netrw-gx&lt;/code&gt;&lt;/a&gt;{target=&#34;_blank&#34;}).
-Then handling is provided by the internal &lt;code&gt;netrw&lt;/code&gt; plugin. This plugin is
-disabled when using &lt;a href=&#34;../../tools/vi/neovim/index.md&#34;&gt;NvChad&lt;/a&gt;.&lt;/p&gt;</description>
-      <link>https://dreknix.github.io/wiki/blog/2023/11/21/enable-gx-in-nvchad.html</link>
-      <pubDate>Wed, 22 Nov 2023 14:27:32 +0000</pubDate>
-      <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
-      
-      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/11/21/enable-gx-in-nvchad.html</guid>
       
     </item>
     
@@ -253,53 +300,6 @@ authentication plugin (see: &lt;a href=&#34;https://github.com/nextcloud/user_ex
       <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
       
       <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/11/20/imap-based-authentication-in-php.html</guid>
-      
-    </item>
-    
-    <item>
-      <title>Using SPICE with TrueNAS Scale Cobia (23.10)</title>
-      
-      
-      
-      
-        
-      <category>Tools</category>
-        
-      <category>UNIX</category>
-        
-      
-      <description>&lt;h1&gt;Using SPICE with TrueNAS Scale Cobia (23.10)&lt;/h1&gt;
-&lt;p&gt;TrueNAS Scale Cobia (23.10) disabled the option to access VM displays via VNC.
-The connection method is changed to
-&lt;a href=&#34;https://www.spice-space.org/&#34;&gt;SPICE&lt;/a&gt;{target=&#34;_blank&#34;}.&lt;/p&gt;</description>
-      <link>https://dreknix.github.io/wiki/blog/2023/11/22/using-spice-with-truenas-scale-cobia-2310.html</link>
-      <pubDate>Wed, 22 Nov 2023 14:27:32 +0000</pubDate>
-      <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
-      
-      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/11/22/using-spice-with-truenas-scale-cobia-2310.html</guid>
-      
-    </item>
-    
-    <item>
-      <title>Using TeX files in Vi</title>
-      
-      
-      
-      
-        
-      <category>LaTeX</category>
-        
-      <category>Neovim</category>
-        
-      
-      <description>&lt;h1&gt;Using TeX files in Vi&lt;/h1&gt;
-&lt;p&gt;In Vim/Neovim the filetype plugin uses three different type for different TeX
-flavors (see &lt;a href=&#34;https://neovim.io/doc/user/filetype.html#ft-tex-plugin&#34;&gt;&lt;code&gt;:help ft-tex-plugin&lt;/code&gt;&lt;/a&gt;{target=&#34;_blank&#34;}).&lt;/p&gt;</description>
-      <link>https://dreknix.github.io/wiki/blog/2023/11/20/using-tex-files-in-vi.html</link>
-      <pubDate>Wed, 22 Nov 2023 12:40:54 +0000</pubDate>
-      <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
-      
-      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2023/11/20/using-tex-files-in-vi.html</guid>
       
     </item>
     

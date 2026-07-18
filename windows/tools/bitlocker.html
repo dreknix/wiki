@@ -26,7 +26,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -34,7 +34,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1889,8 +1889,8 @@
 
 
 <h1 id="bitlocker">BitLocker<a class="headerlink" href="#bitlocker" title="Permanent link">&#128279;</a></h1>
-<p>BitLocker is a proprietary volume encryption tool includes in Microsoft Windows.
-Without any configuration BitLocker using TPM. When using TPM on start of the
+<p>BitLocker is a proprietary volume encryption tool included in Microsoft Windows.
+Without any configuration BitLocker uses TPM. When using TPM on start of the
 computer no password needs to be entered.</p>
 <p>The command line command
 <a href="https://learn.microsoft.com/windows-server/administration/windows-commands/manage-bde" target="_blank" rel="noopener">manage-bde</a>
@@ -1900,7 +1900,7 @@ can be used to turn on BitLocker and monitor the current status.</p>
 keys.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>This configuration settings requires at least Windows 10, older versions
+<p>These configuration settings require at least Windows 10, older versions
 of Windows use different options.</p>
 </div>
 <h3 id="group-policies">Group  Policies<a class="headerlink" href="#group-policies" title="Permanent link">&#128279;</a></h3>
@@ -2048,7 +2048,7 @@ numerical recovery password):</p>
 <div class="language-powershell highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">PS</span><span class="p">&gt;</span> <span class="n">manage-pde</span> <span class="n">-changepassword</span> <span class="n">C</span><span class="p">:</span>
 </span></code></pre></div>
 <h2 id="script">Script<a class="headerlink" href="#script" title="Permanent link">&#128279;</a></h2>
-<p>The following PowerShell script enable BitLocker on <code>C:</code>:</p>
+<p>The following PowerShell script enables BitLocker on <code>C:</code>:</p>
 <div class="language-powerShell highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">if</span> <span class="p">((</span><span class="nb">Get-BitLockerVolume</span> <span class="n">C</span><span class="p">:).</span><span class="n">EncryptionMethod</span> <span class="o">-ne</span> <span class="s2">&quot;None&quot;</span><span class="p">)</span> <span class="p">{</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>  <span class="nb">Write-Host</span> <span class="s2">&quot;&quot;</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>  <span class="nb">Write-Host</span> <span class="s2">&quot;Volume C: is already encrypted&quot;</span> <span class="n">-ForegroundColor</span> <span class="n">red</span>
@@ -2134,7 +2134,7 @@ numerical recovery password):</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="December 21, 2023 11:30:09 UTC">December 21, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="July 18, 2026 10:57:22 UTC">July 18, 2026</span>
   </span>
 
     
@@ -2269,7 +2269,7 @@ numerical recovery password):</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

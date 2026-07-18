@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Wed, 24 Jun 2026 05:05:34 -0000</pubDate>
-    <lastBuildDate>Wed, 24 Jun 2026 05:05:34 -0000</lastBuildDate>
+    <pubDate>Sat, 18 Jul 2026 11:00:14 -0000</pubDate>
+    <lastBuildDate>Sat, 18 Jul 2026 11:00:14 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -174,7 +174,7 @@ RAM space savings.&lt;/p&gt;</description>
       <description>&lt;h1&gt;QEMU and Windows Keys&lt;/h1&gt;
 &lt;p&gt;OEM Windows keys are often stored in the software licensing (SLIC) or Microsoft
 data management (MSDM) table. When a key is stored the unattended installation
-can use a generic key and the stored key is than used and activated. The usage
+can use a generic key and the stored key is then used and activated. The usage
 of such a key can be tested with QEMU/libvirt.&lt;/p&gt;</description>
       <link>https://dreknix.github.io/wiki/blog/2023/12/04/qemu-and-windows-keys.html</link>
       <pubDate>Mon, 04 Dec 2023 00:00:00 +0000</pubDate>
@@ -219,7 +219,7 @@ The connection method is changed to
         
       
       <description>&lt;h1&gt;Enable &lt;code&gt;gx&lt;/code&gt; in NvChad&lt;/h1&gt;
-&lt;p&gt;The command &lt;code&gt;gx&lt;/code&gt; opens the filename under the the cursor with &lt;code&gt;vim.ui.open()&lt;/code&gt;
+&lt;p&gt;The command &lt;code&gt;gx&lt;/code&gt; opens the filename under the cursor with &lt;code&gt;vim.ui.open()&lt;/code&gt;
 (see &lt;a href=&#34;https://neovim.io/doc/user/pi_netrw.html#netrw-gx&#34;&gt;&lt;code&gt;:help netrw-gx&lt;/code&gt;&lt;/a&gt;{target=&#34;_blank&#34;}).
 Then handling is provided by the internal &lt;code&gt;netrw&lt;/code&gt; plugin. This plugin is
 disabled when using &lt;a href=&#34;../../tools/vi/neovim/index.md&#34;&gt;NvChad&lt;/a&gt;.&lt;/p&gt;</description>
