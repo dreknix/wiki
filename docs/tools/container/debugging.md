@@ -60,7 +60,7 @@ like.
     [:fontawesome-brands-github: iximiuz/cdbug](
      https://github.com/iximiuz/cdebug){:target="_blank"}
 
-    A tool for container debugging. Based on the ideas descripted in the blog
+    A tool for container debugging. Based on the ideas described in the blog
     post "[Docker: How To Debug Distroless And Slim Containers](
     https://iximiuz.com/en/posts/docker-debug-slim-containers/){:target="_blank"}"
     from Ivan Velichko

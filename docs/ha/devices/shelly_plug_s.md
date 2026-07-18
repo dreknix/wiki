@@ -32,7 +32,7 @@ Configure device (`Configure` > `Configure Module`):
 BlitzWolf SHP (45)
 ```
 
-Configure MQTT (`Configure` > `Configure MQTT`:
+Configure MQTT (`Configure` > `Configure MQTT`):
 
 * Host: //IP address of Home Assistant//
 * User: //user in Home Assistant//

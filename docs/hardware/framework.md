@@ -11,7 +11,7 @@ https://frame.work/de/en/products/laptop-diy-13-gen-amd){target="_blank"}
 
 ## Debian 13 trixie (testing)
 
-Basic [installation](../unix/debian/install.md) from network installer (netisnt)
+Basic [installation](../unix/debian/install.md) from network installer (netinst)
 ISO image with disk encryption and `btrfs` flat volume layout.
 
 After the first reboot [tweak the fresh installation](../unix/debian/tweak.md).

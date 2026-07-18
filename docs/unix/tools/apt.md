@@ -64,7 +64,7 @@ qemu-guest-agent
 ### Packages have changed dependencies
 
 If the dependencies of a package has changed, and one of the new dependencies
-is not unmet, than the package will not be updated.
+is not met, then the package will not be updated.
 
 To see which package version is installed and which is upgradable use the
 command `apt list -a`:
@@ -78,14 +78,14 @@ qemu-guest-agent/jammy-security 1:6.2+dfsg-2ubuntu6.2 amd64
 qemu-guest-agent/jammy 1:6.2+dfsg-2ubuntu6 amd64
 ```
 
-Use `apt-show` for each version to check the dependencies:
+Use `apt show` for each version to check the dependencies:
 
 ``` console
 apt show qemu-guest-agent=1:6.2+dfsg-2ubuntu6.4
 apt show qemu-guest-agent=1:6.2+dfsg-2ubuntu6.5
 ```
 
-If there are changed dependencies, install the update with the new depencies
+If there are changed dependencies, install the update with the new dependencies
 via:
 
 ``` console
@@ -93,7 +93,7 @@ sudo apt --with-new-pkgs upgrade
 ```
 
 When you use `apt install` to resolve this issue the packages will be marked as
-manual installed.
+manually installed.
 
 ### Packages are a phased update
 

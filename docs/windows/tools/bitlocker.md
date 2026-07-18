@@ -1,7 +1,7 @@
 # BitLocker
 
-BitLocker is a proprietary volume encryption tool includes in Microsoft Windows.
-Without any configuration BitLocker using TPM. When using TPM on start of the
+BitLocker is a proprietary volume encryption tool included in Microsoft Windows.
+Without any configuration BitLocker uses TPM. When using TPM on start of the
 computer no password needs to be entered.
 
 The command line command
@@ -15,7 +15,7 @@ keys.
 
 !!! info
 
-    This configuration settings requires at least Windows 10, older versions
+    These configuration settings require at least Windows 10, older versions
     of Windows use different options.
 
 ### Group  Policies
@@ -184,7 +184,7 @@ PS> manage-pde -changepassword C:
 
 ## Script
 
-The following PowerShell script enable BitLocker on `C:`:
+The following PowerShell script enables BitLocker on `C:`:
 
 ``` powerShell
 if ((Get-BitLockerVolume C:).EncryptionMethod -ne "None") {

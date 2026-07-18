@@ -21,7 +21,7 @@ Which filetype the current buffer was assigned, can be shown with `:set
 filetype?` (or `:LspInfo` if LSP is enabled).
 
 All files with the extension `*.tex` are of type `plaintex`. When the file type
-plugin finds specific keywords the file type is than changed to `tex` or
+plugin finds specific keywords the file type is then changed to `tex` or
 `context`.
 
 The automatic guessing can be disabled with the following two mechanisms.

@@ -1,4 +1,4 @@
-# chardrc.lua
+# chadrc.lua
 
 Content of `~/.config/nvim/lua/custom/chadrc.lua`:
 

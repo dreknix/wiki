@@ -11,7 +11,7 @@ tags:
 * [:fontawesome-brands-github: mrbaseman/parse_yaml](
    https://github.com/mrbaseman/parse_yaml){target="_blank"}
 
-Example yaml file:
+Example YAML file:
 
 ```yaml
 ---
@@ -52,7 +52,7 @@ global_sample_input_1_=" global_sample_input_1_property1 global_sample_input_1_p
 global_sample_input_2_=" global_sample_input_2_property1 global_sample_input_2_property2"
 ```
 
-A list of variables can iterated with:
+A list of variables can be iterated with:
 
 ```console
 $ for f in $global_flags_ ; do eval echo \$f \$${f} ; done

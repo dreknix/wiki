@@ -42,8 +42,8 @@ To switch to a virtual console, you can:
 
 ## Switch to console terminal via `chvt`
 
-The command `chvt N` switch to the virtual console `N`. For example:
+The command `chvt N` switches to the virtual console `N`. For example:
 
 ```console
-$ sudu chvt 3
+$ sudo chvt 3
 ```

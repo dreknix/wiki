@@ -1,6 +1,6 @@
 # iPXE
 
-[iPXE](https://ipxe.org/) is a open source boot firmware, that supports booting
+[iPXE](https://ipxe.org/) is an open source boot firmware, that supports booting
 from a web server via HTTP.
 
 ## Configure and create iPXE boot iso
@@ -30,7 +30,7 @@ Create a script that will be embedded into the iPXE binary:
 # config
 
 echo
-echo iPXE embeded script
+echo iPXE embedded script
 echo
 
 # needed since embed script: https://ipxe.org/embed
@@ -68,8 +68,8 @@ Build UEFI:
 make bin-x86_64-efi/ipxe.efi EMBED=script.ipxe
 ```
 
-To chainload a signed iPXE, a Microsoft-signed shim is needed. The shim can load
-than a MOK self-signed (Machine Owner Key) iPXE loader.
+To chainload a signed iPXE, a Microsoft-signed shim is needed. The shim can then load
+a MOK (Machine Owner Key) self-signed iPXE loader.
 
 Get Microsoft-signed shim:
 
@@ -77,7 +77,7 @@ Get Microsoft-signed shim:
 apt install shim-signed
 ```
 
-To create a signed version of the UEFI, we need to crate a MOK key pair:
+To create a signed version of the UEFI, we need to create a MOK key pair:
 
 ``` console
 openssl req -newkey rsa:2048 -nodes -keyout MOK.key \
@@ -162,7 +162,7 @@ qemu-system-x86_64 \
 For testing purposes the following flags might be helpful:
 
 * `-boot menu=on` - add some time to press `F2`
-* `--nographic` - boot in only text modus
+* `--nographic` - boot in text-only mode
 * `-monitor stdio` - then you can `sendkey ctrl-alt-f2` to switch the virtual
   ttys in a Linux guest
 

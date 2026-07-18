@@ -9,7 +9,7 @@ categories:
 
 OEM Windows keys are often stored in the software licensing (SLIC) or Microsoft
 data management (MSDM) table. When a key is stored the unattended installation
-can use a generic key and the stored key is than used and activated. The usage
+can use a generic key and the stored key is then used and activated. The usage
 of such a key can be tested with QEMU/libvirt.
 
 <!-- more -->
@@ -61,7 +61,7 @@ dmidecode -t 1
 ```
 
 The embedded license key can be activated with the following commands. First
-the key is read from the SLIC or MSDM table and than stored in Windows. The
+the key is read from the SLIC or MSDM table and then stored in Windows. The
 last command activates the license key:
 
 ``` powershell

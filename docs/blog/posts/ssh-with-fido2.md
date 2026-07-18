@@ -104,9 +104,9 @@ https://manpages.debian.org/ssh-keygen.1.en.html){target="_blank"}:
 ssh-keygen -t ed25519-sk -f ~/.ssh/id_dreknix_fido2_a -C "dreknix fido2 a"
 ```
 
-The suffix `-sk` identicates that a secure key is used. Optional the key type
+The suffix `-sk` indicates that a secure key is used. Optional the key type
 `ecdsa-sk` can be used, when an older hardware key is used that does not support
-the prefered `ed25519-sk` key type.
+the preferred `ed25519-sk` key type.
 
 This key was called `a` to emphasize that more than one hardware key should be
 configured.

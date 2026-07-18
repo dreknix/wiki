@@ -3,7 +3,7 @@ tags:
   - HomeAssistant
 ---
 
-# Home Assistent
+# Home Assistant
 
 ## First Steps
 

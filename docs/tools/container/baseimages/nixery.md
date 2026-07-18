@@ -1,10 +1,10 @@
 # Nixery
 
-[Nixery](https://nixery.dev){:target="_blank"} is acontainer image registry that
+[Nixery](https://nixery.dev){:target="_blank"} is a container image registry that
 provides small base images with only the packages specified in the URL,
 separated by slashes.
 
-When the first element is `shell` than the `bash` and `coreutils` are part of
+When the first element is `shell` then the `bash` and `coreutils` are part of
 the image. After that packages from the
 [Nix package manager](https://nixos.org/nix){:target="_blank"} can be added. Any
 package available at

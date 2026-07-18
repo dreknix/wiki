@@ -26,8 +26,8 @@ RAID partitions with:
 sudo mdadm --assemble --scan
 ```
 
-Information about available RAID disks can be found in `/proc/mdstat`. The RAID
-based partition are named `/dev/mdXXX`.
+Information about available RAID disks can be found in `/proc/mdstat`. The RAID-based
+partitions are named `/dev/mdXXX`.
 
 If a disk is missing, try to recreate the RAID partitions by hand.
 
@@ -48,11 +48,11 @@ Unlock the LUKS device:
 sudo cryptsetup luksOpen /dev/md126 crypt
 ```
 
-The unlocked LUKS partition is now available with the device`/dev/mapper/crypt`.
+The unlocked LUKS partition is now available with the device `/dev/mapper/crypt`.
 
 ### LVM
 
-If some of the partitions have the type `LVM2_member` a software RAID is
+If some of the partitions have the type `LVM2_member` an LVM is
 present.
 
 Install the corresponding package if not present:
@@ -103,7 +103,7 @@ sudo mount --rbind --make-rslave /sys /target/sys
 !!! info
 
     Unmounting the file systems is simple. Only the `/dev` and `/sys` file
-    system must be unmounted with the option `--recursive`.
+    systems must be unmounted with the option `--recursive`.
 
     ``` console
     sudo umount --recursive /target/sys

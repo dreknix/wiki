@@ -10,7 +10,7 @@ $ sudo nvme list
 $ sudo nvme smart-log /dev/nvme0n1
 ```
 
-Device performance with `htparm`:
+Device performance with `hdparm`:
 
 ```console
 $ sudo hdparm -Tt --direct /dev/nvme0n1
@@ -49,7 +49,7 @@ Commit firmware to slot 2 without activation (`-a 0`):
 $ sudo nvme fw-commit -s 2 -a 0 /dev/nvme0n1
 ```
 
-Check with `nwme fw-log` if firmware is stored in slot 2. Than activate (`-a 2`)
+Check with `nvme fw-log` if firmware is stored in slot 2. Then activate (`-a 2`)
 the firmware in slot 2.
 
 ```console

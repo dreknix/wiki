@@ -6,7 +6,7 @@ categories:
 
 # Enable `gx` in NvChad
 
-The command `gx` opens the filename under the the cursor with `vim.ui.open()`
+The command `gx` opens the filename under the cursor with `vim.ui.open()`
 (see [`:help netrw-gx`](https://neovim.io/doc/user/pi_netrw.html#netrw-gx){target="_blank"}).
 Then handling is provided by the internal `netrw` plugin. This plugin is
 disabled when using [NvChad](../../tools/vi/neovim/index.md).

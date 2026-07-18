@@ -78,7 +78,7 @@ journalctl --identifier=sshd
 
 Get a description of available fields: `man systemd.journal-fields`
 
-Query which entries exist for a speficic field:
+Query which entries exist for a specific field:
 
 ``` console
 journalctl -F _UID
@@ -95,7 +95,7 @@ journalctl _PID=9099
 
 Grep a pattern in the message text.
 
-Find case insensitive all entry with message containing `error`:
+Find all entries with messages containing `error`:
 
 ``` console
 journal -g "error"

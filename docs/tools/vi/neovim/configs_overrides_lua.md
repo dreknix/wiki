@@ -112,7 +112,7 @@ M.nvimtree = {
 ## lukas-reineke/indent-blankline.nvim
 
 Define other symbols for visualizing different whitespaces in list mode. The
-list mode is disabled by default. ++f2++ is used to toogle list view (see
+list mode is disabled by default. ++f2++ is used to toggle list view (see
 [mappings.lua](mappings_lua.md)). With the plugin variable `show_end_of_line`
 the character set defined by `listchars` is used.
 

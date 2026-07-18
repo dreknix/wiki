@@ -20,13 +20,13 @@ discovery, or before and after the scan.
 <!-- more -->
 
 The script execution can be configured with the following command line
-parameters(see [nmap(1)](
+parameters (see [nmap(1)](
 https://manpages.debian.org/nmap.1.en.html){target="_blank"}):
 
 * `--script`: comma separated list of directories, files or categories
 * `--script-help`: show the help for the given scripts
 * `--script-args`: provide additional parameters
-* `--script-trace`: show all data send and received
+* `--script-trace`: show all data sent and received
 
 In the following a few examples are given.
 

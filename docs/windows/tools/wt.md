@@ -11,7 +11,7 @@ https://github.com/microsoft/terminal
 
 Download the latest release from https://github.com/microsoft/terminal/releases/latest
 
-Install the MSIXBundle by starting a PowerShell with administratior rights:
+Install the MSIXBundle by starting a PowerShell with administrator rights:
 
 ```powershell
 PS> Add-AppxPackage Microsoft.WindowsTerminal_1.2.2381.0_8wekyb3d8bbwe.msixbundle
@@ -142,7 +142,7 @@ Change keyboard shortcuts:
 * Move between Tabs:
   * ++ctrl+tab++
   * ++ctrl+shift+tab++
-* Open spefic Tab:
+* Open specific Tab:
   * ++ctrl+alt+1++
   * ++ctrl+alt+2++
   * ...

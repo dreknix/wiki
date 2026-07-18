@@ -15,7 +15,7 @@ These tools are specific for macOS.
 ## dmenu
 
 The version of [`dmenu`](https://tools.suckless.org/dmenu/) in `HomeBrew` is not
-working. The call to open `XOpenIM` is failing. Therefore, the tool must the
+working. The call to open `XOpenIM` is failing. Therefore, the tool must be
 compiled to support [`XQuartz`](https://www.xquartz.org/).
 
 ``` console
@@ -61,9 +61,9 @@ open -a XQuartz; ls | dmenu -i; \
   ~/bin/gnome-key-gopass.sh
   ```
 
-  Sourcing the file `~/.zprofile` give access to all tools installed via
+  Sourcing the file `~/.zprofile` gives access to all tools installed via
   `HomeBrew`.
 
-  To allow `oascript` send a keystroke within the script, the application
+  To allow `osascript` to send a keystroke within the script, the application
   `Automator` needs additional privileges. Open `Settings` > `Privacy &
   Security` > `Accessibility`. Allow the application `Automator`.

@@ -29,7 +29,7 @@ chroot: failed to run command ‘/bin/bash’: No such file or directory
 
 !!! info
 
-    If no additional parameters (the second is optional and secifies the
+    If no additional parameters (the second is optional and specifies the
     command to run) are provided, `chroot` executes `${SHELL} -i`.
 
 The problem with this example is, that the executable `/bin/bash` does not
@@ -79,7 +79,7 @@ From the trace it is apparent that executing `/bin/bash` is failing. But the
 error code `ENOENT` is misleading in the case, since the file is existing and
 executable.
 
-For a better understanding of this issue, lets write a small application
+For a better understanding of this issue, let's write a small application
 `app.c` in C.
 
 ``` c
@@ -155,7 +155,7 @@ $ nm app | grep " puts"
 Since all executable programs share the same standard libraries memory can be
 saved by not embedding the same code in every running process. Therefore, all
 libraries are shared libraries and are loaded only once into memory. The
-programs contains only references to this external shared libraries and the
+programs contain only references to these external shared libraries and the
 references are resolved during run-time instead at compile time.
 
 Since these shared libraries are not available inside the chroot environment

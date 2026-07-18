@@ -4,12 +4,12 @@
 is a fork of Vim with builtin support for Language Server Protocol (LSP)
 and Lua scripting.
 
-For Neovim different advanced configurations exists:
+For Neovim different advanced configurations exist:
 [LazyVim](https://github.com/LazyVim/LazyVim/){:target="_blank"},
 [LunarVim](https://github.com/LunarVim/LunarVim/){:target="_blank"},
 [AstroNvim](https://github.com/AstroNvim/AstroNvim/){:target="_blank"},
 [NvChad](https://github.com/NvChad/NvChad/){:target="_blank"}, ...
-In the following NvChad is used as the bases for the custom configuration.
+In the following NvChad is used as the basis for the custom configuration.
 
 * [:fontawesome-brands-github: NvChad/NvChad](https://github.com/NvChad/NvChad/){:target="_blank"}
 * [:fontawesome-brands-github: NvChad/example_config](https://github.com/NvChad/example_config/){:target="_blank"}

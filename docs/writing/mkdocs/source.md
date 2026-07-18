@@ -111,7 +111,7 @@ Highlighting inline code is done with the `#!` characters, e.g.,
           return EXIT_SUCCESS; // (2)!
         ```
 
-        1.  to everthing
+        1.  to everything
         2.  Annotation with stripping comments
         ````
 

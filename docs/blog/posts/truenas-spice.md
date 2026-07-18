@@ -19,14 +19,14 @@ is available that is a GTK-based remote desktop client. This tool supports many
 different protocols: RDP, VNC, SPICE, X2Go, SSH, etc. Some of the protocols,
 i.e. SPICE, are only available via additional plugins.
 
-To install Remina with the SPICE plugin (the RDP and VNC plugins are installed
+To install Remmina with the SPICE plugin (the RDP and VNC plugins are installed
 by default):
 
 ``` console
 sudo apt install remmina remmina-plugin-spice
 ```
 
-When Remina is installed, you can connect to the server via the SPICE protocol:
+When Remmina is installed, you can connect to the server via the SPICE protocol:
 
 ``` console
 remmina spice://server.example.org

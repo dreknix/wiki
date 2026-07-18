@@ -62,26 +62,26 @@ Continue configuring Debian installer:
 * `Detect disks`
 * `Partition disks`
   * `Manual`
-    * `Create a new partion`
+    * `Create a new partition`
       * Size: `2 GB`
       * Location: `Beginning`
       * Name: `EFI`
       * Use as: `EFI System Partition`
       * Bootable flag: `on`
-    * `Create a new partion`
+    * `Create a new partition`
       * Size: `4 GB`
       * Location: `Beginning`
       * Name: `Boot`
       * Use as: `Ext4 journaling file system`
       * Mount point: `/boot`
-    * `Create a new partion`
+    * `Create a new partition`
       * Size: `1.9 TB`
       * Location: `Beginning`
       * Name: `Crypto_Linux`
       * Use as: `physical volume for encryption`
       * Encryption key: `Passphrase`
       * Erase data: `no`
-    * `Create a new partion`
+    * `Create a new partition`
       * Size: `94 GB`
       * Location: `Beginning`
       * Name: `Crypto_Swap`
@@ -215,7 +215,7 @@ Edit the `/target/etc/fstab` file:
 
 !!! info
 
-    Instead of device names the UUID of the partitions should be used. The get
+    Instead of device names the UUID of the partitions should be used. To get the
     corresponding UUIDs use the command `blkid`.
 
 !!! info

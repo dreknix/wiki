@@ -45,7 +45,7 @@ markdown_extensions:
 
 ### Example
 
-!!! example "GitHub indention"
+!!! example "GitHub indentation"
 
     === "Layout"
 
@@ -63,11 +63,11 @@ markdown_extensions:
           * Level 2
         ```
 
-!!! example "Standard indention"
+!!! example "Standard indentation"
 
     === "Layout"
 
-        Standanrd indention is not valid any more.
+        Standard indentation is not valid any more.
 
         * Level 1 (Standard)
             * Level 2

@@ -5,7 +5,7 @@
 TODO
 
 Homebrew installs standard tools always with the GNU prefix `g`. In order to use
-scripts that runs also on standard Linux systems, the binaries in the `gnubin`
+scripts that run also on standard Linux systems, the binaries in the `gnubin`
 directory must be included into `${PATH}` and `${MANPATH}` environment
 variables.
 

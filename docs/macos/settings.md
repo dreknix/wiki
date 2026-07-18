@@ -131,7 +131,7 @@ x-apple.systempreferences:com.apple.preference.dock)
 
 ### Finder
 
-Open Finder setting
+Open Finder settings
 
 ``` bash
 osascript \
@@ -139,7 +139,7 @@ osascript \
     -e 'tell application "System Events" to keystroke "," using command down'
 ```
 
-* Set home directory a default start directory
+* Set home directory as default start directory
 
   ``` bash
   defaults write com.apple.finder "NewWindowTarget" "PfHm"

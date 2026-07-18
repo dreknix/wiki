@@ -23,7 +23,7 @@ Download latest version from GitHub
 
 !!! info
 
-    The download a package with all dependencies you can use
+    To download a package with all dependencies you can use
     [https://store.rg-adguard.net/](https://store.rg-adguard.net/).
 
     * Go to [Microsoft store](https://apps.microsoft.com/store/)
@@ -55,12 +55,12 @@ Enable provisioned package for the current user:
 ).InstallLocation | Add-AppxPackage -Register -DisableDevelopmentMode
 ```
 
-The executable `winget.exe` is than found in
+The executable `winget.exe` is then found in
 `$env:USERPROFILE\AppData\Local\Microsoft\WindowsApps\`.
 
 !!! warning
 
-    If there are policies that does not allow Microsoft applications, the
+    If there are policies that do not allow Microsoft applications, the
     application `Microsoft.DesktopAppInstaller` must be whitelisted.
 
 ## Searching for Packages
@@ -74,7 +74,7 @@ PS> winget search
 Can also be seen at
 [microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs/tree/master/manifests).
 
-List all packages that contains `note`:
+List all packages that contain `note`:
 
 ```powershell
 PS> winget search note
@@ -97,7 +97,7 @@ PS> winget install --scope machine --exact --id gerardog.gsudo
 Therefore, the default scope should be `machine`. Change the default scope in
 the [settings](#configuration-settings)
 
-Some package can not be installed in machine scope:
+Some packages cannot be installed in machine scope:
 
 ```powershell
 PS> winget install --scope user --exact --id Microsoft.WindowsTerminal

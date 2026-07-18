@@ -87,7 +87,7 @@ sudo smartctl --log=selftest /dev/sda
 
 ### MegaRAID
 
-Get list of disk in RAID:
+Get list of disks in RAID:
 
 ``` console
 sudo /opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show

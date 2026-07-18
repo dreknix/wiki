@@ -32,7 +32,7 @@ sudo systemctl stop brltty-udev.service
 sudo systemctl mask brltty-udev.service
 ```
 
-The main problem with this solution is that this disable all braille displays.
+The main problem with this solution is that this disables all braille displays.
 
 In the bug description above a better solution is described. This solution is
 already implemented in the Debian packages of brltty. In Ubuntu this patch is
@@ -61,7 +61,7 @@ Feb 10 10:00:00 chumbucket kernel: usb 1-3: ch341-uart converter now attached to
 ...
 ```
 
-If brltty is not interfere the `/dev/ttyUSB0` device must be existing:
+If brltty does not interfere the `/dev/ttyUSB0` device must be existing:
 
 ``` console
 $ ls -l /dev/ttyUSB0
@@ -122,7 +122,7 @@ The changed rule set must be loaded via udev:
 sudo udevadm control --reload && sudo udevadm trigger
 ```
 
-Afterwards the brltty udev service must restarted:
+Afterwards the brltty udev service must be restarted:
 
 ``` console
 sudo systemctl restart brltty-udev.service

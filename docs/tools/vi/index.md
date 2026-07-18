@@ -1,8 +1,8 @@
 # Vi / Vim / Neovim
 
-## General Informations
+## General Information
 
-There are several starting point for informations:
+There are several starting points for information:
 
 * Quick reference guide: [`:help quickref`](https://vimhelp.org/quickref.txt.html){:target="_blank"}
 * User manual: [`:help usr_toc`](https://vimhelp.org/usr_toc.txt.html){:target="_blank"}
@@ -62,7 +62,7 @@ See: [`:help text-objects`](https://vimhelp.org/motion.txt.html#text-objects){:t
   * quotes: `da"` - <b>d</b>elete <b>a</b>round quotes or `da'`
   * brackets: `di]` - <b>d</b>elete <b>i</b>nside brackets
   * braces: `ci{` - <b>c</b>hange <b>i</b>nside braces
-  * paragraph: `dap` - <b>d</b>elete <b>i</b>nside paragraph
+  * paragraph: `dap` - <b>d</b>elete <b>a</b>round paragraph
   * word: `vaw` - <b>v</b>isual select <b>a</b>round word
   * WORD: `vaW` - <b>v</b>isual select <b>a</b>round WORD
   * tag: `vit` - <b>v</b>isual select <b>i</b>nside tag or `vi<`
@@ -123,7 +123,7 @@ Search for key mappings in insert mode:
 Search for key mappings in normal mode:
 
 ``` vim
-:filter pattern imap
+:filter pattern nmap
 ```
 
 To print the content of a mapping:
@@ -147,8 +147,8 @@ nnoremap <C-L> <Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>
 With `==` or `=` code can be formatted.
 
 * `==` - indent current line
-  * `>>` - increase current indentation level be one
-  * `<<` - decrease current indentation level be one
+  * `>>` - increase current indentation level by one
+  * `<<` - decrease current indentation level by one
 * `4==` - indent four lines (including current line)
   * `V3j=` - same indentation by using visual selection
 * `=ap` - indent current paragraph

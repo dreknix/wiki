@@ -43,7 +43,7 @@ Create `/etc/dropbear-initramfs/authorized_keys` and update the initramfs.
 $ sudo update-initramfs -u
 ```
 
-Unlock the LUKS encryption: `cryptroot-unlook`
+Unlock the LUKS encryption: `cryptroot-unlock`
 
 ### dmidecode
 

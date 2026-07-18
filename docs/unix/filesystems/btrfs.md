@@ -14,7 +14,7 @@ manager. The btrfs file system is marked as stable in the Linux kernel since
 * https://youtu.be/JvfCieWkXxI?si=tFSJziZylZpbDwg0
 
 With the following layout booting a read-only snapshot is possible since all
-directories that needs to be writable are not part of the root file system
+directories that need to be writable are not part of the root file system
 subvolume:
 
 ``` plaintext title="/etc/fstab"
@@ -95,21 +95,21 @@ First boot to the last working snapshot. If you have `grub-btrfs` installed, you
 can choose the snapshot from the boot menu. Or you can add the snapshot as
 a kernel option.
 
-Normally btrfs adds the following option the kernel (during `update-grub2`):
+Normally btrfs adds the following option to the kernel (during `update-grub2`):
 
 ``` plaintext
 rootflags=subvol=@
 ```
 
 To select a different snapshot change the option during boot (press `e` in the
-GRUB menue) to:
+GRUB menu) to:
 
 ``` plaintext
 rootflags=subvolid=<id>
 ```
 
 Now the snapshot is used as rootfs. Due to the chosen layout even a read-only
-snapshot (i.e., create by `btrbk`) can be booted.
+snapshot (i.e., created by `btrbk`) can be booted.
 
 After the system was successfully booted, check if the right snapshot is mounted:
 
@@ -227,7 +227,7 @@ snapshot_name  home
 sudo btrbk run
 ```
 
-To perform a try-run add the option `-n`.
+To perform a dry run add the option `-n`.
 
 #### Show diff between two Snapshots
 
