@@ -10,13 +10,13 @@
         <meta name="author" content="dreknix">
       
       
-        <link rel="canonical" href="https://dreknix.github.io/wiki/blog/category/latex.html">
+        <link rel="canonical" href="https://dreknix.github.io/wiki/blog/category/ai.html">
       
       
-        <link rel="prev" href="containers.html">
+        <link rel="prev" href="../archive/2023.html">
       
       
-        <link rel="next" href="neovim.html">
+        <link rel="next" href="containers.html">
       
       
         
@@ -30,7 +30,7 @@
     
     
       
-        <title>LaTeX - dreknix - Documentation</title>
+        <title>AI - dreknix - Documentation</title>
       
     
     
@@ -319,7 +319,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#latex" class="md-skip">
+        <a href="#ai" class="md-skip">
           Skip to content
         </a>
       
@@ -355,7 +355,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LaTeX
+              AI
             
           </span>
         </div>
@@ -1455,12 +1455,23 @@
                 
   
   
-  
     
   
   
-    <li class="md-nav__item">
-      <a href="ai.html" class="md-nav__link">
+    
+      
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="ai.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1476,6 +1487,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1515,23 +1527,12 @@
                 
   
   
-    
-  
   
     
-      
-    
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="latex.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="latex.html" class="md-nav__link">
         
   
   
@@ -1547,7 +1548,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1718,7 +1718,7 @@
   <div class="md-content" data-md-component="content">
     <div class="md-content__inner">
       <header class="md-typeset">
-        <h1 id="latex">LaTeX<a class="headerlink" href="#latex" title="Permanent link">&#128279;</a></h1>
+        <h1 id="ai">AI<a class="headerlink" href="#ai" title="Permanent link">&#128279;</a></h1>
       </header>
       
         <article class="md-post md-post--excerpt">
@@ -1727,13 +1727,13 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2023-11-20 00:00:00+00:00">November 20, 2023</time></li>
+          <time datetime="2025-07-18 00:00:00+00:00">July 18, 2025</time></li>
         
           <li class="md-meta__item">
             in
             
-              <a href="latex.html" class="md-meta__link">LaTeX</a>, 
-              <a href="tools.html" class="md-meta__link">Tools</a></li>
+              <a href="tools.html" class="md-meta__link">Tools</a>, 
+              <a href="ai.html" class="md-meta__link">AI</a></li>
         
         
         
@@ -1742,50 +1742,17 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="finding-glyph-in-fonts"><a class="toclink" href="../2023/11/20/finding-glyph-in-fonts.html">Finding Glyph in Fonts</a></h2>
-<p>Sometimes it is necessary to find fonts that contain a specific glyph. The tool
-<a href="https://ctan.org/pkg/albatross" target="_blank" rel="noopener">albatross</a> can be used for
-that task.</p>
+    <h2 id="using-llm-with-opencode-zen-and-gwdg-models"><a class="toclink" href="../2025/07/18/using-llm-with-opencode-zen-and-gwdg-models.html">Using llm with OpenCode Zen and GWDG Models</a></h2>
+<p><a href="https://llm.datasette.io/" target="_blank" rel="noopener">llm</a> is a CLI tool by Simon
+Willison for interacting with large language models from the terminal. Since
+both <a href="https://opencode.ai/docs/zen" target="_blank" rel="noopener">OpenCode Zen</a> and
+<a href="https://docs.hpc.gwdg.de/services/ai-services/saia/index.html" target="_blank" rel="noopener">GWDG's SAIA</a>
+expose OpenAI-compatible APIs, <code>llm</code> can talk to them with a small YAML
+configuration.</p>
 
     
       <nav class="md-post__action">
-        <a href="../2023/11/20/finding-glyph-in-fonts.html">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2023-11-20 00:00:00+00:00">November 20, 2023</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="latex.html" class="md-meta__link">LaTeX</a>, 
-              <a href="neovim.html" class="md-meta__link">Neovim</a></li>
-        
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="using-tex-files-in-vi"><a class="toclink" href="../2023/11/20/using-tex-files-in-vi.html">Using TeX files in Vi</a></h2>
-<p>In Vim/Neovim the filetype plugin uses three different type for different TeX
-flavors (see <a href="https://neovim.io/doc/user/filetype.html#ft-tex-plugin" target="_blank" rel="noopener"><code>:help ft-tex-plugin</code></a>).</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../2023/11/20/using-tex-files-in-vi.html">
+        <a href="../2025/07/18/using-llm-with-opencode-zen-and-gwdg-models.html">
           Continue reading
         </a>
       </nav>

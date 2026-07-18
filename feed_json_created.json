@@ -13,6 +13,20 @@
     "language": "en",
     "items": [
         {
+            "id": "https://dreknix.github.io/wiki/blog/2025/07/18/using-llm-with-opencode-zen-and-gwdg-models.html",
+            "url": "https://dreknix.github.io/wiki/blog/2025/07/18/using-llm-with-opencode-zen-and-gwdg-models.html",
+            "title": "Using llm with OpenCode Zen and GWDG Models",
+            "content_html": "<h1>Using llm with OpenCode Zen and GWDG Models</h1>\n<p><a href=\"https://llm.datasette.io/\">llm</a>{:target=\"_blank\"} is a CLI tool by Simon\nWillison for interacting with large language models from the terminal. Since\nboth <a href=\"https://opencode.ai/docs/zen\">OpenCode Zen</a>{:target=\"_blank\"} and\n<a href=\"https://docs.hpc.gwdg.de/services/ai-services/saia/index.html\">GWDG's SAIA</a>{:target=\"_blank\"}\nexpose OpenAI-compatible APIs, <code>llm</code> can talk to them with a small YAML\nconfiguration.</p>",
+            "image": null,
+            "date_modified": "2026-07-18T11:11:26+00:00",
+            "date_published": "2025-07-18T00:00:00+00:00",
+            "authors": [],
+            "tags": [
+                "AI",
+                "Tools"
+            ]
+        },
+        {
             "id": "https://dreknix.github.io/wiki/blog/2024/11/22/scripts-for-nmap.html",
             "url": "https://dreknix.github.io/wiki/blog/2024/11/22/scripts-for-nmap.html",
             "title": "Scripts for Nmap",

@@ -13,8 +13,8 @@
     <language>en</language>
 
     
-    <pubDate>Sat, 18 Jul 2026 11:00:14 -0000</pubDate>
-    <lastBuildDate>Sat, 18 Jul 2026 11:00:14 -0000</lastBuildDate>
+    <pubDate>Sat, 18 Jul 2026 11:11:53 -0000</pubDate>
+    <lastBuildDate>Sat, 18 Jul 2026 11:11:53 -0000</lastBuildDate>
     <ttl>1440</ttl>
 
     
@@ -30,6 +30,33 @@
     
 
     
+    
+    <item>
+      <title>Using llm with OpenCode Zen and GWDG Models</title>
+      
+      
+      
+      
+        
+      <category>AI</category>
+        
+      <category>Tools</category>
+        
+      
+      <description>&lt;h1&gt;Using llm with OpenCode Zen and GWDG Models&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://llm.datasette.io/&#34;&gt;llm&lt;/a&gt;{:target=&#34;_blank&#34;} is a CLI tool by Simon
+Willison for interacting with large language models from the terminal. Since
+both &lt;a href=&#34;https://opencode.ai/docs/zen&#34;&gt;OpenCode Zen&lt;/a&gt;{:target=&#34;_blank&#34;} and
+&lt;a href=&#34;https://docs.hpc.gwdg.de/services/ai-services/saia/index.html&#34;&gt;GWDG&#39;s SAIA&lt;/a&gt;{:target=&#34;_blank&#34;}
+expose OpenAI-compatible APIs, &lt;code&gt;llm&lt;/code&gt; can talk to them with a small YAML
+configuration.&lt;/p&gt;</description>
+      <link>https://dreknix.github.io/wiki/blog/2025/07/18/using-llm-with-opencode-zen-and-gwdg-models.html</link>
+      <pubDate>Sat, 18 Jul 2026 11:11:26 +0000</pubDate>
+      <source url="https://dreknix.github.io/wiki/feed_rss_updated.xml">dreknix - Documentation</source>
+      
+      <guid isPermaLink="true">https://dreknix.github.io/wiki/blog/2025/07/18/using-llm-with-opencode-zen-and-gwdg-models.html</guid>
+      
+    </item>
     
     <item>
       <title>brltty and Generic Serial Converter</title>
