@@ -1,4 +1,4 @@
-mkdocs-material>=9.7,<9.8
+mkdocs-material>=9.8,<9.9
 mkdocs-awesome-pages-plugin
 mkdocs-file-filter-plugin
 mkdocs-git-committers-plugin-2
