@@ -24,7 +24,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -32,10 +32,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
   
@@ -1627,26 +1627,26 @@ single API key. Get an API key at
 <div class="language-console highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="gp">$ </span>llm<span class="w"> </span>keys<span class="w"> </span><span class="nb">set</span><span class="w"> </span>opencode-zen
 </span></code></pre></div>
 <p>Find the configuration directory and create or edit <code>extra-openai-models.yaml</code>:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>dirname<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>llm<span class="w"> </span>logs<span class="w"> </span>path<span class="k">)</span><span class="s2">&quot;</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="gp">$ </span>dirname<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>llm<span class="w"> </span>logs<span class="w"> </span>path<span class="k">)</span><span class="s2">"</span>
 </span></code></pre></div>
 <p>Add model entries to <code>extra-openai-models.yaml</code>:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">model_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opencode-zen-claude-sonnet-4</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">claude-sonnet-4</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://opencode.ai/zen/v1&quot;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">"https://opencode.ai/zen/v1"</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">api_key_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opencode-zen</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">model_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opencode-zen-gpt-5</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">  </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gpt-5</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://opencode.ai/zen/v1&quot;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">"https://opencode.ai/zen/v1"</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="nt">api_key_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opencode-zen</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">model_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opencode-zen-deepseek-v4-flash-free</span>
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deepseek-v4-flash-free</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://opencode.ai/zen/v1&quot;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">"https://opencode.ai/zen/v1"</span>
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="nt">api_key_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">opencode-zen</span>
 </span></code></pre></div>
 <p>Run a prompt:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>llm<span class="w"> </span>-m<span class="w"> </span>opencode-zen-claude-sonnet-4<span class="w"> </span><span class="s1">&#39;Explain SAIA in one paragraph&#39;</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="gp">$ </span>llm<span class="w"> </span>-m<span class="w"> </span>opencode-zen-claude-sonnet-4<span class="w"> </span><span class="s1">'Explain SAIA in one paragraph'</span>
 </span></code></pre></div>
 <h2 id="connecting-to-gwdg-models">Connecting to GWDG Models<a class="headerlink" href="#connecting-to-gwdg-models" title="Permanent link">&#128279;</a></h2>
 <p><a href="https://docs.hpc.gwdg.de/services/ai-services/saia/index.html" target="_blank" rel="noopener">GWDG SAIA</a>
@@ -1659,24 +1659,24 @@ SAIA API key are required.</p>
 <p>Add model entries to the same <code>extra-openai-models.yaml</code>:</p>
 <div class="language-yaml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">model_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gwdg-llama-3.1-8b</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">meta-llama-3.1-8b-instruct</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://chat-ai.academiccloud.de/v1&quot;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">"https://chat-ai.academiccloud.de/v1"</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="nt">api_key_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gwdg</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">model_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gwdg-qwen3.6-27b</span>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">qwen3.6-27b</span>
-</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://chat-ai.academiccloud.de/v1&quot;</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">"https://chat-ai.academiccloud.de/v1"</span>
 </span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="nt">api_key_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gwdg</span>
 </span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
 </span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">model_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gwdg-deepseek-v4-flash</span>
 </span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">  </span><span class="nt">model_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deepseek-v4-flash</span>
-</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://chat-ai.academiccloud.de/v1&quot;</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">"https://chat-ai.academiccloud.de/v1"</span>
 </span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">  </span><span class="nt">api_key_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gwdg</span>
 </span></code></pre></div>
 <p>Run a prompt:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gp">$ </span>llm<span class="w"> </span>-m<span class="w"> </span>gwdg-qwen3.6-27b<span class="w"> </span><span class="s1">&#39;What is the capital of Lower Saxony?&#39;</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="gp">$ </span>llm<span class="w"> </span>-m<span class="w"> </span>gwdg-qwen3.6-27b<span class="w"> </span><span class="s1">'What is the capital of Lower Saxony?'</span>
 </span></code></pre></div>
 <p>The full list of available GWDG models can be retrieved with:</p>
-<div class="language-console highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">$ </span>curl<span class="w"> </span>-s<span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer </span><span class="k">$(</span>llm<span class="w"> </span>keys<span class="w"> </span>get<span class="w"> </span>gwdg<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<div class="language-console highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="gp">$ </span>curl<span class="w"> </span>-s<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer </span><span class="k">$(</span>llm<span class="w"> </span>keys<span class="w"> </span>get<span class="w"> </span>gwdg<span class="k">)</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span>https://chat-ai.academiccloud.de/v1/models<span class="w"> </span><span class="p">|</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>json.tool
 </span></code></pre></div>
 <h2 id="useful-commands">Useful Commands<a class="headerlink" href="#useful-commands" title="Permanent link">&#128279;</a></h2>
@@ -1841,10 +1841,10 @@ SAIA API key are required.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

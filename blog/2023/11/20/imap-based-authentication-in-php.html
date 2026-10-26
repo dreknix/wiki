@@ -26,7 +26,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -34,10 +34,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
   
@@ -1563,38 +1563,38 @@ authentication plugin (see: <a href="https://github.com/nextcloud/user_external"
 <div class="language-php highlight"><span class="filename">imap-test.php</span><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="x">#!/usr/bin/env php</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="cp">&lt;?php</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nv">$version</span> <span class="o">=</span> <span class="nb">phpversion</span><span class="p">();</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Current PHP version: </span><span class="si">{</span><span class="nv">$version</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Current PHP version: </span><span class="si">{</span><span class="nv">$version</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nv">$url</span> <span class="o">=</span> <span class="s1">&#39;imaps://imap.example.org:993&#39;</span><span class="p">;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nv">$email</span> <span class="o">=</span> <span class="s1">&#39;user@example.org&#39;</span><span class="p">;</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nv">$password</span> <span class="o">=</span> <span class="s1">&#39;password&#39;</span><span class="p">;</span> <span class="c1"># password must be in &#39;...&#39;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nv">$url</span> <span class="o">=</span> <span class="s1">'imaps://imap.example.org:993'</span><span class="p">;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nv">$email</span> <span class="o">=</span> <span class="s1">'user@example.org'</span><span class="p">;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nv">$password</span> <span class="o">=</span> <span class="s1">'password'</span><span class="p">;</span> <span class="c1"># password must be in '...'</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="nv">$ch</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">();</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="c1"># see: https://www.php.net/manual/en/function.curl-setopt.php</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_URL</span><span class="p">,</span> <span class="nv">$url</span><span class="p">);</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_USERPWD</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{</span><span class="nv">$email</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="nv">$password</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_USERPWD</span><span class="p">,</span> <span class="s2">"</span><span class="si">{</span><span class="nv">$email</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="nv">$password</span><span class="si">}</span><span class="s2">"</span><span class="p">);</span>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_CONNECTTIMEOUT</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1"># equal to: curl_setopt($ch, CURLOPT_CUSTOMREQUEST, &#39;CAPABILITY&#39;);</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1"># equal to: curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'CAPABILITY');</span>
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_CONNECT_ONLY</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="c1"># get more debug information</span>
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_CERTINFO</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$ch</span><span class="p">,</span> <span class="nx">CURLOPT_VERBOSE</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>
-</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="k">print</span><span class="p">(</span><span class="s2">&quot;Connecting to: </span><span class="si">{</span><span class="nv">$url</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Connecting to: </span><span class="si">{</span><span class="nv">$url</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
 </span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="nv">$errorcode</span> <span class="o">=</span> <span class="nb">curl_errno</span><span class="p">(</span><span class="nv">$ch</span><span class="p">);</span>
 </span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
 </span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="k">if</span> <span class="p">(</span><span class="nv">$errorcode</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>  <span class="k">print</span><span class="p">(</span><span class="s2">&quot;OK</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>  <span class="k">print</span><span class="p">(</span><span class="s2">"OK</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
 </span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$errorcode</span> <span class="o">===</span> <span class="mi">67</span><span class="p">)</span> <span class="p">{</span>
-</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>  <span class="k">print</span><span class="p">(</span><span class="s2">&quot;ERROR(&quot;</span> <span class="o">.</span> <span class="nv">$errorcode</span> <span class="o">.</span> <span class="s2">&quot;): Login denied! Wrong credentials?</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>  <span class="k">print</span><span class="p">(</span><span class="s2">"ERROR("</span> <span class="o">.</span> <span class="nv">$errorcode</span> <span class="o">.</span> <span class="s2">"): Login denied! Wrong credentials?</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
 </span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>  <span class="k">print</span><span class="p">(</span><span class="s2">&quot;ERROR(&quot;</span> <span class="o">.</span> <span class="nv">$errorcode</span> <span class="o">.</span> <span class="s2">&quot;): &quot;</span> <span class="o">.</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>  <span class="k">print</span><span class="p">(</span><span class="s2">"ERROR("</span> <span class="o">.</span> <span class="nv">$errorcode</span> <span class="o">.</span> <span class="s2">"): "</span> <span class="o">.</span> <span class="nb">curl_error</span><span class="p">(</span><span class="nv">$ch</span><span class="p">)</span> <span class="o">.</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">);</span>
 </span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a><span class="p">}</span>
 </span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="cp">?&gt;</span>
 </span></code></pre></div>
@@ -1604,7 +1604,7 @@ authentication plugin (see: <a href="https://github.com/nextcloud/user_external"
 application. To ensure the correct version Docker/Podman can be used.</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker run -it --rm \
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>           --name php-test \
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>           -v &quot;./imap-test.php:/work/imap-test.php&quot; \
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>           -v "./imap-test.php:/work/imap-test.php" \
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>           -w /work php:8.2-cli \
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>           php imap-test.php
 </span></code></pre></div>
@@ -1765,10 +1765,10 @@ application. To ensure the correct version Docker/Podman can be used.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

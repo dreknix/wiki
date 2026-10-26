@@ -26,7 +26,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -34,10 +34,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
   
@@ -1886,98 +1886,98 @@
 <h1 id="vim">Vim<a class="headerlink" href="#vim" title="Permanent link">&#128279;</a></h1>
 <p><a class="magiclink magiclink-github magiclink-repository" href="https://github.com/mhinz/vim-galore" target="_blank" title="GitHub Repository: mhinz/vim-galore" rel="noopener">mhinz/vim-galore</a></p>
 <h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">&#128279;</a></h2>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">&quot; enter current millenium</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c">" enter current millenium</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">set</span> <span class="nb">nocompatible</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c">&quot; enable syntax and plugins (for netrw)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c">" enable syntax and plugins (for netrw)</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">syntax</span> enable
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">filetype</span> plugin <span class="k">on</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">filetype</span> plugin <span class="k">on</span>
 </span></code></pre></div>
 <h2 id="finding-files">Finding Files<a class="headerlink" href="#finding-files" title="Permanent link">&#128279;</a></h2>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c">&quot; search down into subfolders</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c">&quot; provides tab-completion for all file-related tasks</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c">" search down into subfolders</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c">" provides tab-completion for all file-related tasks</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">set</span> <span class="nb">path</span><span class="p">+=</span>**
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c">&quot; ignore different file types</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">set</span> <span class="nb">wildignore</span><span class="p">+=</span>*.aux<span class="p">,</span>*.log<span class="p">,</span>*.out<span class="p">,</span>*.pdf<span class="p">,</span>*.<span class="k">o</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c">" ignore different file types</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">set</span> <span class="nb">wildignore</span><span class="p">+=</span>*.aux<span class="p">,</span>*.<span class="k">log</span><span class="p">,</span>*.out<span class="p">,</span>*.pdf<span class="p">,</span>*.<span class="k">o</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c">&quot; ignore a specific folder</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c">" ignore a specific folder</span>
 </span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">set</span> <span class="nb">wildignore</span><span class="p">+=</span>**<span class="sr">/node_modules/</span>**
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c">&quot; give suffixes a low priority (list at end)</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c">" give suffixes a low priority (list at end)</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">set</span> <span class="nb">suffixes</span><span class="p">+=</span>.pdf
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c">&quot; display all matching files when we tab complete</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="c">" display all matching files when we tab complete</span>
 </span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="k">set</span> <span class="nb">wildmenu</span>
 </span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>
-</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c">&quot; Hit tab to :find by partial match</span>
-</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="c">&quot; Use * to make it fuzzy</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="c">" Hit tab to :find by partial match</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="c">" Use * to make it fuzzy</span>
 </span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
-</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="c">&quot; :b lets you autocomplete any open buffer</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="c">" :b lets you autocomplete any open buffer</span>
 </span></code></pre></div>
 <h2 id="autocomplete">Autocomplete<a class="headerlink" href="#autocomplete" title="Permanent link">&#128279;</a></h2>
 <p>More shortcuts can be found in |ins-completion|</p>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c">&quot; ^x^n - for just this file</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c">&quot; ^x^f - for filenames</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c">&quot; ^x^] - for tags only</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c">&quot; ^n   - for anything by the &#39;complete&#39; option</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c">" ^x^n - for just this file</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="c">" ^x^f - for filenames</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c">" ^x^] - for tags only</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c">" ^n   - for anything by the 'complete' option</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c">&quot; move than with ^n and ^p in the suggestion list</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c">" move than with ^n and ^p in the suggestion list</span>
 </span></code></pre></div>
 <h2 id="spell-checking-and-word-completion">Spell Checking and Word Completion<a class="headerlink" href="#spell-checking-and-word-completion" title="Permanent link">&#128279;</a></h2>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">&quot; Spell-check language</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c">" Spell-check language</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">set</span> <span class="nb">spelllang</span><span class="p">=</span>en_us
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c">&quot; Automatically set by plugin vim-markdown</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c">&quot;&quot; Define new filetype markdown</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c">&quot;autocmd BufRead,BufNewFile *.md set filetype=markdown</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c">" Automatically set by plugin vim-markdown</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c">"" Define new filetype markdown</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c">"autocmd BufRead,BufNewFile *.md set filetype=markdown</span>
 </span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c">&quot; Spell-check Markdown files</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>autocmd <span class="nb">FileType</span> markdown <span class="k">setlocal</span> <span class="k">spell</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c">" Spell-check Markdown files</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>autocmd <span class="nb">FileType</span> markdown setlocal <span class="k">spell</span>
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c">&quot; Spell-check Git messages</span>
-</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>autocmd <span class="nb">FileType</span> gitcommit <span class="k">setlocal</span> <span class="k">spell</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="c">" Spell-check Git messages</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>autocmd <span class="nb">FileType</span> gitcommit setlocal <span class="k">spell</span>
 </span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
-</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c">&quot; Set spellfile to location that is guaranteed to exist,</span>
-</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c">&quot; can be symlinked to Dropbox or kept in Git</span>
-</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c">&quot; and managed outside of thoughtbot/dotfiles using rcm.</span>
-</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="k">set</span> <span class="nb">spellfile</span><span class="p">=</span>$HOME<span class="sr">/.vim/</span><span class="k">spell</span><span class="p">-</span><span class="k">en</span>.utf<span class="m">-8</span>.add
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="c">" Set spellfile to location that is guaranteed to exist,</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="c">" can be symlinked to Dropbox or kept in Git</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c">" and managed outside of thoughtbot/dotfiles using rcm.</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="k">set</span> <span class="nb">spellfile</span><span class="p">=</span>$HOME<span class="sr">/.vim/</span><span class="k">spell</span><span class="p">-</span>en.utf<span class="m">-8</span>.<span class="k">add</span>
 </span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
-</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="c">&quot; Autocomplete with dictionary words when spell check is on</span>
-</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="k">set</span> <span class="nb">complete</span><span class="p">+=</span>kspell
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="c">" Autocomplete with dictionary words when spell check is on</span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a><span class="k">set</span> <span class="k">complete</span><span class="p">+=</span>kspell
 </span></code></pre></div>
 <h2 id="file-browsing">File Browsing<a class="headerlink" href="#file-browsing" title="Permanent link">&#128279;</a></h2>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c">&quot; tweaks for browsing</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">let</span> <span class="k">g</span>:netrw_banner<span class="p">=</span><span class="m">0</span>        <span class="c">&quot; disable annoying banner</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">let</span> <span class="k">g</span>:netrw_browse_split<span class="p">=</span><span class="m">4</span>  <span class="c">&quot; open in prior window</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">let</span> <span class="k">g</span>:netrw_altv<span class="p">=</span><span class="m">1</span>          <span class="c">&quot; open splits to the right</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">let</span> <span class="k">g</span>:netrw_liststyle<span class="p">=</span><span class="m">3</span>     <span class="c">&quot; tree view</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c">" tweaks for browsing</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">let</span> <span class="k">g</span>:netrw_banner<span class="p">=</span><span class="m">0</span>        <span class="c">" disable annoying banner</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">let</span> <span class="k">g</span>:netrw_browse_split<span class="p">=</span><span class="m">4</span>  <span class="c">" open in prior window</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">let</span> <span class="k">g</span>:netrw_altv<span class="p">=</span><span class="m">1</span>          <span class="c">" open splits to the right</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">let</span> <span class="k">g</span>:netrw_liststyle<span class="p">=</span><span class="m">3</span>     <span class="c">" tree view</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">let</span> <span class="k">g</span>:netrw_list_hide<span class="p">=</span>netrw_gitignore#Hide<span class="p">()</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">let</span> <span class="k">g</span>:netrw_list_hide.<span class="p">=</span><span class="s1">&#39;,\(^\|\s\s\)\zs\.\S\+&#39;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">let</span> <span class="k">g</span>:netrw_list_hide.<span class="p">=</span><span class="s1">',\(^\|\s\s\)\zs\.\S\+'</span>
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c">&quot; :edit a folder to open a file browser</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c">&quot; &lt;CR&gt;/v/t to open in an h-split/v-split/tab</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c">&quot; check |netrw-browse-maps| for more mappings</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="c">" :edit a folder to open a file browser</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c">" &lt;CR&gt;/v/t to open in an h-split/v-split/tab</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c">" check |netrw-browse-maps| for more mappings</span>
 </span></code></pre></div>
 <h2 id="snippets">Snippets<a class="headerlink" href="#snippets" title="Permanent link">&#128279;</a></h2>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c">&quot; read an empty HTML template and move cursor to title</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">nnoremap</span> <span class="p">,</span>html :<span class="m">-1</span>read $HOME<span class="sr">/.vim/</span>.skeleton.html<span class="p">&lt;</span>CR<span class="p">&gt;</span><span class="m">3</span>jwf<span class="p">&gt;</span><span class="k">a</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c">" read an empty HTML template and move cursor to title</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">nnoremap</span> <span class="p">,</span>html :<span class="m">-1</span>read $HOME<span class="sr">/.vim/</span>.skeleton.html<span class="p">&lt;</span>CR<span class="p">&gt;</span><span class="m">3</span>jwf<span class="p">&gt;</span><span class="k">a</span>
 </span></code></pre></div>
 <h2 id="help">Help<a class="headerlink" href="#help" title="Permanent link">&#128279;</a></h2>
-<div class="language-vim highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">:</span>help ^<span class="k">n</span>    <span class="c">&quot; help about ctrl-n in normal mode</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">:</span>help i_^<span class="k">n</span>  <span class="c">&quot; help about ctrl-n in insert mode</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">:</span>help c_^<span class="k">n</span>  <span class="c">&quot; help about ctrl-n in command mode</span>
+<div class="language-vim highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">:</span>help ^<span class="k">n</span>    <span class="c">" help about ctrl-n in normal mode</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">:</span>help i_^<span class="k">n</span>  <span class="c">" help about ctrl-n in insert mode</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">:</span>help c_^<span class="k">n</span>  <span class="c">" help about ctrl-n in command mode</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c">&quot; grep in help pages</span>
-</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">:</span><span class="k">helpgrep</span> xxx
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c">" grep in help pages</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">:</span>helpgrep xxx
 </span></code></pre></div>
 <h2 id="colorcolumn">ColorColumn<a class="headerlink" href="#colorcolumn" title="Permanent link">&#128279;</a></h2>
 <div class="language-vim highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">set</span> <span class="nb">textwidth</span><span class="p">=</span><span class="m">80</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="k">set</span> <span class="nb">colorcolumn</span><span class="p">=</span><span class="m">81</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nb">highlight</span> ColorColumn ctermbg<span class="p">=</span><span class="m">0</span> guibg<span class="p">=</span>lightgrey
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c">&quot; alternativ</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="k">au</span> <span class="nb">BufWinEnter</span> * <span class="k">let</span> <span class="k">w</span>:m2<span class="p">=</span>matchadd<span class="p">(</span><span class="s1">&#39;ErrorMsg&#39;</span><span class="p">,</span> <span class="s1">&#39;\%&gt;80v.\+&#39;</span><span class="p">,</span> <span class="m">-1</span><span class="p">)</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c">" alternativ</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>au <span class="nb">BufWinEnter</span> * <span class="k">let</span> <span class="k">w</span>:m2<span class="p">=</span><span class="k">matchadd</span><span class="p">(</span><span class="s1">'ErrorMsg'</span><span class="p">,</span> <span class="s1">'\%&gt;80v.\+'</span><span class="p">,</span> <span class="m">-1</span><span class="p">)</span>
 </span></code></pre></div>
 
 
@@ -2133,10 +2133,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>

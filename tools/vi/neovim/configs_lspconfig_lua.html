@@ -26,7 +26,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed of updated content" href="../../../feed_rss_updated.xml">
       
       <link rel="icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
     
     
       
@@ -34,10 +34,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
   
@@ -1853,12 +1853,12 @@
 <p>Configuration of the LSP servers can be found <a href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md" target="_blank" rel="noopener">here</a>.</p>
 <p>The LSP configuration for the current buffer can be shown with <code>:LspInfo</code>. Often the file type (<code>:set ft</code>) must be set to the correct value. See <code>vim.filetype.add</code> in <a href="init_lua.html">init.lua</a>.</p>
 <p>Content of <code>~/.config/nvim/lua/custom/configs/lspconfig.lua</code>:</p>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">require</span><span class="p">(</span><span class="s1">&#39;plugins.configs.lspconfig&#39;</span><span class="p">)</span>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">base</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">require</span><span class="p">(</span><span class="s1">'plugins.configs.lspconfig'</span><span class="p">)</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">on_attach</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">base</span><span class="p">.</span><span class="py">on_attach</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kd">local</span><span class="w"> </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">base</span><span class="p">.</span><span class="py">capabilities</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kd">local</span><span class="w"> </span><span class="nv">lspconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">require</span><span class="p">(</span><span class="s1">&#39;lspconfig&#39;</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="kd">local</span><span class="w"> </span><span class="nv">lspconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">require</span><span class="p">(</span><span class="s1">'lspconfig'</span><span class="p">)</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nv">lspconfig</span><span class="p">.</span><span class="py">clangd</span><span class="p">.</span><span class="nf">setup</span><span class="p">({</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="nv">on_attach</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="w"> </span><span class="p">(</span><span class="nv">client</span><span class="p">,</span><span class="w"> </span><span class="nv">bufnr</span><span class="p">)</span>
@@ -1876,7 +1876,7 @@
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="nv">lspconfig</span><span class="p">.</span><span class="py">docker_compose_language_service</span><span class="p">.</span><span class="nf">setup</span><span class="p">({</span>
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="w">  </span><span class="nv">on_attach</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">on_attach</span><span class="p">,</span>
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">capabilities</span><span class="p">,</span>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="nv">filetypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;yaml.docker-compose&#39;</span><span class="p">},</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">  </span><span class="nv">filetypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s1">'yaml.docker-compose'</span><span class="p">},</span>
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="p">})</span>
 </span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
 </span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="nv">lspconfig</span><span class="p">.</span><span class="py">dockerls</span><span class="p">.</span><span class="nf">setup</span><span class="p">({</span>
@@ -1897,13 +1897,13 @@
 </span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="nv">lspconfig</span><span class="p">.</span><span class="py">yamlls</span><span class="p">.</span><span class="nf">setup</span><span class="p">({</span>
 </span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="w">  </span><span class="nv">on_attach</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">on_attach</span><span class="p">,</span>
 </span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">capabilities</span><span class="p">,</span>
-</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">  </span><span class="nv">filetypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;yaml&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yaml.ansible&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;yaml.docker-compose&#39;</span><span class="p">},</span>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="w">  </span><span class="nv">filetypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s1">'yaml'</span><span class="p">,</span><span class="w"> </span><span class="s1">'yaml.ansible'</span><span class="p">,</span><span class="w"> </span><span class="s1">'yaml.docker-compose'</span><span class="p">},</span>
 </span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="p">})</span>
 </span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>
 </span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="nv">lspconfig</span><span class="p">.</span><span class="py">pyright</span><span class="p">.</span><span class="nf">setup</span><span class="p">({</span>
 </span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a><span class="w">  </span><span class="nv">on_attach</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">on_attach</span><span class="p">,</span>
 </span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a><span class="w">  </span><span class="nv">capabilities</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">capabilities</span><span class="p">,</span>
-</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">  </span><span class="nv">filetypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s1">&#39;python&#39;</span><span class="p">},</span>
+</span><span id="__span-0-51"><a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a><span class="w">  </span><span class="nv">filetypes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s1">'python'</span><span class="p">},</span>
 </span><span id="__span-0-52"><a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a><span class="p">})</span>
 </span></code></pre></div>
 
@@ -2060,10 +2060,10 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.annotate", "content.code.copy", "content.tabs.link", "content.tooltips", "navigation.indexes", "navigation.instant", "navigation.instant.progress", "navigation.prune", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": {"Ansible": "ansible", "Debian": "debian", "Docker": "docker", "Git": "git", "GitHub": "github", "GitLab": "gitlab", "HTML": "html", "HomeAssistant": "homeassistant", "JSON": "json", "Markdown": "markdown", "Neovim": "neovim", "PowerShell": "powershell", "Proxmox": "proxmox", "Python": "python", "TrueNAS": "truenas", "Ubuntu": "ubuntu", "Vim": "vim", "Windows": "windows", "YAML": "yaml", "bash": "bash", "tmux": "tmux"}, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
     
   </body>
